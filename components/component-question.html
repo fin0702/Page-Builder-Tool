@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css"><!-- Link to Stylesheet-->
+</head>
+<style>
+body{
+height:100%;
+}
+</style>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="question-4" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-question mono">question</span>
+<br><br>
+<h3 contenteditable="true" data-text="Enter your question"></h3>
+<br><br>
+<span class="answers">
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option"><span class="up-answer"></span><span class="down-answer"></span><span contenteditable="true" data-text="Enter an incorrect answer"></span></button>
+<button onclick="this.classList.add('answer-correct')" class="pb-answer-option"><span class="up-answer"></span><span class="down-answer"></span><span contenteditable="true" data-text="Enter the correct answer"></span></button>
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option"><span class="up-answer"></span><span class="down-answer"></span><span contenteditable="true" data-text="Enter an incorrect answer"></span></button>
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option"><span class="up-answer"></span><span class="down-answer"></span><span contenteditable="true" data-text="Enter an incorrect answer"></span></button>
+</span>
+</div>
+<script>
+//function to move the div component block up or down the DOM
+function moveUp(element) {
+  if(element.previousElementSibling)
+    element.parentNode.insertBefore(element, element.previousElementSibling);
+}
+function moveDown(element) {
+  if(element.nextElementSibling)
+    element.parentNode.insertBefore(element.nextElementSibling, element);
+}
+document.querySelector('#question-4').addEventListener('click', function(e) {
+  if(e.target.className === 'down-answer') moveDown(e.target.parentNode);
+  else if(e.target.className === 'up-answer') moveUp(e.target.parentNode);
+});
+</script>
+</body>
+</html>

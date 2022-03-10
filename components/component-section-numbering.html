@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="section-numbering" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-section-numbering">
+<h3 contenteditable="true" data-text="Enter title">A instruction or step in a procedure can go here</h3>
+<div contenteditable="true" data-text="Enter text">
+<p data-text="Enter text">A sub-step or other information can go here.</p>
+<p>The numbering automatically continues from the previous number.</p>
+<p>The numbering will continue even if seperated by other elements e.g images.</p>
+</div>
+</div>
+</body>
+</html>

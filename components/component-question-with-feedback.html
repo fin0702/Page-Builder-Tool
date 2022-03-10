@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css"><!-- Link to Stylesheet-->
+</head>
+<style>
+.pb-answer-option{
+display:block;
+height:66px;
+width:100%;
+border-radius:4px;
+border:0px;
+outline;none;
+padding:18px 12px 18px 24px;
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-weight: 300;
+font-size: 20px;
+line-height: 30px;
+text-align: left;
+margin-bottom:0.25em;
+cursor:pointer;
+background-color: #f5f5f5;
+color:#000000;
+}
+.answer-incorrect{
+background-color: #fc6847;
+color:#ffffff;
+}
+.answer-correct{
+background-color: #2ec57e;
+color:#ffffff;
+}
+.mono{
+font-family: Arrival Apercu Mono Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+text-transform:uppercase;
+font-size:11.25px;
+line-height:14px;
+}
+.pb-feedback p, .pb-question p{
+font-family: Arrival Apercu Pro,-apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+}
+</style>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();">remove</button>
+<span class="up"></span><span class="down"></span>
+<div class="pb-question block">
+<span class="mono">question</span>
+<br><br>
+<p contenteditable="true" data-text="Enter your question">How transient stability limit can be increased?</p>
+</div>
+<div class="block">
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option" data-text="Enter an incorrect answer"><span class="up"></span><span class="down"></span>Incorrect Answer</button>
+<button onclick="this.classList.add('answer-correct')" class="pb-answer-option" data-text="Enter a correct answer"><span class="up"></span><span class="down"></span>Correct Answer</button>
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option" data-text="Enter an incorrect answer"><span class="up"></span><span class="down"></span>Incorrect Answer</button>
+<button onclick="this.classList.add('answer-incorrect')" class="pb-answer-option" data-text="Enter an incorrect answer"><span class="up"></span><span class="down"></span>Incorrect Answer</button>
+</div>
+<div id="incorrect" class="pb-feedback block">
+<span class="mono">incorrect</span>
+<br><br>
+<p>Transient stability limit can be increased by reduction in the transfer reactance.</p>
+</div>
+</div>
+</div>
+<script>
+//function to move the div component block up or down the DOM
+function moveUp(element) {
+  if(element.previousElementSibling)
+    element.parentNode.insertBefore(element, element.previousElementSibling);
+}
+function moveDown(element) {
+  if(element.nextElementSibling)
+    element.parentNode.insertBefore(element.nextElementSibling, element);
+}
+document.querySelector('#question-4').addEventListener('click', function(e) {
+  if(e.target.className === 'down') moveDown(e.target.parentNode);
+  else if(e.target.className === 'up') moveUp(e.target.parentNode);
+});
+</script>
+</body>
+</html>

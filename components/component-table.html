@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css"><!-- Link to Stylesheet-->
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<!-- add remove row buttons must not be moved in parent/child heirachy -->
+<div id="table" class="block">
+  <button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span id="controls" class="up"></span><span id="controls" class="down"></span>
+  <table>
+    <tr>
+      <th contenteditable="true" class="leftcol-heading" data-text="Enter text">Specifications</th>
+      <th contenteditable="true" class="rightcol-heading"></th>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">GVW:</td>
+      <td contenteditable="true" class="rightcol" data-text="Enter text">3.5T / 4.25T</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">Height:</td>
+      <td contenteditable="true" class="rightcol" data-text="Enter text">2.4 - 2.7m</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">Length:</td>
+      <td contenteditable="true" class="rightcol">5.1 - 6.5m</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">Max. Payload:</td>
+      <td contenteditable="true" class="rightcol" data-text="Enter text"> 2,100kg</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">Battery Capacity:</td>
+      <td contenteditable="true" class="rightcol" data-text="Enter text">44kWh - 133kWh</td>
+    </tr>
+    <tr>
+      <td contenteditable="true" data-text="Enter text">Range up to:</td>
+      <td contenteditable="true" class="rightcol" data-text="Enter text">350km / 215 miles</td>
+    </tr>
+  <button id="controls" style="position:absolute" class="row-buttons add-row"onclick='this.nextElementSibling.insertAdjacentHTML("beforeend", "<tr><td contenteditable=true>Battery Capacity:</td><td contenteditable=true class=rightcol>44kWh - 133kWh</td></tr>");'></button>
+</table>
+  <button id="controls" class="row-buttons remove-row" onclick='this.previousElementSibling.deleteRow(-1);'></button>
+</span>
+</div>
+</body>
+</html>

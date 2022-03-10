@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css"><!-- Link to Stylesheet-->
+</head>
+<style>
+table {
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-weight: 300;
+font-size: 20px;
+line-height: 30px;
+text-align: left;
+table-layout: fixed;
+width: 100%;
+}
+.leftcol-heading, .rightcol-heading{
+font-weight: 800;
+padding-bottom:32px;
+}
+.rightcol-heading{
+text-align: right;
+}
+.rightcol{
+text-align: right;
+}
+table td {
+padding-bottom:16px;
+}
+</style>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="question-4" style="display:inline-block;">
+<button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();">remove</button>
+<span class="up"></span><span class="down"></span>
+<span class="block">
+  <table id='table'>
+    <tr>
+      <th contenteditable="true" class="leftcol-heading">Specifications</th>
+      <th contenteditable="true" class="rightcol-heading"></th>
+    </tr>
+    <tr>
+      <td contenteditable="true">GVW:</td>
+      <td contenteditable="true" class="rightcol">3.5T / 4.25T</td>
+    </tr>
+    <tr>
+      <td contenteditable="true">Height:</td>
+      <td contenteditable="true" class="rightcol">2.4 - 2.7m</td>
+    </tr>
+    <tr>
+      <td contenteditable="true">Length:</td>
+      <td contenteditable="true" class="rightcol">5.1 - 6.5m</td>
+    </tr>
+    <tr>
+      <td contenteditable="true">Max. Payload:</td>
+      <td contenteditable="true" class="rightcol"> 2,100kg</td>
+    </tr>
+    <tr>
+      <td contenteditable="true">Battery Capacity:</td>
+      <td contenteditable="true" class="rightcol">44kWh - 133kWh</td>
+    </tr>
+    <tr>
+      <td contenteditable="true">Range up to:</td>
+      <td contenteditable="true" class="rightcol">350km / 215 miles</td>
+    </tr>
+    </table>
+        <button class="addrow" onclick='this.previousElementSibling.insertAdjacentHTML("beforeend", "<td>Battery Capacity:</td><td class=rightcol>44kWh - 133kWh</td>");'>add</button>
+  <input id="date"></input>
+</span>
+</div>
+<script>
+// create random number (date in m/s) to use as an id
+document.getElementById('date').value = Date.now();
+// reference value of input containing random number
+rid = document.getElementById('date').value;
+// update table id with random number
+document.getElementById('table').id = rid;
+function addTableRow(){
+/* Get table by Id*/
+var table = document.getElementById(rid);
+/* Add new row to 'bottom' of table. Use '0' to add to top*/
+var row = table.insertRow(-1);
+/* Add new cells to row*/
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+/* text/data to display in cell when added*/
+cell1.outerHTML = '<td contenteditable="true">Range up to:</td>';
+cell2.outerHTML = '<td contenteditable="true" class="rightcol">350km / 215 miles</td>';
+};
+</script>
+
+</body>
+</html>

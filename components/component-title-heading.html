@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="title-heading" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-title-heading">
+<h1 contenteditable="true" data-text="Enter title">Large title goes here</h1>
+<h2 contenteditable="true" data-text="Enter sub-title">Subtitle goes here if needed, one line</h2>
+</span>
+</div>
+</body>
+</html>

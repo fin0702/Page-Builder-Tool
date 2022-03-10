@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css"><!-- Link to Stylesheet-->
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="title" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-title">
+<h1 contenteditable="true" data-text="Enter title">A relatively long title, can be two lines if needed!</h1>
+</span>
+</div>
+</body>
+</html>

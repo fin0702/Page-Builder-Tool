@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<input style="visibility:hidden;" id="downloadid"></input>
+<div id="download-link" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-download">
+<a id="" class="download-file" href="../mobile.svg" download><p class="download-description" id="">brand guidlines pdf</p></a>
+</span>
+</div>
+<script>
+function getRndInteger(min, max) {
+return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+document.getElementById('downloadid').value = getRndInteger(1, 5000);
+let downloadid = document.getElementById('downloadid').value;
+var els = document.getElementsByClassName('download-file');
+for (var i = 0; i < els.length; i++ ) {
+    els[i].id = 'download'+downloadid;};
+var desc = document.getElementsByClassName('download-description');
+for (var i = 0; i < els.length; i++ ) {
+    desc[i].id = 'description'+downloadid;};
+</script>
+</body>
+</html>

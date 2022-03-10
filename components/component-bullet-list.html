@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="..style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<!--div style inline block prevents div being entered on return/enter. Div is removed when markup generated-->
+<div id="bullet-list" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-bullet-list">
+<ul><div style="display:inline-block;" contenteditable="true">
+<li>This is how a list may look when using a simple bullet list.</li>
+<li>This is how a list may look when using a simple bullet list.</li>
+<li>This is how a list may look when using a simple bullet list.</li>
+</div></ul>
+</span>
+</div>
+</body>
+</html>

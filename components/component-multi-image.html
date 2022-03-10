@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+<link rel="stylesheet" href="../style/app-style.css"><!--page-builder-app-style-->
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<input style="visibility:hidden;" id="imageid1"></input>
+<input style="visibility:hidden;" id="imageid2"></input>
+<div id="multi-image" class="block full">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<div class="pb-multi-image">
+  <div class="image-column">
+    <img class="multi-image1" src="https://via.placeholder.com/1250x750">
+  </div>
+  <div class="image-column">
+    <img class="multi-image2" src="https://via.placeholder.com/1250x750">
+  </div>
+</div>
+</div>
+<!--<form action="#" method="post">
+<input type="url" id="url" class="imagelink" onkeyup="" name="imglink" placeholder="Paste image SLUG here" />
+<button class="updateimage" onclick="upDateImage()"></button>
+</form>
+<script>
+function getRndInteger(min, max) {
+return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+function upDateImage(){
+document.getElementById('imageid').value = getRndInteger(1, 5000);
+let imgid = document.getElementById('imageid').value;
+var els = document.getElementsByClassName('standardimg');
+for (var i = 0; i < els.length; i++ ) {
+    els[i].id = imgid;};
+document.getElementById(imgid).src = 'https://asp.arrival.co'+ document.getElementById('url').value +'';
+};
+</script>-->
+</body>
+</html>

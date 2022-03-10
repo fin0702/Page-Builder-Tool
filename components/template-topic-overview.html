@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="topic-overview-template">
+  <div id="header" class="pb-block full">
+   <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+   <span class="up"></span><span class="down"></span>
+   <span class="pb-arrival-header"></span>
+  </div>
+  <div id="title" class="pb-block">
+   <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+   <span class="up"></span><span class="down"></span>
+   <span class="pb-title">
+   <h1 contenteditable="true" data-text="Enter title">Arrival Insider Trading Policy</h1>
+   </span>
+  </div>
+  <div id="small-title-paragraph" class="pb-block">
+   <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+   <span class="up"></span><span class="down"></span>
+   <span class="pb-small-title-paragraph">
+   <h3 contenteditable="true" data-text="Enter title">About this course</h3>
+   <p contenteditable="true" data-text="Enter text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   </span>
+  </div>
+  <div id="numbered-list-title" class="pb-block">
+   <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+   <span class="up"></span><span class="down"></span>
+   <span class="pb-numbered-list-title">
+   <h3 class="list-title">Learning Objectives</h3>
+   <ol>
+   <div style="display:inline-block;" contenteditable="true">
+   <li>This is how a list may look when using a simple numbered list.</li>
+   <li>This is how a list may look when using a simple numbered list.</li>
+   <li>This is how a list may look when using a simple numbered list.</li>
+   </div>
+   </ol>
+   </span>
+  </div>
+  <div id="divider" class="block full">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <hr class="divider">
+  </div>
+  <div id="small-title-paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-small-title-paragraph">
+  <h3 contenteditable="true" data-text="Enter title">Time to complete</h3>
+  <p contenteditable="true" data-text="Enter text">1 hour</p>
+  </span>
+  </div>
+  <div id="small-title-paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-small-title-paragraph">
+  <h3 contenteditable="true" data-text="Enter title">Areas/Categories</h3>
+  <p contenteditable="true" data-text="Enter text">Electronics, Bus, compliance</p>
+  </span>
+  </div>
+  <div id="paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-paragraph">
+  <p contenteditable="true" data-text="Enter text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </span>
+  </div>
+  <div id="divider" class="pb-block full">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <hr class="divider">
+  </div>
+  <div id="section-title-paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-section-title-paragraph">
+  <p contenteditable="true" class="mono-section">module 1</p>
+  <h3 contenteditable="true" data-text="Enter title">Title</h3>
+  <p contenteditable="true" data-text="Enter text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </span>
+  </div>
+  <div id="section-title-paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-section-title-paragraph">
+  <p contenteditable="true" class="mono-section">module 2</p>
+  <h3 contenteditable="true" data-text="Enter title">Title</h3>
+  <p contenteditable="true" data-text="Enter text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </span>
+  </div>
+  <div id="section-title-paragraph" class="pb-block">
+  <button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+  <span class="up"></span><span class="down"></span>
+  <span class="pb-section-title-paragraph">
+  <p contenteditable="true" class="mono-section">module 3</p>
+  <h3 contenteditable="true" data-text="Enter title">Title</h3>
+  <p contenteditable="true" data-text="Enter text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+  </div>
+</span>
+</body>
+</html>
