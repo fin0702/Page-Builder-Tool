@@ -418,7 +418,7 @@ max-height:75%;
 .overflowno{
 overflow:hidden !important;
 }
-iframe#image-frame, iframe#image-caption-frame, iframe#image-letterbox-frame, iframe#video-frame, iframe#multi-image-frame, iframe#dlink-frame, iframe#extlink-frame{
+iframe#image-frame, iframe#image-caption-frame, iframe#image-letterbox-frame, iframe#video-frame, iframe#multi-image-frame, iframe#dlink-frame, iframe#extlink-frame, iframe#image-marked-frame{
 border:0px;
 outline:0;
 height:99%;

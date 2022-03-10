@@ -133,6 +133,7 @@ admonitions
       <div id="MediaComponents" class="panel-collapse collapse out">
         <div class="panel-body">
           <a onclick="dialog2.showModal()"><span class="item"><p>image</p></span></a>
+          <a onclick="dialog10.showModal()"><span class="item"><p>image with markers</p></span></a>
           <a onclick="dialog5.showModal()"><span class="item"><p>full-width-letterbox-image</p></span></a>
           <a onclick="dialog7.showModal()"><span class="item"><p>side-by-side-image</p></span></a>
           <a onclick="dialog4.showModal()"><span class="item"><p>image with caption</p></span></a>
@@ -239,6 +240,19 @@ other
   <span class="imageurlinput"><form action="#" method="post">
   <input type="url" id="urlcaption" class="imagelink" onkeyup="" name="imglink" placeholder="Paste image SLUG here" />
   <button class="updateimage" onclick="upDateImageCaption()"></button>
+</form></div>
+</dialog>
+
+<!--popup for Marked image component-->
+<dialog class="image-modal" id="dialog10">
+  <button class="dialogclose" onclick="window.dialog10.close();"></button><!--button to close dialog-->
+  <div class="iframe-container">
+    <iframe loading="lazy" id="image-marked-frame" name="markedimage" src="components/component-image-marker.html"></iframe>
+  </div>
+  <button onclick="insertMarkedImage(), window.dialog10.close();" class="image-insert" id=""></button><!--button to insert imagecomponent-->
+  <span class="imageurlinput"><form action="#" method="post">
+  <input type="url" id="urlmarked" class="imagelink" onkeyup="" name="imglink" placeholder="Paste image SLUG here" />
+  <button class="updateimage" onclick="upDateMarkedImage()"></button>
 </form></div>
 </dialog>
 

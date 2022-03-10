@@ -64,6 +64,20 @@ for (var i = 0; i < els.length; i++ ) {
 imageframe.document.getElementById(imgid).src = 'https://asp.arrival.co'+ document.getElementById('url').value +'';
 };
 
+// Marked image random id and insert
+function getRndInteger(min, max) {
+return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+function upDateMarkedImage(){
+var imageframe = document.getElementById('image-marked-frame').contentWindow;
+imageframe.document.getElementById('imageid').value = getRndInteger(1, 5000);
+let imgid = imageframe.document.getElementById('imageid').value;
+var els = imageframe.document.getElementsByClassName('markedimg');
+for (var i = 0; i < els.length; i++ ) {
+    els[i].id = 'marked'+imgid;};
+imageframe.document.getElementById('marked'+imgid).src = 'https://asp.arrival.co'+ document.getElementById('urlmarked').value +'';
+};
+
 // Multi image random id and insert
 function getRndInteger(min, max) {
 return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -645,6 +659,19 @@ const editor = document.getElementById('page-builder');
 var imageframe = document.getElementById('image-frame');
 // get the element wthin the iframe
 cont = imageframe.contentWindow.document.getElementById('image');
+
+var clone = cont.cloneNode(true);
+// insert Html
+editor.appendChild(clone).scrollIntoView({behavior: 'smooth'});
+};
+
+// Insert Marked image component
+function insertMarkedImage(){
+const editor = document.getElementById('page-builder');
+// get the iframe
+var markedimageframe = document.getElementById('image-marked-frame');
+// get the element wthin the iframe
+cont = markedimageframe.contentWindow.document.getElementById('marker-image');
 
 var clone = cont.cloneNode(true);
 // insert Html

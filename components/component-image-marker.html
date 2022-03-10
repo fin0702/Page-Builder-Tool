@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><!--temp solution for side-bar search/image marker-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script><!--required for draggable hotspot-->
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<input style="visibility:hidden;" id="imageid"></input>
+<div class="position">Move mouse to desired location. Click to drop marker.</div>
+<div id="marker-image" class="block">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<span class="pb-marker-image">
+<div id="marker-image" class="marker-image">
+<img id="marked" class="markedimg" src="https://via.placeholder.com/900x506">
+</div>
+<span id="info" class="block"></span>
+</span>
+</div>
+<script>
+$( ".marker-image img" ).click(function(e) {
+var dot_count = $( ".dot" ).length;
+
+var top_offset = $(this).offset().top - $(window).scrollTop();
+var left_offset = $(this).offset().left - $(window).scrollLeft();
+
+var top_px = Math.round( (e.clientY - top_offset - 12) );
+var left_px = Math.round( (e.clientX - left_offset - 12) );
+
+var top_perc = top_px / $(this).height() * 100;
+var left_perc = left_px / $(this).width() * 100;
+
+// alert('Top: ' + top_px + 'px = ' + top_perc + '%');
+// alert('Left: ' + left_px + 'px = ' + left_perc + '%');
+
+var dot = '<div class="dot" style="top: ' + top_perc + '%; left: ' + left_perc + '%;">' + (dot_count + 1) + '</div>';
+var info = '<div><div class="info"> '+(dot_count + 1)+'  </div><p class="marker-info" contenteditable="true" data-text="Enter text">This is where you describe your marked item</p></div>';
+
+$(dot).hide().appendTo($(this).parent()).fadeIn(350);;
+$(info).hide().appendTo($('#info')).fadeIn(350);;
+
+$( ".dot" ).draggable({
+containment: "#marker-image",
+stop: function( event, ui ) {
+var new_left_perc = parseInt($(this).css("left")) / ($(".marker-image").width() / 100) + "%";
+var new_top_perc = parseInt($(this).css("top")) / ($(".marker-image").height() / 100) + "%";
+var position = 'Top: ' + parseInt(new_top_perc) + '%, Left: ' + parseInt(new_left_perc) + '%';
+
+$(this).css("left", parseInt($(this).css("left")) / ($(".marker-image").width() / 100) + "%");
+$(this).css("top", parseInt($(this).css("top")) / ($(".marker-image").height() / 100) + "%");
+
+$('.position').html('Click to add. Drag to move. Describe below.');
+}
+});
+
+console.log("Left: " + left_perc + "%; Top: " + top_perc + '%;');
+$('.position').html("Click to add more. Drag to move.");
+});
+</script>
+</body>
+</html>
