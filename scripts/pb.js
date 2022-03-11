@@ -164,6 +164,13 @@ let extlinkspframeurl = document.getElementById('urlspframe').value;
 extlinkspframe.document.getElementById('sp-iframe').src = extlinkspframeurl;
 }
 
+// Responsive iFrame Link insert
+function extLinkRespFrame(){
+var extlinkrespframe = document.getElementById('resp-frame').contentWindow;
+let extlinkrespframeurl = document.getElementById('urlrespframe').value;
+extlinkrespframe.document.getElementById('responsive-iframe').src = extlinkrespframeurl;
+}
+
 //function to download a .txt version of the markup
 (function () {
 var textFile = null,
@@ -770,6 +777,19 @@ const editor = document.getElementById('page-builder');
 var spframe = document.getElementById('sp-frame');
 // get the element wthin the iframe
 cont = spframe.contentWindow.document.getElementById('single-page-iframe');
+
+var clone = cont.cloneNode(true);
+// insert Html
+editor.appendChild(clone).scrollIntoView({behavior: 'smooth'});
+};
+
+// Insert Responsive Page iframe component
+function insertRespIframe(){
+const editor = document.getElementById('page-builder');
+// get the iframe
+var respframe = document.getElementById('resp-frame');
+// get the element wthin the iframe
+cont = respframe.contentWindow.document.getElementById('iframe-responsive');
 
 var clone = cont.cloneNode(true);
 // insert Html
