@@ -157,6 +157,13 @@ let downloadid = extlinkframe.document.getElementById('downloadid').value;
 extlinkframe.document.getElementById('description'+downloadid).innerHTML = extlinkdesc;
 }
 
+// iFrame Link insert
+function extLinkSpFrame(){
+var extlinkspframe = document.getElementById('sp-frame').contentWindow;
+let extlinkspframeurl = document.getElementById('urlspframe').value;
+extlinkspframe.document.getElementById('sp-iframe').src = extlinkspframeurl;
+}
+
 //function to download a .txt version of the markup
 (function () {
 var textFile = null,
@@ -756,6 +763,19 @@ var clone = cont.cloneNode(true);
 editor.appendChild(clone).scrollIntoView({behavior: 'smooth'});
 };
 
+// Insert Single Page iframe component
+function insertSpIframe(){
+const editor = document.getElementById('page-builder');
+// get the iframe
+var spframe = document.getElementById('sp-frame');
+// get the element wthin the iframe
+cont = spframe.contentWindow.document.getElementById('single-page-iframe');
+
+var clone = cont.cloneNode(true);
+// insert Html
+editor.appendChild(clone).scrollIntoView({behavior: 'smooth'});
+};
+
 // fetch html and insert Topic Overview Template
 function insertTopicOverviewTemplate(){
 fetch(templatetopicoverviewurl).then(function (response) {
@@ -808,7 +828,7 @@ removeQuestionClassPage();
 /* Get the component by Id and select innerHTML */
 var content = document.getElementById('page-builder').outerHTML;
 /* Replace contents of textarea with component innerHTML and remove blank lines */
-markup.value = content.replace('<div id="page-builder" style="display:block" contenteditable="false" class="componenthover">', '<link rel="stylesheet" href="https://lms-page-builder.s3.eu-west-2.amazonaws.com/style/components-style.css"> <div id="page-builder">').replaceAll('<button id="controls" style="position:absolute" class="row-buttons add-row" onclick="this.nextElementSibling.insertAdjacentHTML(&quot;beforeend&quot;, &quot;<tr><td contenteditable=true>Battery Capacity:</td><td contenteditable=true class=rightcol>44kWh - 133kWh</td></tr>&quot;);"></button>', "").replaceAll('<button id="controls" class="row-buttons remove-row" onclick="this.previousElementSibling.deleteRow(-1);"></button>', "").replaceAll(' style="display:inline-block"', "").replaceAll('<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();">', "").replaceAll(' style="display:inline-block"', "").replaceAll('<span class="up-full"></span><span class="down-full"></span>', "").replaceAll('<span id="controls" class="up"></span><span id="controls" class="down"></span>', "").replaceAll('<span class="up-answer"></span><span class="down-answer"></span>', "").replaceAll(' data-text="Enter text"', "").replaceAll(' data-text="Enter title"', "").replaceAll(' data-text="Enter your question"', "").replaceAll(' data-text="Enter the correct answer"', "").replaceAll(' data-text="Enter an incorrect answer"', "").replaceAll(' data-text="Enter sub-title"', "").replaceAll(' contenteditable="true"', "").replaceAll('<ul><div style="display:inline-block;">', "<ul>").replaceAll('</div></ul>', "</ul>").replaceAll('<ol><div style="display:inline-block;">', "<ol>").replaceAll('</div></ol>', "</ol>").replaceAll('<ol class="alpha-list"><div style="display:inline-block;">', '<ol class="alpha-list">').replaceAll('div class="resizable"', "div").replaceAll('div id="title"', "div").replaceAll('div id="title-heading"', "div").replaceAll('div id="paragraph"', "div").replaceAll('div id="small-title-paragraph"', "div").replaceAll('div id="divider"', "div").replaceAll('div id="numbered-list"', "div").replaceAll('div id="alpha-list"', "div").replaceAll('div id="bullet-list"', "div").replaceAll('div id="section-numbering"', "div").replaceAll('div id="note-admonition"', "div").replaceAll('div id="question-4"', "div").replaceAll('div id="caution-admonition"', "div").replaceAll('div id="warning-admonition"', "div").replaceAll('div id="danger-admonition"', "div").replaceAll('<button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();">remove</button>', "").replace(/^\s*[\r\n]/gm, "");
+markup.value = content.replace('<div id="page-builder" style="display:block" contenteditable="false" class="componenthover">', '<link rel="stylesheet" href="https://lms-page-builder.s3.eu-west-2.amazonaws.com/style/components-style.css"> <div id="page-builder">').replaceAll('<button id="controls" style="position:absolute" class="row-buttons add-row" onclick="this.nextElementSibling.insertAdjacentHTML(&quot;beforeend&quot;, &quot;<tr><td contenteditable=true>Battery Capacity:</td><td contenteditable=true class=rightcol>44kWh - 133kWh</td></tr>&quot;);"></button>', "").replaceAll('<button id="controls" class="row-buttons remove-row" onclick="this.previousElementSibling.deleteRow(-1);"></button>', "").replaceAll(' style="display:inline-block"', "").replaceAll('<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>', "").replaceAll(' style="display:inline-block"', "").replaceAll('<span class="up-full"></span><span class="down-full"></span>', "").replaceAll('<span id="controls" class="up"></span><span id="controls" class="down"></span>', "").replaceAll('<span class="up-answer"></span><span class="down-answer"></span>', "").replaceAll(' data-text="Enter text"', "").replaceAll(' data-text="Enter title"', "").replaceAll(' data-text="Enter your question"', "").replaceAll(' data-text="Enter the correct answer"', "").replaceAll(' data-text="Enter an incorrect answer"', "").replaceAll(' data-text="Enter sub-title"', "").replaceAll(' contenteditable="true"', "").replaceAll('<ul><div style="display:inline-block;">', "<ul>").replaceAll('</div></ul>', "</ul>").replaceAll('<ol><div style="display:inline-block;">', "<ol>").replaceAll('</div></ol>', "</ol>").replaceAll('<ol class="alpha-list"><div style="display:inline-block;">', '<ol class="alpha-list">').replaceAll('div class="resizable"', "div").replaceAll('div id="title"', "div").replaceAll('div id="title-heading"', "div").replaceAll('div id="paragraph"', "div").replaceAll('div id="small-title-paragraph"', "div").replaceAll('div id="divider"', "div").replaceAll('div id="numbered-list"', "div").replaceAll('div id="alpha-list"', "div").replaceAll('div id="bullet-list"', "div").replaceAll('div id="section-numbering"', "div").replaceAll('div id="note-admonition"', "div").replaceAll('div id="question-4"', "div").replaceAll('div id="caution-admonition"', "div").replaceAll('div id="warning-admonition"', "div").replaceAll('div id="danger-admonition"', "div").replaceAll('<button contenteditable="false" class="remove-element" onclick="this.parentNode.remove();">remove</button>', "").replace(/^\s*[\r\n]/gm, "");
 /* Remove resizable class from divs */
 /* select the text inside the text field */
 markup.select();

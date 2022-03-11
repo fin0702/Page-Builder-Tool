@@ -138,6 +138,7 @@ admonitions
           <a onclick="dialog7.showModal()"><span class="item"><p>side-by-side-image</p></span></a>
           <a onclick="dialog4.showModal()"><span class="item"><p>image with caption</p></span></a>
           <a onclick="dialog6.showModal()"><span class="item"><p>video</p></span></a>
+          <a onclick="dialog11.showModal()"><span class="item"><p>Single Page iframe</p></span></a>
         </div>
       </div>
     </div>
@@ -296,6 +297,18 @@ other
   <br>
   <br>
   <input type="url" id="urlextlink" class="downloadlinkinput" onkeyup="extLinkHref()" name="extlink" placeholder="https://www.arrival.com" />
+</form></div>
+</dialog>
+
+<!--popup for single page iframe-->
+<dialog class="spframe-modal" id="dialog11">
+  <button class="dialogclose" onclick="window.dialog11.close();"></button><!--button to close dialog-->
+  <div class="iframe-container overflowno">
+    <iframe style="display:none;height:2em;" loading="lazy" id="sp-frame" name="externallink" src="components/component-iframe-singlepage.html"></iframe>
+  </div>
+  <button onclick="insertSpIframe(), window.dialog11.close()" class="image-insert" id=""></button><!--button to insert imagecomponent-->
+  <span class="imageurlinput"><form action="#" method="post">
+  <input type="url" id="urlspframe" class="downloadlinkinput" onkeyup="extLinkSpFrame()" name="spframelink" placeholder="Enter URL here" />
 </form></div>
 </dialog>
 

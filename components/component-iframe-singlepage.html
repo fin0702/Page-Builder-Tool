@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../style/components-style.css">
+</head>
+<body>
+<!-- button - removes the block component from editor -->
+<!-- span up span down moves the block component in DOM -->
+<div id="single-page-iframe" class="block spframe">
+<button id="controls" contenteditable="false" class="remove-element" onclick="this.parentNode.remove();"></button>
+<span id="controls" class="up"></span><span id="controls" class="down"></span>
+<iframe id="sp-iframe" loading="lazy" src=""></iframe>
+</div>
+</body>
+</html>

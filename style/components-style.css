@@ -465,6 +465,13 @@ margin-left:48px;
 min-width:100%;
 max-width:100%;
 }
+/*Full width blocks*/
+.spframe {
+min-width:100%;
+max-width:100%;
+padding:0 !important;
+margin:0 !important;
+}
 /*Download file*/
 .download-file, .link-window{
 display:inline-block;
@@ -605,6 +612,13 @@ display:inline-block;
 span#info{
 padding-left:0em !important;
 }
+/*single page iframe for platfform. height calc is required curently to compensate for header height*/
+div#single-page-iframe iframe{
+height:calc(100vh - 189px);
+width:100%;
+outline:0;
+border:none;
+}
 /*Mobile view platform*/
 @media only screen and (max-width: 800px) {
 div#page-builder{
@@ -639,5 +653,11 @@ flex-direction:column;
 }
 .pb-footer > span {
 margin-left:1.5em;
+}
+}
+/*single page iframe for platfform. height calc is required curently to compensate for header height*/
+@media screen and (max-width: 421px) {
+div#single-page-iframe iframe {
+height:calc(100vh - 237px) !important;
 }
 }
