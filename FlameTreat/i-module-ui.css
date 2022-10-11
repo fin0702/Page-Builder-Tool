@@ -1,0 +1,280 @@
+@font-face {
+font-family: "Arrival Apercu Pro";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Light.woff2") format("woff2");
+}
+@font-face {
+font-family: "Arrival Apercu Mono Pro";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuMonoPro-Regular.woff2") format("woff2");
+}
+@font-face {
+font-family: "Arrival Apercu Pro Medium";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Medium.woff2") format("woff2");
+}
+* {
+box-sizing:border-box;
+margin: 0;
+text-align:left;
+scroll-behavior: smooth;
+}
+body {
+display: flex;
+flex-flow: column;
+height:100vh;
+max-height: 100vh;
+background:#f4f4f4;
+overflow:hidden;
+}
+h1{
+font-weight:500;
+font-size:32px;
+line-height:44px;
+letter-spacing: -0.01em;
+font-style: normal;
+font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+color:#000000;
+}
+h2{
+font-weight:300;
+font-size:32px;
+line-height:44px;
+font-style: normal;
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+h3{
+font-weight:500;
+font-size:20px;
+line-height:30px;
+letter-spacing: -0.01em;
+font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+p{
+font-weight:300;
+font-size:20px;
+line-height:30px;
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header {
+display:flex;
+background: #f4f4f4;
+height:64px;
+align-items:center;
+padding: 1em;
+}
+.header-btn{
+min-height:32px;
+min-width:32px;
+border:none;
+outline:0;
+cursor:pointer;
+background-color:#e9e9e9;
+border-radius:4px;
+margin-right:4px;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:11.25px;
+line-height:14px;
+letter-spacing: 0.06em;
+padding:0.5em 1em 0.5em 1em;
+}
+.header-btn:hover{
+background-color:#e3e3e3;
+}
+.no-btn:hover{
+background-color:#e9e9e9;
+cursor:initial;
+}
+.progress-section {
+display:flex;
+min-height:64px;
+align-items:center;
+padding: 1em;
+overflow-x:auto;
+overflow: -moz-scrollbars-none;
+-ms-overflow-style: none;
+}
+.progress-section::-webkit-scrollbar{
+width: 0 !important;
+}
+.progress-section-card{
+min-height:100px;
+max-height:100px;
+flex: 0 1 30%;
+border:none;
+outline:0;
+cursor:initial;
+background-color:#ffffff;
+border-radius:4px;
+margin-right:16px;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:11.25px;
+line-height:14px;
+letter-spacing: 0.06em;
+color:#808080;
+padding:1em;
+}
+.card-active{
+background-color:#2044ff;
+color:#ffffff;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1200pt' height='1200pt' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m771.75 600c0 94.859-76.895 171.75-171.75 171.75-94.855 0-171.75-76.895-171.75-171.75 0-94.855 76.895-171.75 171.75-171.75 94.859 0 171.75 76.895 171.75 171.75' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E%0A");
+background-size:32px;
+background-repeat:no-repeat;
+background-position:bottom right;
+}
+.learning-menu-btn{
+width:32px;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:serif='http://www.serif.com/' viewBox='0 0 28 28' version='1.1' xml:space='preserve' style='' x='0px' y='0px' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cg transform='matrix(1,0,0,1,0,-84)'%3E%3Cg%3E%3Cpath d='M26,100C26,99.448 25.552,99 25,99L16,99C15.448,99 15,99.448 15,100L15,109C15,109.552 15.448,110 16,110L25,110C25.552,110 26,109.552 26,109L26,100Z'%3E%3C/path%3E%3Cpath d='M13,100C13,99.448 12.552,99 12,99L3,99C2.448,99 2,99.448 2,100L2,109C2,109.552 2.448,110 3,110L12,110C12.552,110 13,109.552 13,109L13,100Z'%3E%3C/path%3E%3Cpath d='M13,87C13,86.448 12.552,86 12,86L3,86C2.448,86 2,86.448 2,87L2,96C2,96.552 2.448,97 3,97L12,97C12.552,97 13,96.552 13,96L13,87Z'%3E%3C/path%3E%3Cpath d='M19,90.5L16,90.5C15.448,90.5 15,90.948 15,91.5C15,92.052 15.448,92.5 16,92.5L19,92.5L19,95.5C19,96.052 19.448,96.5 20,96.5C20.552,96.5 21,96.052 21,95.5L21,92.5L24,92.5C24.552,92.5 25,92.052 25,91.5C25,90.948 24.552,90.5 24,90.5L21,90.5L21,87.5C21,86.948 20.552,86.5 20,86.5C19.448,86.5 19,86.948 19,87.5L19,90.5Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-position:center;
+background-size:16px 16px;
+}
+.learning-menu{
+position:absolute;
+top:64px;
+left:0;
+display:none;
+height:calc(100% - 64px);
+background-color:#ffffff;
+animation-name: animate-pop;
+animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+animation-duration: 0.5s;
+z-index:9999;
+}
+@keyframes animate-pop {
+0% {
+opacity: 0;
+transform: scale(0.5, 0.5);
+}
+100% {
+opacity: 1;
+transform: scale(1, 1);
+}
+}
+.learning-menu-close{
+flex:40%;
+background-color:#000000;
+opacity:75%;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:11.25px;
+line-height:14px;
+letter-spacing: 0.06em;
+color:#ffffff;
+padding:2em;
+cursor:pointer;
+}
+.learning-menu-close:hover{
+opacity:76%;
+}
+.learning-menu-items{
+flex:60%;
+padding:1em 1em 2em 1em;
+}
+.learning-menu-items-card-container{
+display:flex;
+height:100%;
+flex-wrap: wrap;
+flex-direction: row;
+padding:1em;
+overflow-x:scroll;
+}
+.learning-menu-items-card{
+position:relative;
+background-color:#f4f4f4;
+flex: 0 1 25%;
+height:313px;
+min-width:250px;
+margin:1em;
+border-radius:4px;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:11.25px;
+line-height:14px;
+letter-spacing: 0.06em;
+color:#000000;
+padding:2em;
+cursor:pointer;
+}
+.learning-menu-items-card:hover{
+background-color:#2044ff;
+color:#ffffff;
+}
+.learning-menu-items-card::before{
+content:'section';
+margin-right:8px;
+}
+.learning-menu-items-card-title{
+position:absolute;
+bottom:2em;
+left:2em;
+right:2em;
+}
+footer {
+display:flex;
+height:64px;
+}
+.back-topic-btn{
+display:flex;
+align-items:center;
+height:100%;
+background-color:#000000;
+border:none;
+outline:0;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:14px;
+line-height:14px;
+letter-spacing: 0.06em;
+color:#ffffff;
+padding:1em;
+cursor:pointer;
+}
+.back-topic-btn::after{
+margin-left:8px;
+content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuNjE1OSA0Ljg4ODg5SDEwLjIyMkMxMS40NDkzIDQuODg4ODkgMTIuNDQ0MiA1Ljg4MzgxIDEyLjQ0NDIgNy4xMTExMUMxMi40NDQyIDguMzM4NDEgMTEuNDQ5MyA5LjMzMzMzIDEwLjIyMiA5LjMzMzMzSDQuNjI4MjhMNi41MzYyMyA3LjQyNTM4TDUuOTA3NjkgNi43OTY4NEwyLjkyNjc2IDkuNzc3NzhMNS45MDc2OSAxMi43NTg3TDYuNTM2MjMgMTIuMTMwMkw0LjYyODI4IDEwLjIyMjJIMTAuMjIyQzExLjk0MDIgMTAuMjIyMiAxMy4zMzMxIDguODI5MzMgMTMuMzMzMSA3LjExMTExQzEzLjMzMzEgNS4zOTI4OSAxMS45NDAyIDQgMTAuMjIyIDRINS42MTU5VjQuODg4ODlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
+}
+.back-topic-btn:hover{
+opacity:85%;
+}
+.next-section-btn:hover{
+opacity:100%;
+}
+.next-section-btn{
+display:flex;
+flex:50%;
+align-items:center;
+justify-content:space-between;
+height:100%;
+background-color:#2044ff;
+border:none;
+outline:0;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+font-size:14px;
+line-height:14px;
+letter-spacing: 0.06em;
+color:#ffffff;
+padding:1em;
+opacity:99%;
+cursor:pointer;
+}
+.next-section-btn::after{
+margin-right:8px;
+margin-left:8px;
+content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjQzOTQgOC41MDAwNEw5LjI5MjkzIDExLjY0NjVMMTAgMTIuMzUzNkwxNC4zNTM2IDguMDAwMDRMMTAgMy42NDY0OEw5LjI5MjkzIDQuMzUzNTlMMTIuNDM5NCA3LjUwMDA0SDEuNjQ2NDhWOC41MDAwNEgxMi40Mzk0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==')
+}
+.disabled{
+color:#000000;
+background-image:linear-gradient(45deg, #ffffff 25%, #ededed 25%, #ededed 50%, #ffffff 50%, #ffffff 75%, #ededed 75%, #ededed 100%);
+background-size: 0.35375rem 0.35375rem;
+pointer-events:none;
+background-color:#ffffff;
+}
