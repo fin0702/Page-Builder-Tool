@@ -167,7 +167,7 @@ font-style: normal;
 font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-margin: 0.3em 0 0.3em 0;
+margin: 0.3em 0 0.4em 0;
 }
 /* H3 Header text style*/
 h3{
@@ -313,29 +313,39 @@ overflow:hidden;
 height:2em;
 width:2em;
 }
-.learning-menu{
+.overlay, .menuoverlay{
 position:absolute;
 width:100%;
 top:4em;
 left:0;
-display:none;
 height:calc(100% - 4em);
 background-color:var(--white);
 animation-name: animate-pop;
-animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
-animation-duration: 0.5s;
-z-index:9999;
+animation-duration: 0.3s;
+z-index:9998;
 overflow:hidden;
 }
 @keyframes animate-pop {
 0% {
 opacity: 0;
-transform: scale(0.5, 0.5);
+transform: scale(0.95, 0.95);
 }
 100% {
 opacity: 1;
 transform: scale(1, 1);
 }
+}
+.menuoverlay{
+z-index:9999;
+}
+.overlay.hide,.menuoverlay.hide{
+display:none;
+}
+.overlay.show,.menuoverlay.show{
+display:flex;
+}
+.column.overflow {
+overflow:auto;
 }
 footer {
 position:fixed;
@@ -344,7 +354,7 @@ display:flex;
 align-items: center;
 height:3em;
 width:100%;
-z-index:9998;
+z-index:9997;
 }
 @media only screen and (max-width: 768px){
 .columns {

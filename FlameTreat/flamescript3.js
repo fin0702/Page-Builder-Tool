@@ -1,6 +1,11 @@
 const frame1 = 'frame1.html';
 const frame2 = 'frame2.html';
 
+function hideOverlays(){
+Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
+};
+
+function frameOne(){
 fetch(frame1).then(function (response) {
 // The API call was successful!
 return response.text();
@@ -80,6 +85,7 @@ footer.outerHTML = nav;
     }
     });
 });
+};
 function frameTwo(){
 fetch(frame2).then(function (response) {
 // The API call was successful!
