@@ -56,67 +56,34 @@
 <!--LEARNING CONTENT-->
 <div id="content" class="container"><!--Learning Content Container-->
 <div class="columns"><!--Columns Container-->
-<div class="column half white"><!--Left (Desktop) Column Container-->
-<h1 class="not-mobile">Collect your equipment!</h1>
+<div class="column fill white"><!--Left (Desktop) Column Container-->
+<h1>Collect your equipment!</h1>
 <h2>Take a look at the items and move them into your toolbag.</h2>
 <div class="row"><!--First row of cards-->
 
-<span id="object" class="card small light btn"><!--Card-->
+<span class="card third light"><!--Card-->
 <p class="mono">gloves</p><!--Card mono title-->
 <div class="img-center"><!--Image center container-->
-<img src="gloves.svg"><!--Image-->
+<img id="object" src="tool-bag.svg"><!--Image-->
 </div><!--End Image center container-->
 </span><!--End Card-->
 
-<span id="object2" class="card small light btn"><!--Card-->
-<p class="mono">eye protection</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="eyeprotection.svg"><!--Image-->
-</div><!--End Image center container-->
+<span class="card third white"><!--Card-->
+<p class="mono">Title</p><!--Card mono title-->
+<p>Hi</p><p>this is a card add some text into the card. You  can do that.</p><!--Card text-->
+<button class="button blue sm-btn">Click Me</button><!--Card button-->
 </span><!--End Card-->
 
-<span id="object3" class="card small light btn"><!--Card-->
-<p class="mono">soft brush</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="brush.svg"><!--Image-->
-</div><!--End Image center container-->
+<span class="card third white"><!--Card-->
+<p class="mono">Title</p><!--Card mono title-->
+<p>Hi</p><p>this is a card add some text into the card. You  can do that.</p><!--Card text-->
+<button class="button blue sm-btn">Click Me</button><!--Card button-->
 </span><!--End Card-->
-
-<span id="object4" class="card small light btn"><!--Card-->
-<p class="mono">propane torch</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="propanetorch.svg"><!--Image-->
-</div><!--End Image center container-->
-</span><!--End Card-->
-</div><!--End first row-->
-
-<div class="row"><!--Second row of cards-->
-
-<span id="objectwrong" class="card small light btn"><!--Card-->
-<p class="mono">scraper</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="gloves.svg"><!--Image-->
-</div><!--End Image center container-->
-</span><!--End Card-->
-
-<span id="object5" class="card small light btn"><!--Card-->
-<p class="mono">lint free cloth</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="cloth.svg"><!--Image-->
-</div><!--End Image center container-->
-</span><!--End Card-->
-
-<span id="object6" class="card small light btn"><!--Card-->
-<p class="mono">ipa alcohol</p><!--Card mono title-->
-<div class="img-center"><!--Image center container-->
-<img src="gloves.svg"><!--Image-->
-</div><!--End Image center container-->
-</span><!--End Card-->
-</div><!--End Second row of cards-->
+</div><!--End First row of cards-->
 </div><!--End Left (Desktop) Column Container-->
 
-<div id="dropzone" class="column half gray"><!--Right (Desktop) Column Container-->
-<div class="img-center"><!--Image center container-->
+<div class="column third gray"><!--Right (Desktop) Column Container-->
+<div id="dropzone" class="img-center"><!--Image center container-->
 <img src="tool-bag.svg"><!--Image-->
 </div><!--End Image center container-->
 </div><!--End Right (Desktop) Column Container-->
@@ -138,5 +105,67 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="flamescript3.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script>
+$("#object").draggable();
+$("#object2").draggable();
+$("#object3").draggable();
+$("#object4").draggable();
+$("#object5").draggable();
+$("#object6").draggable();
+$("#object7").draggable();
+$("#dropzone").droppable({
+//defines what to do when object is dropped
+drop: function(event, ui) {
+//defines what to do when object is dropped
+$(this).addClass('change').removeClass('over');
+//if all CORRECT objects are dropped:
+if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+// change color
+$("#dropzone").addClass('complete');
+// and show button
+$("#forward").removeClass('disabled');
+}
+//if INCORRECT objects are dropped:
+if ($("#object7").is(".dropped")) {
+// remove color
+$("#dropzone").removeClass('complete').addClass('error');
+// hide button
+$("#forward").addClass('disabled');
+}
+},
+over: function(event, ui) {
+// add hover color to dropzone
+$(this).addClass('over');
+// if objects are dragged over dropzone add dropped class
+if($("#object").is('.ui-draggable-dragging')){$("#object").addClass('dropped')};
+if($("#object2").is('.ui-draggable-dragging')){$("#object2").addClass('dropped')};
+if($("#object3").is('.ui-draggable-dragging')){$("#object3").addClass('dropped')};
+if($("#object4").is('.ui-draggable-dragging')){$("#object4").addClass('dropped')};
+if($("#object5").is('.ui-draggable-dragging')){$("#object5").addClass('dropped')};
+if($("#object6").is('.ui-draggable-dragging')){$("#object6").addClass('dropped')};
+if($("#object7").is('.ui-draggable-dragging')){$("#object7").addClass('dropped')};
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$(this).removeClass('over');
+// remove complete color and hide button when object leaves dropzone
+$(this).removeClass('complete');$("#forward").addClass('disabled');
+//if object moves out of dropzone AND is dragging AND has been dropped, remove dropped class
+if(($("#object").is('.ui-draggable-dragging'))&&($("#object").is('.dropped'))){$("#object").removeClass('dropped')};
+if(($("#object2").is('.ui-draggable-dragging'))&&($("#object2").is('.dropped'))){$("#object2").removeClass('dropped')};
+if(($("#object3").is('.ui-draggable-dragging'))&&($("#object3").is('.dropped'))){$("#object3").removeClass('dropped')};
+if(($("#object4").is('.ui-draggable-dragging'))&&($("#object4").is('.dropped'))){$("#object4").removeClass('dropped')};
+if(($("#object5").is('.ui-draggable-dragging'))&&($("#object5").is('.dropped'))){$("#object5").removeClass('dropped')};
+if(($("#object6").is('.ui-draggable-dragging'))&&($("#object6").is('.dropped'))){$("#object6").removeClass('dropped')};
+if(($("#object7").is('.ui-draggable-dragging'))&&($("#object7").is('.dropped'))){$("#object7").removeClass('dropped');$("#dropzone").removeClass('error')};
+// if all CORRECT objects remain in dropzone reinstate complete color and button
+if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+$("#dropzone").addClass('complete');
+$("#forward").removeClass('disabled');
+};
+}
+});
+});
+</script>
 </body>
 </html>
