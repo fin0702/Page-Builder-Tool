@@ -396,6 +396,8 @@ z-index:2;
 }
 .dropped{
 z-index:999;
+background-color:var(--black);
+color:var(--white);
 }
 span[name=gloves]{
 background-repeat:no-repeat;
