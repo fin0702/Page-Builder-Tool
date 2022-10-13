@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="i-module-ui2.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+
+<header><!--Header Fixed-->
+<button class="button gray sm-btn menu" title="Learning Menu" onclick="document.getElementById('learningmenu').style.display = 'flex'"></button><!--Menu Button-->
+<button class="button gray sm-btn not-btn">Manual Flame Treatment of Composite Panels</button><!--Module Name-->
+</header><!--End Header-->
+
+<!--HEADER END-->
+
+<!--PROGRESS-->
+
+<div class="progress-section"><!--Progress Section Fixed-->
+<span class="card white mono">Equipment</span><!--Section-->
+<span class="card white mono">Surface Treatment</span><!--Section-->
+<span class="card white mono">Flame Treatment</span><!--Section-->
+<span class="card white mono">Primer Application</span><!--Section-->
+</div><!--End Progress Section-->
+
+<!--PROGRESS END-->
+
+<!--MENU OVERLAY-->
+
+<div id="learningmenu" class="learning-menu animate pop"><!--Learning Menu Overlay-->
+<div class="columns"><!--Columns Container-->
+<div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').style.display = 'none';">close</div><!--Close Button-->
+<div class="column fill white"><!--Section Cards Container-->
+
+<div class="row"><!--First row of cards-->
+<span class="card btn light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+</div><!--End First row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+</div><!--End Section Cards Container-->
+</div><!--End Columns Container-->
+</div><!--End Learning Menu Overlay-->
+
+<!--MENU OVERLAY END-->
+
+<!--LEARNING CONTENT-->
+<div class="container"><!--Learning Content Container-->
+<div class="columns"><!--Columns Container-->
+<div class="column fill white"><!--Left (Desktop) Column Container-->
+<h1>Something</h1><!--Heading-->
+<h2>Perhaps something to talk about</h2><!--Sub-heading-->
+<div class="row"><!--First row of cards-->
+
+<span class="card third white"><!--Card-->
+<p class="mono">Title</p><!--Card mono title-->
+<p>Hi</p><p>this is a card add some text into the card. You  can do that.</p><!--Card text-->
+<button class="button blue sm-btn">Click Me</button><!--Card button-->
+</span><!--End Card-->
+
+<span class="card third white"><!--Card-->
+<p class="mono">Title</p><!--Card mono title-->
+<p>Hi</p><p>this is a card add some text into the card. You  can do that.</p><!--Card text-->
+<button class="button blue sm-btn">Click Me</button><!--Card button-->
+</span><!--End Card-->
+
+<span class="card third white"><!--Card-->
+<p class="mono">Title</p><!--Card mono title-->
+<p>Hi</p><p>this is a card add some text into the card. You  can do that.</p><!--Card text-->
+<button class="button blue sm-btn">Click Me</button><!--Card button-->
+</span><!--End Card-->
+</div><!--End First row of cards-->
+</div><!--End Left (Desktop) Column Container-->
+
+    <div class="column third black">
+    <h1>Something</h1>
+    <p>Perhaps something to talk about</p>
+    <p>Perhaps something to talk about</p>
+    <p>Perhaps something to talk about</p>
+      <div class="row">
+        <span class="card white">
+          <p class="mono">Title</p>
+          <p>Hi</p><p>this is a card add some text into the card. You  can do that.</p>
+          <button class="button blue sm-btn">Click Me</button>
+        </span>
+      </div>
+      <p>Perhaps something to talk about</p>
+      <p>Perhaps something to talk about</p>
+      <p>Perhaps something to talk about</p>
+    </div>
+  </div>
+</div>
+
+<!--FOOTER-->
+
+<footer id="footer">
+<button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.visibility = 'hidden';">back to topic</button>
+<button id="forward" class="button nav-btn forward" onclick="">move forward</button>
+</footer>
+
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
