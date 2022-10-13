@@ -16,8 +16,6 @@ var nav = doc.getElementById('footer').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 footer.outerHTML = nav;
-//Progress active card
-$("#equip").addClass('card-active');
 //defines object as being draggable
     $("#object").draggable();
     $("#object2").draggable();
@@ -37,14 +35,14 @@ $("#equip").addClass('card-active');
     // change color
     $("#dropzone").addClass('complete');
     // and show button
-    $("#forward").removeClass('disabled');
+    $("#forward").removeClass('disabled-btn');
     }
     //if INCORRECT objects are dropped:
     if ($("#objectwrong").is(".dropped")) {
     // remove color
     $("#dropzone").removeClass('complete').addClass('error');
     // hide button
-    $("#forward").addClass('disabled');
+    $("#forward").addClass('disabled-btn');
     }
     },
     over: function(event, ui) {
@@ -77,7 +75,7 @@ $("#equip").addClass('card-active');
     // if all CORRECT objects remain in dropzone reinstate complete color and button
     if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
     $("#dropzone").addClass('complete');
-    $("#forward").removeClass('disabled');
+    $("#forward").removeClass('disabled-btn');
     };
     }
     });
