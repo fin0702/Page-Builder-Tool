@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+</head>
+<body>
+<header>
+<button class="button gray sm-btn menu" title="Learning Menu" onclick="document.getElementById('learningmenu').style.display = 'flex'"></button>
+<button class="button gray sm-btn not-btn">Manual Flame Treatment of Composite Panels</button>
+</header>
+<div class="progress-section">
+<span class="card white mono">Equipment</span>
+<span class="card white mono">Surface Treatment</span>
+<span class="card white mono">Flame Treatment</span>
+<span class="card white mono">Primer Application</span>
+</div>
+<div id="learningmenu" class="learning-menu animate pop">
+  <div class="columns">
+    <div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').style.display = 'none';">close</div>
+    <div class="column fill white">
+    <div class="row">
+      <span class="card light">
+        <p class="mono">Section</p>
+        <br>
+        <p>Equipment</p>
+      </span>
+</div>
+    </div>
+</div><!--columns close-->
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="screen-height">
+  <div class="columns">
+    <div class="column fill white">
+    <h1>Something</h1>
+    <h2>Perhaps something to talk about</h2>
+      <div class="row">
+        <span class="card third white">
+          <p class="mono">Title</p>
+          <p>Hi</p><p>this is a card add some text into the card. You  can do that.</p>
+          <button class="button blue sm-btn">Click Me</button>
+        </span>
+        <span class="card third white">
+          <p class="mono">Title</p>
+          <p>Hi</p><p>this is a card add some text into the card. You  can do that.</p>
+          <button class="button blue sm-btn">Click Me</button>
+        </span>
+        <span class="card third white">
+          <p class="mono">Title</p>
+          <p>Hi</p><p>this is a card add some text into the card. You  can do that.</p>
+          <button class="button blue sm-btn">Click Me</button>
+        </span>
+      </div>
+    </div>
+    <div class="column third black">
+    <h1>Something</h1>
+    <p>Perhaps something to talk about</p>
+    <p>Perhaps something to talk about</p>
+    <p>Perhaps something to talk about</p>
+      <div class="row">
+        <span class="card white">
+          <p class="mono">Title</p>
+          <p>Hi</p><p>this is a card add some text into the card. You  can do that.</p>
+          <button class="button blue sm-btn">Click Me</button>
+        </span>
+      </div>
+      <p>Perhaps something to talk about</p>
+      <p>Perhaps something to talk about</p>
+      <p>Perhaps something to talk about</p>
+    </div>
+  </div>
+</div>
+<footer id="footer">
+  <button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.visibility = 'hidden';">back to topic</button>
+  <button id="forward" class="button nav-btn forward" onclick="">move forward</button>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
