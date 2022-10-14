@@ -15,13 +15,55 @@
 
 
 
-
-
-
 <!--LEARNING CONTENT-->
 <div id="content" class="container"><!--Learning Content Container-->
+  <!--HEADER END-->
+
+  <!--MENU OVERLAY-->
+
+  <div id="learningmenu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
+  <div class="columns"><!--Columns Container-->
+  <div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').classList.remove('show')">close</div><!--Close Button-->
+  <div class="column fill white"><!--Section Cards Container-->
+  <h1>Sections in this Module</h1><!--Heading-->
+  <div class="row"><!--First row of cards-->
+  <span class="card btn light" onclick="frameOne();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+  <span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+  <span class="card btn light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+  </div><!--End First row of cards-->
+
+  <div class="row"><!--Second row of cards-->
+  <span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+  </div><!--End Second row of cards-->
+
+  </div><!--End Section Cards Container-->
+  </div><!--End Columns Container-->
+  </div><!--End Learning Menu Overlay-->
+
+  <!--MENU OVERLAY END-->
+
+  <div id="start" class="overlay hide show animate pop"><!--Start Overlay-->
+  <div class="columns"><!--Columns Container-->
+  <div class="column quarter blue mono btn" onclick="document.getElementById('start').classList.remove('show');frameOne();">start</div><!--Close Button-->
+  <div class="column white overflow"><!--Start Section Container-->
+  <h1>Welcome!</h1><!--Heading-->
+  <h2>Are you ready to begin?</h2><!--Heading-->
+  <p>In this short Module we will explore the process of carrying out Manual Flame Treatment on composite panels.</p>
+  <p>This treatment process is extremely important and must be carried out precisely.</p>
+  <h3>The Module is split into the following sections:</h3>
+  <div class="row wrap"><!--First row of cards-->
+  <span class="card small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+  </div><!--End First row of cards-->
+  <p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
+  </div><!--End Start Section Container-->
+  </div><!--End Columns Container-->
+  </div><!--End Start Overlay-->
 </div><!--End Learning Content Container-->
 
+<div id="content"></div>
 <!--FOOTER-->
 <footer id="footer">
 <button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.display = 'none';">back to topic</button>
