@@ -33,11 +33,19 @@ overflow: -moz-scrollbars-none;
 *::-webkit-scrollbar{
 width: 0 !important;
 }
+* {
+  margin: 0;
+}
 html, body {
-height:100%;
 color:var(--black);
 background-color:var(--light-gray);
 font-size: calc(16px + 0.390625vw);
+}
+body{
+display: flex;
+flex-direction: column;
+height: 100vh;
+overflow:hidden;
 }
 /* Button style*/
 .button{
@@ -199,11 +207,7 @@ font-size:0.5em;
 line-height:1.5em;
 }
 header {
-position:fixed;
-top:0;
-left:0;
 display:flex;
-flex-wrap:wrap;
 background: var(--black);
 height:4em;
 width:100%;
@@ -218,10 +222,8 @@ background-position:center;
 background-size:1.5em 1.5em;
 }
 .container{
-position:absolute;
-display:block;
-padding-top:4em;
-max-height:100%;
+display:flex;
+flex:1;
 background-color:var(--light-gray);
 overflow:auto;
 z-index:1;
@@ -349,13 +351,10 @@ display:flex;
 overflow:auto;
 }
 footer {
-position:absolute;
-bottom:0px;
-display:flex;
 align-items: center;
 height:3em;
 width:100%;
-z-index:99999;
+background-color:red;
 }
 @media only screen and (max-width: 768px){
 .columns {
