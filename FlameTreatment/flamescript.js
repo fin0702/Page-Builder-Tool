@@ -1,6 +1,7 @@
 const section1 = 'Equipment';
 const frame1 = 'frame1.html';
 const frame2 = 'frame2.html';
+const frame3 = 'frame3.html';
 
 function hideOverlays(){
 Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
@@ -106,5 +107,44 @@ learningcontent.outerHTML = frame;
 footer.outerHTML = nav;
 //Progress active card
 $(".progress-section-card").removeClass('card-active');$("#surface").addClass('card-active');
+});
+};
+
+function frameThree(){
+fetch(frame3).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+const footer = document.getElementById('footer');
+var frame = doc.getElementById('content').outerHTML;
+var nav = doc.getElementById('footer').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+footer.outerHTML = nav;
+});
+};
+
+function slideOne(){
+const slide1 = document.getElementById('slide1');
+const slide2 = document.getElementById('slide2');
+slide1.classList.add('animate__animated', 'animate__backOutLeft');
+slide1.addEventListener('animationend', () => {
+slide1.classList.add('hide');
+slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function slideTwo(){
+const slide3 = document.getElementById('slide3');
+slide2.classList.remove('animate__animated', 'animate__slideInLeft');
+slide2.classList.add('animate__animated', 'animate__backOutLeft');
+slide2.addEventListener('animationend', () => {
+slide2.classList.remove('show');
+slide2.classList.add('hide');
+slide3.classList.add('show', 'animate__animated', 'animate__slideInLeft');
 });
 };

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+</head>
+<body>
+<!--HEADER-->
+<header><!--Header Fixed-->
+</header><!--End Header-->
+<!--HEADER END-->
+<style>
+</style>
+<!--LEARNING CONTENT-->
+<div id="content" class="slide cyan-light"><!--Start Overlay-->
+<div id="slide1" class="columns white"><!--Columns Container-->
+<div class="column overflow"><!--Start Section Container-->
+<h1>Welcome!</h1><!--Heading-->
+<h2>Are you ready to begin?</h2><!--Heading-->
+<p>In this short Module we will explore the process of carrying out Manual Flame Treatment on composite panels.</p>
+<p>This treatment process is extremely important and must be carried out precisely.</p>
+<h3>The Module is split into the following sections:</h3>
+<div class="row wrap"><!--First row of cards-->
+<span class="card blue small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End First row of cards-->
+<p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
+</div><!--End Start Section Container-->
+<div class="column third purple-dark mono btn" onclick="slideOne()">start</div><!--Close Button-->
+</div><!--End Columns Container-->
+
+<div id="slide2" class="columns white hide"><!--Columns Container-->
+<div class="column overflow"><!--Start Section Container-->
+<h1 class="">Welcome!</h1><!--Heading-->
+<h2>Are you ready to begin?k</h2><!--Heading-->
+<p>In this short Module we will explore the process of carrying out Manual Flame Treatment on composite panels.</p>
+<p>This treatment process is extremely important and must be carried out precisely.</p>
+<h3>The Module is split into the following sections:</h3>
+<div class="row wrap"><!--First row of cards-->
+<span class="card small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End First row of cards-->
+<p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
+</div><!--End Start Section Container-->
+<div class="column third purple-light mono btn" onclick="slideTwo()">start</div><!--Close Button-->
+</div><!--End Columns Container-->
+
+<div id="slide3" class="columns white hide"><!--Columns Container-->
+<div class="column overflow"><!--Start Section Container-->
+<h1 class="">Welcome!</h1><!--Heading-->
+<h2>Are you ready to begin?k</h2><!--Heading-->
+<p>In this short Module we will explore the process of carrying out Manual Flame Treatment on composite panels.</p>
+<p>This treatment process is extremely important and must be carried out precisely.</p>
+<h3>The Module is split into the following sections:</h3>
+<div class="row wrap"><!--First row of cards-->
+<span class="card small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+<span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End First row of cards-->
+<p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
+</div><!--End Start Section Container-->
+<div class="column third cyan-dark mono btn" onclick="slideThree()">start</div><!--Close Button-->
+</div><!--End Columns Container-->
+
+<script>
+function slideOne(){
+const slide1 = document.getElementById('slide1');
+const slide2 = document.getElementById('slide2');
+slide1.classList.add('animate__animated', 'animate__backOutLeft');
+slide1.addEventListener('animationend', () => {
+slide1.classList.add('hide');
+slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function slideTwo(){
+const slide3 = document.getElementById('slide3');
+slide2.classList.remove('animate__animated', 'animate__slideInLeft');
+slide2.classList.add('animate__animated', 'animate__backOutLeft');
+slide2.addEventListener('animationend', () => {
+slide2.classList.remove('show');
+slide2.classList.add('hide');
+slide3.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+</script>
+
+</div><!--End Slide Overlay-->
+
+<!--FOOTER-->
+<footer id="footer">
+<button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.display = 'none';">back to topic</button>
+<button id="forward" class="button nav-btn forward disabled-btn" onclick="">move forward</button>
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
