@@ -221,7 +221,7 @@ background-size:1.5em 1.5em;
 position:absolute;
 display:block;
 top:4em;
-min-height:100vh;
+min-height:100%;
 background-color:var(--light-gray);
 overflow:auto;
 z-index:1;
@@ -350,7 +350,7 @@ overflow:auto;
 }
 footer {
 position:fixed;
-bottom:0px;
+top:calc(100% - 3em);
 display:flex;
 align-items: center;
 height:3em;
