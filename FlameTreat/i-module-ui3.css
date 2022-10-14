@@ -350,6 +350,7 @@ overflow:auto;
 }
 footer {
 position:sticky;
+position: -webkit-sticky;
 top:100%;
 display:flex;
 align-items: center;
