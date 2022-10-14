@@ -350,7 +350,7 @@ overflow:auto;
 }
 footer {
 position:fixed;
-bottom:0;
+bottom:0px;
 display:flex;
 align-items: center;
 height:3em;
