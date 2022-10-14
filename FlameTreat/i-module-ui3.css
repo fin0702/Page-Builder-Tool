@@ -350,12 +350,12 @@ overflow:auto;
 }
 footer {
 position:sticky;
-bottom:0px;
+top:100%;
 display:flex;
 align-items: center;
 height:3em;
 width:100%;
-z-index:9997;
+z-index:9999;
 }
 @media only screen and (max-width: 768px){
 .columns {
