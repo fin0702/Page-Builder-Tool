@@ -221,7 +221,7 @@ background-size:1.5em 1.5em;
 position:absolute;
 display:block;
 top:4em;
-height:calc(100vh - 7em);
+min-height:100vh;
 background-color:var(--light-gray);
 overflow:auto;
 z-index:1;
