@@ -4,8 +4,9 @@ const section1 = 'Equipment';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
-const frame1a = 'frame1a.html';
-const frame1b = 'frame1b.html';
+const section1a = 'section1a.html';
+const section1b = 'section1b.html';
+const section1c = 'section1c.html';
 const frame2 = 'frame2.html';
 const frame3 = 'frame3.html';
 
@@ -20,7 +21,7 @@ footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
 // Insert Start Content
-startFrame();
+startFrampe();
 learningMenu();
 // Update Section Name in Header
 var sectionname = document.getElementById('section-name');
@@ -63,8 +64,8 @@ function hideOverlays(){
 Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
 };
 
-function frameOnea(){
-fetch(frame1a).then(function (response) {
+function sectionOnea(){
+fetch(section1a).then(function (response) {
 // The API call was successful!
 return response.text();
 }).then(function (html) {
@@ -80,8 +81,8 @@ document.getElementById('section-name').innerHTML = section1;
 });
 };
 
-function frameOneb(){
-fetch(frame1b).then(function (response) {
+function sectionOneb(){
+fetch(section1b).then(function (response) {
 // The API call was successful!
 return response.text();
 }).then(function (html) {
@@ -158,6 +159,24 @@ document.getElementById('section-name').innerHTML = section1;
     });
 });
 };
+
+function sectionOnec(){
+fetch(section1c).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section1;
+});
+};
+
 function frameTwo(){
 fetch(frame2).then(function (response) {
 // The API call was successful!
@@ -195,22 +214,34 @@ learningcontent.outerHTML = frame;
 });
 };
 
-function slideOne(){
-const slide1 = document.getElementById('slide1');
-const slide2 = document.getElementById('slide2');
+function sectionOneslideTwo(){
+var slide1 = document.getElementById('section1slide1');
+var slide2 = document.getElementById('section1slide2');
 slide1.classList.add('animate__animated', 'animate__backOutLeft');
 slide1.addEventListener('animationend', () => {
 slide1.classList.add('hide');
 slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
 });
 };
-function slideTwo(){
-const slide3 = document.getElementById('slide3');
-slide2.classList.remove('animate__animated', 'animate__slideInLeft');
+function sectionOneslideThree(){
+var slide2 = document.getElementById('section1slide2');
+var slide3 = document.getElementById('section1slide3');
+slide2.classList.remove('animate__slideInLeft');
 slide2.classList.add('animate__animated', 'animate__backOutLeft');
 slide2.addEventListener('animationend', () => {
 slide2.classList.remove('show');
 slide2.classList.add('hide');
 slide3.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideFour(){
+var slide3 = document.getElementById('section1slide3');
+var slide4 = document.getElementById('section1slide4');
+slide3.classList.remove('animate__slideInLeft');
+slide3.classList.add('animate__animated', 'animate__backOutLeft');
+slide3.addEventListener('animationend', () => {
+slide3.classList.remove('show');
+slide3.classList.add('hide');
+slide4.classList.add('show', 'animate__animated', 'animate__slideInLeft');
 });
 };
