@@ -4,7 +4,8 @@ const section1 = 'Equipment';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
-const frame1 = 'frame1.html';
+const frame1a = 'frame1a.html';
+const frame1b = 'frame1b.html';
 const frame2 = 'frame2.html';
 const frame3 = 'frame3.html';
 
@@ -14,7 +15,7 @@ var headerelement = document.getElementById('ui-header');
 var headercontent = '<button class=\"button white sm-btn menu\" title=\"Learning Menu\" onclick=\"document.getElementById(\'learningmenu\').classList.add(\'show\');\"></button><button id=\"modulename\" class=\"button black sm-btn not-btn not-mobile\"></button><button id=\"section-name\" class=\"button blue sm-btn not-btn\"></button>';
 headerelement.insertAdjacentHTML( 'beforeend', headercontent );
 var footerelement = document.getElementById('footer');
-var footercontent = '<button class=\"button nav-btn return\" onclick=\"document.getElementById(\'i-module-ui\').parentNode.remove();\">back to topic</button><button id=\"forward\" class=\"button nav-btn forward disabled-btn\" onclick=\"\">next section</button>';
+var footercontent = '<button class=\"button nav-btn return\" onclick=\"document.getElementById(\'i-module-ui\').style.display = \'none\';\">back to topic</button><button id=\"forward\" class=\"button nav-btn forward disabled-btn\" onclick=\"\">next section</button>';
 footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
@@ -62,8 +63,25 @@ function hideOverlays(){
 Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
 };
 
-function frameOne(){
-fetch(frame1).then(function (response) {
+function frameOnea(){
+fetch(frame1a).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section1;
+});
+};
+
+function frameOneb(){
+fetch(frame1b).then(function (response) {
 // The API call was successful!
 return response.text();
 }).then(function (html) {
@@ -85,7 +103,7 @@ document.getElementById('section-name').innerHTML = section1;
     $("#object6").draggable();
     $("#object7").draggable();
     $("#objectwrong").draggable();
-    $("#dropzone").droppable({
+    $("#dropzone,#dropsuccess").droppable({
     //defines what to do when object is dropped
     drop: function(event, ui) {
     //defines what to do when object is dropped
@@ -93,16 +111,14 @@ document.getElementById('section-name').innerHTML = section1;
     //if all CORRECT objects are dropped:
     if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
     // change color
-    $("#dropzone").addClass('complete');
-    // and show button
-    $("#forward").removeClass('disabled-btn');
+    $("#dropzone").addClass('hide');
+    $("#dropsuccess").removeClass('hide');
     }
     //if INCORRECT objects are dropped:
     if ($("#objectwrong").is(".dropped")) {
     // remove color
-    $("#dropzone").removeClass('complete').addClass('error');
-    // hide button
-    $("#forward").addClass('disabled-btn');
+    $("#dropsuccess").addClass('hide');
+    $("#dropzone").removeClass('hide').addClass('error');
     }
     },
     over: function(event, ui) {
@@ -122,7 +138,8 @@ document.getElementById('section-name').innerHTML = section1;
     //remove class when object moves outside dropzone
     $(this).removeClass('over');
     // remove complete color and hide button when object leaves dropzone
-    $(this).removeClass('complete');$("#forward").addClass('disabled');
+    $("#dropzone").removeClass('hide');
+    $("#dropsuccess").addClass('hide');
     //if object moves out of dropzone AND is dragging AND has been dropped, remove dropped class
     if(($("#object").is('.ui-draggable-dragging'))&&($("#object").is('.dropped'))){$("#object").removeClass('dropped')};
     if(($("#object2").is('.ui-draggable-dragging'))&&($("#object2").is('.dropped'))){$("#object2").removeClass('dropped')};
@@ -134,8 +151,8 @@ document.getElementById('section-name').innerHTML = section1;
     if(($("#objectwrong").is('.ui-draggable-dragging'))&&($("#objectwrong").is('.dropped'))){$("#objectwrong").removeClass('dropped');$("#dropzone").removeClass('error')};
     // if all CORRECT objects remain in dropzone reinstate complete color and button
     if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
-    $("#dropzone").addClass('complete');
-    $("#forward").removeClass('disabled-btn');
+    $("#dropzone").addClass('hide');
+    $("#dropsuccess").removeClass('hide');
     };
     }
     });

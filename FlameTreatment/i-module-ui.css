@@ -27,7 +27,7 @@ src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Medium.woff2
 --purple-dark:#AD4E89;
 }
 .animate__animated.animate__slideInLeft {
---animate-duration: 0.5s;
+--animate-duration: 0.8s;
 }
 * {
 box-sizing:border-box;
@@ -174,6 +174,10 @@ color:var(--black);
 background-color:var(--purple-dark);
 color:var(--white);
 }
+.success{
+background-color:var(--success)!important;
+color:var(--white);
+}
 /* H1 Header text style*/
 h1{
 font-weight:500;
@@ -184,7 +188,7 @@ font-style: normal;
 font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
- margin: 0.2em 0 0.2em 0;
+ margin: 0.4em 0 0.4em 0;
 }
 /* H2 Header text style*/
 h2{
@@ -195,7 +199,7 @@ font-style: normal;
 font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-margin: 0.3em 0 0.4em 0;
+margin: 0.6em 0 0.6em 0;
 }
 /* H3 Header text style*/
 h3{
@@ -206,7 +210,7 @@ letter-spacing: -0.01em;
 font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-margin: 0.4em 0 0.4em 0;
+margin: 1em 0 1em 0;
 }
 /* Paragragh text style*/
 p{
@@ -216,7 +220,7 @@ line-height:1.5em;
 font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
 "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
 "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-margin: 0.55em 0 0.55em 0;
+margin: 0.7em 0 0.7em 0;
 }
 /* Arrival MONO text style*/
 .mono{
@@ -248,6 +252,7 @@ position:absolute;
 top:4em;
 background-color:var(--light-gray);
 overflow:auto;
+width:100%;
 height:calc(100% - 7em);
 z-index:1;
 }
@@ -378,10 +383,10 @@ background-repeat:no-repeat;
 background-position:10% 50%;
 background-size:10em 10em;
 }
-.overlay.hide,.menuoverlay.hide,.columns.hide{
+.overlay.hide,.menuoverlay.hide,.columns.hide,.column.hide,.container.hide,.slide.hide{
 display:none;
 }
-.overlay.show,.menuoverlay.show,.columns.show{
+.overlay.show,.menuoverlay.show,.columns.show,.column.show,.container.show,.slide.show{
 display:flex;
 }
 .column.overflow {

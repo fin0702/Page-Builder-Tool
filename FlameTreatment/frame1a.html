@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
 </head>
@@ -14,27 +13,27 @@
 <!--HEADER END-->
 
 <!--MENU OVERLAY-->
-
-<aside id="learningmenu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
-<div class="columns"><!--Columns Container-->
-<div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').classList.remove('show')">close</div><!--Close Button-->
-<div class="column fill white"><!--Section Cards Container-->
-<h1>Sections in this Module</h1><!--Heading-->
-<div class="row"><!--First row of cards-->
-<span class="card btn light" onclick="frameOnea();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
-<span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
-<span class="card btn light" onclick="frameThree();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
-</div><!--End First row of cards-->
-
-<div class="row"><!--Second row of cards-->
-<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
-</div><!--End Second row of cards-->
-
-</div><!--End Section Cards Container-->
-</div><!--End Columns Container-->
-</aside><!--End Learning Menu Overlay-->
-
+<aside id="learningmenu">
+</aside>
 <!--MENU OVERLAY END-->
+
+<!--LEARNING CONTENT-->
+
+<div id="content" class="slide cyan-light"><!--Start Overlay-->
+<div id="slide1" class="columns white"><!--Columns Container-->
+<div class="column overflow"><!--Start Section Container-->
+<h1>Getting ready</h1><!--Heading-->
+<h2>\ Preparation</h2><!--Heading-->
+<p>Before beginning the Flame Treatment process, it is important to ensure that your working area is properly prepared.</p>
+<p>You must ensure that all required protective equipment and tooling is available before beginning work.</p>
+<h3>Move forward and select the equipment that you think is required to complete the process.</h3>
+</div>
+<div class="column third cyan-light mono btn" onclick="frameOneb();">move forward</div><!--Close Button-->
+</div><!--End Columns Container-->
+
+</div><!--End Slide Overlay-->
+
+<!--LEARNING CONTENT END-->
 
 
 <!--FOOTER-->
@@ -46,7 +45,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 </body>
 </html>
