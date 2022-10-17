@@ -7,7 +7,7 @@
 </head>
 <body>
 <!--HEADER-->
-<header><!--Header Fixed-->
+<header id="ui-header"><!--Header Fixed-->
 </header><!--End Header-->
 <!--HEADER END-->
 <style>
@@ -68,35 +68,13 @@
 <div class="column third cyan-dark mono btn" onclick="slideThree()">start</div><!--Close Button-->
 </div><!--End Columns Container-->
 
-<script>
-function slideOne(){
-const slide1 = document.getElementById('slide1');
-const slide2 = document.getElementById('slide2');
-slide1.classList.add('animate__animated', 'animate__backOutLeft');
-slide1.addEventListener('animationend', () => {
-slide1.classList.add('hide');
-slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
-});
-};
-function slideTwo(){
-const slide3 = document.getElementById('slide3');
-slide2.classList.remove('animate__animated', 'animate__slideInLeft');
-slide2.classList.add('animate__animated', 'animate__backOutLeft');
-slide2.addEventListener('animationend', () => {
-slide2.classList.remove('show');
-slide2.classList.add('hide');
-slide3.classList.add('show', 'animate__animated', 'animate__slideInLeft');
-});
-};
-</script>
-
 </div><!--End Slide Overlay-->
 
 <!--FOOTER-->
+
 <footer id="footer">
-<button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.display = 'none';">back to topic</button>
-<button id="forward" class="button nav-btn forward disabled-btn" onclick="">move forward</button>
 </footer>
+
 <!--FOOTER END-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

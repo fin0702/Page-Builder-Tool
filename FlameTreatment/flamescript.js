@@ -1,7 +1,62 @@
+const modulename = 'Manual Flame Treatment of Composite Panels &#92;'
+const startsection = 'Welcome';
 const section1 = 'Equipment';
+
+const start = 'start.html'
+const learningmenu = 'menu.html'
 const frame1 = 'frame1.html';
 const frame2 = 'frame2.html';
 const frame3 = 'frame3.html';
+
+// Insert Header and Footer Content
+window.onload = function iHeader(){
+var headerelement = document.getElementById('ui-header');
+var headercontent = '<button class=\"button white sm-btn menu\" title=\"Learning Menu\" onclick=\"document.getElementById(\'learningmenu\').classList.add(\'show\');\"></button><button id=\"modulename\" class=\"button black sm-btn not-btn not-mobile\"></button><button id=\"section-name\" class=\"button blue sm-btn not-btn\"></button>';
+headerelement.insertAdjacentHTML( 'beforeend', headercontent );
+var footerelement = document.getElementById('footer');
+var footercontent = '<button class=\"button nav-btn return\" onclick=\"document.getElementById(\'i-module-ui\').remove();\">back to topic</button><button id=\"forward\" class=\"button nav-btn forward disabled-btn\" onclick=\"\">next section</button>';
+footerelement.insertAdjacentHTML( 'beforeend', footercontent );
+// Insert Learning Module Name
+document.getElementById('modulename').innerHTML = modulename;
+// Insert Start Content
+startFrame();
+learningMenu();
+// Update Section Name in Header
+var sectionname = document.getElementById('section-name');
+sectionname.innerHTML = startsection;
+};
+
+function startFrame(){
+fetch(start).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+});
+};
+
+function learningMenu(){
+fetch(learningmenu).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const menucontainer = document.getElementById('learningmenu');
+var menucontent = doc.getElementById('learningmenu').outerHTML;
+// insert Html
+menucontainer.outerHTML = menucontent;
+});
+};
 
 function hideOverlays(){
 Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
@@ -17,12 +72,9 @@ var parser = new DOMParser();
 var doc = parser.parseFromString(html, 'text/html');
 // get the element
 const learningcontent = document.getElementById('content');
-const footer = document.getElementById('footer');
 var frame = doc.getElementById('content').outerHTML;
-var nav = doc.getElementById('footer').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
-footer.outerHTML = nav;
 document.getElementById('section-name').innerHTML = section1;
 //defines object as being draggable
     $("#object").draggable();
@@ -120,12 +172,9 @@ var parser = new DOMParser();
 var doc = parser.parseFromString(html, 'text/html');
 // get the element
 const learningcontent = document.getElementById('content');
-const footer = document.getElementById('footer');
 var frame = doc.getElementById('content').outerHTML;
-var nav = doc.getElementById('footer').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
-footer.outerHTML = nav;
 });
 };
 

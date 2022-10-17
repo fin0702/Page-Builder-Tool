@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="i-module-ui" lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +14,28 @@
 <!--HEADER END-->
 
 <!--MENU OVERLAY-->
-<aside id="learningmenu">
-</aside>
+
+<aside id="learningmenu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
+<div class="columns"><!--Columns Container-->
+<div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').classList.remove('show')">close</div><!--Close Button-->
+<div class="column fill white"><!--Section Cards Container-->
+<h1>Sections in this Module</h1><!--Heading-->
+<div class="row"><!--First row of cards-->
+<span class="card btn light" onclick="frameOne();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card btn light" onclick="frameThree();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+</div><!--End First row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+</div><!--End Section Cards Container-->
+</div><!--End Columns Container-->
+</aside><!--End Learning Menu Overlay-->
+
 <!--MENU OVERLAY END-->
 
-
-<!-- CONTENT -->
-<div id="content" class="container"><!--Learning Content Container-->
-</div><!--End Learning Content Container-->
-<!-- CONTENT END -->
 
 <!--FOOTER-->
 <footer id="footer">
