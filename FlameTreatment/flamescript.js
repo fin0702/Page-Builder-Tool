@@ -21,7 +21,7 @@ footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
 // Insert Start Content
-startFrampe();
+startFrame();
 learningMenu();
 // Update Section Name in Header
 var sectionname = document.getElementById('section-name');
@@ -243,5 +243,60 @@ slide3.addEventListener('animationend', () => {
 slide3.classList.remove('show');
 slide3.classList.add('hide');
 slide4.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideFive(){
+var slide4 = document.getElementById('section1slide4');
+var slide5 = document.getElementById('section1slide5');
+slide4.classList.remove('animate__slideInLeft');
+slide4.classList.add('animate__animated', 'animate__backOutLeft');
+slide4.addEventListener('animationend', () => {
+slide4.classList.remove('show');
+slide4.classList.add('hide');
+slide5.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideSix(){
+var slide5 = document.getElementById('section1slide5');
+var slide6 = document.getElementById('section1slide6');
+slide5.classList.remove('animate__slideInLeft');
+slide5.classList.add('animate__animated', 'animate__backOutLeft');
+slide5.addEventListener('animationend', () => {
+slide5.classList.remove('show');
+slide5.classList.add('hide');
+slide6.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideSeven(){
+var slide6 = document.getElementById('section1slide6');
+var slide7 = document.getElementById('section1slide7');
+slide6.classList.remove('animate__slideInLeft');
+slide6.classList.add('animate__animated', 'animate__backOutLeft');
+slide6.addEventListener('animationend', () => {
+slide6.classList.remove('show');
+slide6.classList.add('hide');
+slide7.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideEight(){
+var slide7 = document.getElementById('section1slide7');
+var slide8 = document.getElementById('section1slide8');
+slide7.classList.remove('animate__slideInLeft');
+slide7.classList.add('animate__animated', 'animate__backOutLeft');
+slide7.addEventListener('animationend', () => {
+slide7.classList.remove('show');
+slide7.classList.add('hide');
+slide8.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+});
+};
+function sectionOneslideNine(){
+var slide8 = document.getElementById('section1slide8');
+var slide9 = document.getElementById('section1slide9');
+slide8.classList.remove('animate__slideInLeft');
+slide8.classList.add('animate__animated', 'animate__backOutLeft');
+slide8.addEventListener('animationend', () => {
+slide8.classList.remove('show');
+slide8.classList.add('hide');
+slide9.classList.add('show', 'animate__animated', 'animate__slideInLeft');
 });
 };
