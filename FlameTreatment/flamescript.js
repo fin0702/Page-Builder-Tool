@@ -10,6 +10,22 @@ const section1c = 'section1c.html';
 const frame2 = 'frame2.html';
 const frame3 = 'frame3.html';
 
+var ov = setInterval(overFlow, 1000);
+window.addEventListener('resize', overFlowRemove);
+window.addEventListener('resize', overFlow);
+
+function overFlow(){
+document.querySelectorAll('*').forEach(el => {
+if (el.scrollHeight > el.clientHeight) {
+const scrolls = document.querySelectorAll('.overflow');
+for (const scroll of scrolls) {scroll.classList.add('scroll');}
+}
+});
+};
+function overFlowRemove(){
+const scrolls = document.querySelectorAll('.overflow');
+for (const scroll of scrolls) {scroll.classList.remove('scroll');}
+};
 // Insert Header and Footer Content
 window.onload = function iHeader(){
 var headerelement = document.getElementById('ui-header');
@@ -174,6 +190,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section1;
+overFlow();
 });
 };
 

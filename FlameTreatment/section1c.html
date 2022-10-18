@@ -20,8 +20,15 @@
 <!--LEARNING CONTENT-->
 
 <div id="content" class="slide cyan-light"><!--Start Overlay-->
+  <script>
+  document.querySelectorAll('*').forEach(el => {
+  if (el.offsetWidth > document.documentElement.offsetWidth) {
+      console.log('Found the worst element ever: ', el);
+  }
+});
+</script>
 <div id="section1slide1" class="columns white"><!--Columns Container-->
-<div class="column overflow"><!--Start Section Container-->
+<div name="scroll" class="column overflow"><!--Start Section Container-->
 <h1>Great!</h1><!--Heading-->
 <h2>You selected the correct equipment!</h2><!--Heading-->
 <p>Let's find out why this equipment is important.</p>
@@ -31,7 +38,7 @@
 </div><!--End Columns Container-->
 
 <div id="section1slide2" class="columns light hide"><!--Columns Container-->
-<div class="column overflow"><!--Start Section Container-->
+<div name="scroll" class="column overflow"><!--Start Section Container-->
 <h2>Propane Torch</h2><!--Heading-->
 <p>Perhaps an obvious choice but needless to say, the Flame Treatment process is not possible without a flame!</p>
 <div class="row"><!--First row of cards-->
