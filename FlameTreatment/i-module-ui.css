@@ -409,11 +409,12 @@ overflow-x:none;
 overflow-y:auto;
 overflow-x:hidden;
 }
-.overflow-icon.scroll::after{
+.overflow-icon.scroll::before{
 content:'\00A0';
 display:block;
 position:sticky;
-bottom:0%;
+top:0%;
+float:right;
 width:2em;
 height:2.7em;
 background-color:var(--dark-gray);
@@ -423,6 +424,7 @@ background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-
 background-repeat:no-repeat;
 background-position:50% 50%;
 background-size:contain;
+z-index:9999;
 }
 .drag{
 position:relative;
