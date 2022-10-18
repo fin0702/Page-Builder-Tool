@@ -407,7 +407,7 @@ overflow-x:none;
 }
 .column.overflow-icon {
 overflow-y:auto;
-overflow-x:none;
+overflow-x:hidden;
 }
 .overflow-icon.scroll::after{
 content:'\00A0';
