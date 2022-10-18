@@ -15,17 +15,18 @@ window.addEventListener('resize', overFlowRemove);
 window.addEventListener('resize', overFlow);
 
 function overFlow(){
-document.querySelectorAll('*').forEach(el => {
+document.querySelectorAll('.overflow-icon').forEach(el => {
 if (el.scrollHeight > el.clientHeight) {
-const scrolls = document.querySelectorAll('.overflow');
+const scrolls = document.querySelectorAll('.overflow-icon');
 for (const scroll of scrolls) {scroll.classList.add('scroll');}
 }
 });
 };
 function overFlowRemove(){
-const scrolls = document.querySelectorAll('.overflow');
+const scrolls = document.querySelectorAll('.overflow-icon');
 for (const scroll of scrolls) {scroll.classList.remove('scroll');}
 };
+
 // Insert Header and Footer Content
 window.onload = function iHeader(){
 var headerelement = document.getElementById('ui-header');
