@@ -265,11 +265,15 @@ width:100%;
 flex:1;
 padding:1em 0em 1em 0em;
 }
+#content{
+max-height:calc(100% - 7em);
+}
 .columns {
 display:flex;
 flex-direction:row;
 flex:1;
 overflow:auto;
+min-height:100%;
 }
 .column{
 padding:1em;
@@ -371,7 +375,7 @@ transform: scale(1, 1);
 .menuoverlay{
 z-index:9999;
 }
-.slide{;
+.slide{
 position:absolute;
 width:100%;
 top:4em;
@@ -383,6 +387,9 @@ background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-
 background-repeat:no-repeat;
 background-position:10% 50%;
 background-size:10em 10em;
+}
+.slide > .columns{
+height:100%;
 }
 .overlay.hide,.menuoverlay.hide,.columns.hide,.column.hide,.container.hide,.slide.hide{
 display:none;
