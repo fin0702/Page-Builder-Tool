@@ -409,6 +409,7 @@ overflow-x:none;
 position:relative;
 height:auto;
 min-height:100%;
+max-height: -webkit-fill-available;
 }
 footer {
 position:fixed;
