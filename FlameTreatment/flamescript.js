@@ -1,18 +1,31 @@
 const modulename = 'Manual Flame Treatment of Composite Panels &#92;'
 const startsection = 'Welcome';
 const section1 = 'Equipment';
+const section2 = 'Surface Treatment';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
 const section1a = 'section1a.html';
 const section1b = 'section1b.html';
 const section1c = 'section1c.html';
-const frame2 = 'frame2.html';
+const section2a = 'section2a.html';
+const section2b = 'section2b.html';
+const section2c = 'section2c.html';
 const frame3 = 'frame3.html';
 
 var ov = setInterval(overFlow, 1000);
 window.addEventListener('resize', overFlowRemove);
 window.addEventListener('resize', overFlow);
+
+function activateNext(){
+var forwardnav = document.getElementById('forward');
+forwardnav.classList.remove('disabled-btn');
+};
+
+function deactivateNext(){
+var forwardnav = document.getElementById('forward');
+forwardnav.classList.add('disabled-btn');
+};
 
 function overFlow(){
 document.querySelectorAll('.overflow-icon').forEach(el => {
@@ -191,7 +204,58 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section1;
-overFlow();
+});
+};
+
+function sectionTwoa(){
+fetch(section2a).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section2;
+deactivateNext();
+});
+};
+
+function sectionTwob(){
+fetch(section2b).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section2;
+});
+};
+
+function sectionTwoc(){
+fetch(section2c).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section2;
 });
 };
 
@@ -316,5 +380,7 @@ slide8.addEventListener('animationend', () => {
 slide8.classList.remove('show');
 slide8.classList.add('hide');
 slide9.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+activateNext();
+document.getElementById('forward').setAttribute('onclick', 'sectionTwoa()');
 });
 };

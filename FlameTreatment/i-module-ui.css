@@ -179,6 +179,10 @@ color:var(--white);
 background-color:var(--success)!important;
 color:var(--white);
 }
+.error{
+background-color:var(--error)!important;
+color:var(--white);
+}
 /* H1 Header text style*/
 h1{
 font-weight:500;
@@ -291,6 +295,14 @@ flex:1 0 33.33%;
 }
 .column.fill, .card.fill {
 flex:100%;
+}
+.column > video {
+height:100%;
+width:auto;
+max-width:100%;
+display:block;
+margin:auto;
+clip-path: inset(0.5px 0.5px);
 }
 .img-center{
 display:flex;
