@@ -16,6 +16,7 @@ const section2d = 'section2d.html';
 const section2e = 'section2e.html';
 const section2f = 'section2f.html';
 const section3a = 'section3a.html';
+const section3b = 'section3b.html';
 const frame3 = 'frame3.html';
 
 var ov = setInterval(overFlow, 1000);
@@ -333,6 +334,23 @@ deactivateNext();
 });
 };
 
+function sectionThreeb(){
+fetch(section3b).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+});
+};
+
 function sectionOneslideTwo(){
 var slide1 = document.getElementById('section1slide1');
 var slide2 = document.getElementById('section1slide2');
@@ -433,3 +451,37 @@ activateNext();
 document.getElementById('forward').setAttribute('onclick', 'sectionThreea()');
 });
 };
+
+// Section 3b Flame
+function igniteFlame(){
+document.getElementById('flame').style.opacity = '1';// Show flame
+document.getElementById('adjust-flame').classList.remove('hide');// Show adjust flame section
+document.getElementById('ignite-flame').classList.add('hide');// Hide ignite flame section
+document.getElementById('flame-h1').innerHTML = 'Is the flame correct?';// Update text
+document.getElementById('flame-h2').innerHTML = 'Adjust the flame';// Update text
+}
+function showVal(newVal){
+var val = document.getElementById("valR").value;
+document.getElementById("range").innerHTML=val;
+document.getElementById("flame").src = val + ".png";
+document.getElementById("range").innerHTML=newVal;
+document.getElementById("flame").src = newVal + ".png";
+// If slider is above 11...
+if(val > 11){document.getElementById('flame-content').classList.add('success');
+document.getElementById('flame').classList.add('flame-complete');
+document.getElementById('flame-not-correct').classList.add('hide');
+document.getElementById('flame-correct').classList.remove('hide');
+document.getElementById('adjust-flame').classList.add('blue');
+document.getElementById('flame-h1').innerHTML = 'Great!';
+document.getElementById('flame-h2').innerHTML = 'The flame is set.';
+}
+// If slider is below 11...
+if(val < 11){document.getElementById('flame-content').classList.remove('success');
+document.getElementById('flame').classList.remove('flame-complete');
+document.getElementById('flame-not-correct').classList.remove('hide');
+document.getElementById('flame-correct').classList.add('hide');
+document.getElementById('adjust-flame').classList.remove('blue');
+document.getElementById('flame-h1').innerHTML = 'Is the flame correct?';
+document.getElementById('flame-h2').innerHTML = 'Adjust the flame';
+}
+}

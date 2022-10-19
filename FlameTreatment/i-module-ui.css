@@ -25,6 +25,7 @@ src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Medium.woff2
 --cyan-dark:#003D44;
 --purple-light:#D7BDCD;
 --purple-dark:#AD4E89;
+--light-blue:#617BFF
 }
 .animate__animated{
 --animate-duration: 0.8s;
@@ -132,8 +133,8 @@ content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZ
 }
 /* Color style for Active Blue - adds background and text color*/
 .blue{
-background-color:var(--active-blue);
-color:var(--white);
+background-color:var(--active-blue)!important;;
+color:var(--white)!important;;
 }
 /* Color style for Gray - adds background and text color*/
 .gray{
@@ -181,6 +182,10 @@ color:var(--white);
 }
 .error{
 background-color:var(--error)!important;
+color:var(--white);
+}
+.blue-light{
+background-color:var(--light-blue)!important;
 color:var(--white);
 }
 /* H1 Header text style*/
@@ -269,6 +274,9 @@ display:flex;
 width:100%;
 flex:1;
 padding:1em 0em 1em 0em;
+}
+.row.fifty{
+height:50%;
 }
 #content{
 max-height:calc(100% - 7em);
@@ -407,10 +415,10 @@ background-size:10em 10em;
 .slide > .columns{
 height:100%;
 }
-.overlay.hide,.menuoverlay.hide,.columns.hide,.column.hide,.container.hide,.slide.hide{
+.overlay.hide,.menuoverlay.hide,.columns.hide,.column.hide,.container.hide,.slide.hide,.row.hide{
 display:none;
 }
-.overlay.show,.menuoverlay.show,.columns.show,.column.show,.container.show,.slide.show{
+.overlay.show,.menuoverlay.show,.columns.show,.column.show,.container.show,.slide.show,.row.show{
 display:flex;
 }
 .column.overflow {
@@ -451,6 +459,10 @@ align-items: center;
 height:3em;
 width:100%;
 background-color:var(--white);
+}
+.fixed{
+flex-shrink:0;
+flex-grow:0;
 }
 @media only screen and (max-width: 768px){
 .columns {
@@ -639,3 +651,36 @@ background-position:1em 1em;
   color: #000;
   border-color: #2044ff;
 }
+/*Flame adjustment of blow torch - section 3*/
+#torch {
+width: 60%;
+margin-left:2%;
+margin-top:-4.2%;
+display:block
+}
+#valR{
+width: 50%;
+}
+#flame {
+display:block;
+opacity:0;
+position: relative;
+width: 44%;
+left: 61%;
+mix-blend-mode: multiply;
+}
+.flame-complete{
+mix-blend-mode: normal !important;
+}
+#range {
+display: none;
+}
+.flame-range{
+display:flex;
+width:100%;
+height:100%;
+align-items:
+center;
+justify-content:center;
+}
+/*Flame adjustment of blow torch - section 3*/
