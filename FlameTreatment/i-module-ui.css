@@ -25,7 +25,9 @@ src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Medium.woff2
 --cyan-dark:#003D44;
 --purple-light:#D7BDCD;
 --purple-dark:#AD4E89;
---light-blue:#617BFF
+--light-blue:#617BFF;
+--caution:#ffd100;
+--caution-light:#fff3d4;
 }
 .animate__animated{
 --animate-duration: 0.8s;
@@ -187,6 +189,14 @@ color:var(--white);
 .blue-light{
 background-color:var(--light-blue)!important;
 color:var(--white);
+}
+.caution-color{
+background-color:var(--caution);
+color:var(--black);
+}
+.caution-color-light{
+background-color:var(--caution-light);
+color:var(--black);
 }
 /* H1 Header text style*/
 h1{
@@ -493,6 +503,12 @@ background-color:var(--active-blue);
 color:var(--white);
 z-index:9999!important;
 }
+#torch-with-flame.ui-draggable-dragging{
+opacity:1;
+background-color:transparent!important;
+color:var(--white);
+z-index:9999!important;
+}
 .normal{
 background-color:#555555;
 }
@@ -684,3 +700,35 @@ center;
 justify-content:center;
 }
 /*Flame adjustment of blow torch - section 3*/
+/*Flame positioning - section 3*/
+#torch-with-flame{
+min-width:150px;
+width:20vw;
+position:absolute;
+top:10%;
+cursor:pointer;
+}
+#composite-panel{
+min-width:100%;
+min-height:100%;
+position:relative;
+}
+#bad{
+display:flex;
+box-sizing:border-box;
+width:100%;
+height:fit-content;
+max-width:100vw;
+position:absolute;
+bottom:5%;
+right:0%;
+margin:auto;
+padding:10em 0em 0em 2em;
+}
+#good{
+display:block;
+box-sizing:border-box;
+width:100%;
+height:fit-content;
+margin:auto;
+}

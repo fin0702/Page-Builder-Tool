@@ -17,7 +17,8 @@ const section2e = 'section2e.html';
 const section2f = 'section2f.html';
 const section3a = 'section3a.html';
 const section3b = 'section3b.html';
-const frame3 = 'frame3.html';
+const section3c = 'section3c.html';
+const section3d = 'section3d.html';
 
 var ov = setInterval(overFlow, 1000);
 window.addEventListener('resize', overFlowRemove);
@@ -348,6 +349,78 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+});
+};
+
+function sectionThreec(){
+fetch(section3c).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+});
+};
+
+function sectionThreed(){
+fetch(section3d).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+//Section 3 move flame to panel
+//defines object as being draggable
+$("#torch-with-flame").draggable();
+$( "#bad" ).droppable({
+  tolerance: "touch"
+});
+$("#bad").droppable({
+//defines what to do when object is dropped
+over: function(event, ui) {
+// add hover color to dropzone
+$("#move-burner").addClass('error');
+$("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$("#move-burner").removeClass('error');
+$("#move-burner").html('<h2 class=\"mono\">Move the flame to the panel</h2>');
+}
+});
+$( "#good" ).droppable({
+  tolerance: "touch"
+});
+$("#good").droppable({
+//defines what to do when object is dropped
+over: function(event, ui) {
+// add hover color to dropzone
+$("#move-burner").removeClass('error');
+$("#move-burner").addClass('hide');
+$("#move-forward").removeClass('hide');
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$("#move-burner").removeClass('success');
+$("#move-burner").removeClass('hide');
+$("#move-burner").addClass('error');
+$("#move-forward").addClass('hide');
+}
+});
 });
 };
 
