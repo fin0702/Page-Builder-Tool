@@ -2,6 +2,7 @@ const modulename = 'Manual Flame Treatment of Composite Panels &#92;'
 const startsection = 'Welcome';
 const section1 = 'Equipment';
 const section2 = 'Surface Treatment';
+const section3 = 'Flame Treatment';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
@@ -11,6 +12,10 @@ const section1c = 'section1c.html';
 const section2a = 'section2a.html';
 const section2b = 'section2b.html';
 const section2c = 'section2c.html';
+const section2d = 'section2d.html';
+const section2e = 'section2e.html';
+const section2f = 'section2f.html';
+const section3a = 'section3a.html';
 const frame3 = 'frame3.html';
 
 var ov = setInterval(overFlow, 1000);
@@ -259,8 +264,8 @@ document.getElementById('section-name').innerHTML = section2;
 });
 };
 
-function frameTwo(){
-fetch(frame2).then(function (response) {
+function sectionTwod(){
+fetch(section2d).then(function (response) {
 // The API call was successful!
 return response.text();
 }).then(function (html) {
@@ -269,19 +274,15 @@ var parser = new DOMParser();
 var doc = parser.parseFromString(html, 'text/html');
 // get the element
 const learningcontent = document.getElementById('content');
-const footer = document.getElementById('footer');
 var frame = doc.getElementById('content').outerHTML;
-var nav = doc.getElementById('footer').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
-footer.outerHTML = nav;
-//Progress active card
-$(".progress-section-card").removeClass('card-active');$("#surface").addClass('card-active');
+document.getElementById('section-name').innerHTML = section2;
 });
 };
 
-function frameThree(){
-fetch(frame3).then(function (response) {
+function sectionTwoe(){
+fetch(section2e).then(function (response) {
 // The API call was successful!
 return response.text();
 }).then(function (html) {
@@ -293,6 +294,42 @@ const learningcontent = document.getElementById('content');
 var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section2;
+});
+};
+
+function sectionTwof(){
+fetch(section2f).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section2;
+});
+};
+
+function sectionThreea(){
+fetch(section3a).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+deactivateNext();
 });
 };
 
@@ -382,5 +419,17 @@ slide8.classList.add('hide');
 slide9.classList.add('show', 'animate__animated', 'animate__slideInLeft');
 activateNext();
 document.getElementById('forward').setAttribute('onclick', 'sectionTwoa()');
+});
+};
+function sectionTwofslidetwo(){
+var slide1 = document.getElementById('section2fslide1');
+var slide2 = document.getElementById('section2fslide2');
+slide1.classList.remove('animate__slideInUp');
+slide1.classList.add('animate__animated', 'animate__backOutLeft');
+slide1.addEventListener('animationend', () => {
+slide1.classList.add('hide');
+slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+activateNext();
+document.getElementById('forward').setAttribute('onclick', 'sectionThreea()');
 });
 };

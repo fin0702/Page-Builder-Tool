@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+<header id="ui-header"><!--Header Fixed-->
+</header><!--End Header-->
+<!--HEADER END-->
+
+<!--MENU OVERLAY-->
+<aside id="learningmenu">
+</aside>
+<!--MENU OVERLAY END-->
+
+<!--LEARNING CONTENT-->
+
+<div id="content" name="section2f" class="slide cyan-light"><!--Start Overlay-->
+<div id="section2fslide1" class="columns light animate__animated animate__slideInUp"><!--Columns Container-->
+<div class="column white overflow-icon"><!--Left Column Container-->
+<h1>Great!</h1><!--Heading-->
+<h2>The panel is cleansed and prepared.</h2><!--Heading-->
+<div class="row"><!--First row of cards-->
+<span name="cloth" class="card small black" onclick="this.style.backgroundColor = 'var(--error)';document.getElementById('incorrect').classList.remove('hide');document.getElementById('normal').classList.add('hide');;document.getElementById('correct').classList.add('hide')"><!--Card-->
+<p class="mono">Lint-free cloth</p><!--Card mono title-->
+</span><!--End Card-->
+<span class="card small black" onclick="this.style.backgroundColor = 'var(--error)';document.getElementById('incorrect').classList.remove('hide');document.getElementById('normal').classList.add('hide');;document.getElementById('correct').classList.add('hide')"><!--Card-->
+<p class="mono">IPA alcohol</p><!--Card mono title-->
+</span><!--End Card-->
+</div><!--End first row-->
+<div class="admonition caution">
+<div class="title"></div>
+<h3>Important:</h3>
+<p>You must wait 5 minutes afters cleansing the composite panel with the IPA alcohol. This ensures that the solvent is fully flashed off.</p>
+</div>
+<p>The lint-free cloth and IPA alcohol is used to cleanse the panel prior to Flame Treatment. Ensure that you use the correct high purity (>95%), high concentration industrial IPA Alcohol.</p>
+<h3>Let's move forward.</h3>
+</div><!--End Left Column Container-->
+<div class="column third cyan-dark mono btn" onclick="sectionTwofslidetwo()">move forward</div><!--Move forward - right column-->
+</div><!--End Columns Container-->
+
+<div id="section2fslide2" class="columns success hide"><!--Columns Container-->
+<div class="column"><!--Start Section Container-->
+<h2 class="mono">That's it for this section.</h2><!--Heading-->
+<p class="mono">select next section to continue.</p>
+</div><!--End Start Section -->
+</div><!--End Columns Container-->
+
+</div><!--End Learning Content Container-->
+
+<!--LEARNING CONTENT END-->
+
+
+<!--FOOTER-->
+<footer id="footer">
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
