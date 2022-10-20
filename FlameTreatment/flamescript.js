@@ -628,6 +628,46 @@ document.getElementById('flame-h2').innerHTML = 'Adjust the flame';
 }
 }
 
+// Section 2c remove dust video
+function startDust(){
+var dustVideo = document.getElementById('remove-dust');
+var dustContinue = document.getElementById('dust-continue');
+var startDust = document.getElementById('start-dust');
+var startText = document.getElementById('start-text');
+var processText = document.getElementById('process-text');
+dustVideo.play();
+startDust.classList.remove('btn');
+startDust.classList.add('blue-light');
+startText.innerHTML = '&nbsp;';
+processText.innerHTML = 'removing dust with soft brush';
+dustVideo.addEventListener('ended', function () {
+dustVideo.currentTime = 0;
+dustVideo.play();
+startDust.classList.add('hide');
+dustContinue.classList.remove('hide')
+}, false);
+};
+
+// Section 2e cleanse video
+function startCleanse(){
+var cleanseVideo = document.getElementById('clean-panel');
+var cleanContinue = document.getElementById('clean-continue');
+var startClean = document.getElementById('start-clean');
+var startText = document.getElementById('start-text');
+var processText = document.getElementById('process-text');
+cleanseVideo.play();
+startClean.classList.remove('btn');
+startClean.classList.add('blue-light');
+startText.innerHTML = '&nbsp;';
+processText.innerHTML = 'cleaning panel';
+cleanseVideo.addEventListener('ended', function () {
+cleanseVideo.currentTime = 0;
+cleanseVideo.play();
+startClean.classList.add('hide');
+cleanContinue.classList.remove('hide')
+}, false);
+};
+
 // Section 3e flametreat video
 function startFlametreat(){
 var flameVideo = document.getElementById('flame-treat');
