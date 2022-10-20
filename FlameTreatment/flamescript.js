@@ -3,6 +3,7 @@ const startsection = 'Welcome';
 const section1 = 'Equipment';
 const section2 = 'Surface Treatment';
 const section3 = 'Flame Treatment';
+const section4 = 'Resources';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
@@ -19,6 +20,9 @@ const section3a = 'section3a.html';
 const section3b = 'section3b.html';
 const section3c = 'section3c.html';
 const section3d = 'section3d.html';
+const section3e = 'section3e.html';
+const section3f = 'section3f.html';
+const section4a = 'section4a.html';
 
 var ov = setInterval(overFlow, 1000);
 window.addEventListener('resize', overFlowRemove);
@@ -424,6 +428,58 @@ $("#move-forward").addClass('hide');
 });
 };
 
+function sectionThreee(){
+fetch(section3e).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+});
+};
+
+function sectionThreef(){
+fetch(section3f).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section3;
+});
+};
+
+function sectionFoura(){
+fetch(section4a).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = section4;
+deactivateNext();
+});
+};
+
 function sectionOneslideTwo(){
 var slide1 = document.getElementById('section1slide1');
 var slide2 = document.getElementById('section1slide2');
@@ -525,6 +581,19 @@ document.getElementById('forward').setAttribute('onclick', 'sectionThreea()');
 });
 };
 
+function sectionThreeslidetwo(){
+var slide1 = document.getElementById('section3fslide1');
+var slide2 = document.getElementById('section3fslide2');
+slide1.classList.remove('animate__slideInRight');
+slide1.classList.add('animate__animated', 'animate__backOutLeft');
+slide1.addEventListener('animationend', () => {
+slide1.classList.add('hide');
+slide2.classList.add('show', 'animate__animated', 'animate__slideInLeft');
+activateNext();
+document.getElementById('forward').setAttribute('onclick', 'sectionFoura()');
+});
+};
+
 // Section 3b Flame
 function igniteFlame(){
 document.getElementById('flame').style.opacity = '1';// Show flame
@@ -558,3 +627,23 @@ document.getElementById('flame-h1').innerHTML = 'Is the flame correct?';
 document.getElementById('flame-h2').innerHTML = 'Adjust the flame';
 }
 }
+
+// Section 3e flametreat video
+function startFlametreat(){
+var flameVideo = document.getElementById('flame-treat');
+var treatmentContinue = document.getElementById('treatment-continue');
+var startTreatment = document.getElementById('start-treatment');
+var startText = document.getElementById('start-text');
+var processText = document.getElementById('process-text');
+flameVideo.play();
+startTreatment.classList.remove('btn');
+startTreatment.classList.add('blue-light');
+startText.innerHTML = '&nbsp;';
+processText.innerHTML = 'approx. 50cm per second';
+flameVideo.addEventListener('ended', function () {
+flameVideo.currentTime = 0;
+flameVideo.play();
+startTreatment.classList.add('hide');
+treatmentContinue.classList.remove('hide')
+}, false);
+};

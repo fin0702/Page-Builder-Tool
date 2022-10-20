@@ -236,7 +236,7 @@ font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
 margin: 1em 0 1em 0;
 }
 /* Paragragh text style*/
-p{
+p, li{
 font-weight:300;
 font-size:1em;
 line-height:1.5em;

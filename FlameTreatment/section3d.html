@@ -20,7 +20,7 @@
 
 <!--LEARNING CONTENT-->
 
-<div id="content" name="section3c" class="slide cyan-light"><!--Start Overlay-->
+<div id="content" name="section3c" class="slide purple-light"><!--Start Overlay-->
 <div class="columns white animate__animated animate__slideInLeft"><!--Columns Container-->
 <div name="scroll" class="column fill light"><!--Start Section Container-->
 <div style="width:100%;height:100%;position:relative;">
@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="move-burner" class="column third dark mono"><h2 class="mono">Move the flame to the panel</h2></div><!--Close Button-->
-<div id="move-forward" class="column third success mono btn hide" onclick="sectionOneslideTwo()">move forward
+<div id="move-forward" class="column third success mono btn hide" onclick="sectionThreee()">move forward
 <br>
 <br>
 <h2 class="mono">Great!</h2>
@@ -56,37 +56,6 @@
 <script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-//defines object as being draggable
-$("#torch-with-flame").draggable();
-$("#bad").droppable({
-//defines what to do when object is dropped
-over: function(event, ui) {
-// add hover color to dropzone
-$("#move-burner").addClass('error');
-$("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
-},
-out: function(event, ui) {
-//remove class when object moves outside dropzone
-$("#move-burner").removeClass('error');
-$("#move-burner").html('<h2 class=\"mono\">Move the flame to the panel</h2>');
-}
-});
-$("#good").droppable({
-//defines what to do when object is dropped
-over: function(event, ui) {
-// add hover color to dropzone
-$("#move-burner").removeClass('error');
-$("#move-burner").addClass('hide');
-$("#move-forward").removeClass('hide');
-},
-out: function(event, ui) {
-//remove class when object moves outside dropzone
-$("#move-burner").removeClass('success');
-$("#move-burner").removeClass('hide');
-$("#move-burner").addClass('error');
-$("#move-forward").addClass('hide');
-}
-});
 </script>
 </body>
 </html>
