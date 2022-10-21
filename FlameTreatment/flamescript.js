@@ -711,11 +711,3 @@ iframe.classList.add('hide');
 iframebutton.classList.remove('blue-light');
 }
 }
-
-function fillFrame(){
-$.get('https://wiki.arrival.com/display/VEHICLEPLATFORMS/ARVL+ST-25+Surface+Treatment+of+PPGF+for+Sikaflex+Adhesive+Bonding', function (response){
-var html = response;
-var html_src = 'data:text/html;charset=utf-8,' + html;
-$("#iframeId").attr("src" , html_src);
-});
-};
