@@ -62,7 +62,7 @@ footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
 // Insert Start Content
-startFrameh();
+startFrame();
 learningMenu();
 // Update Section Name in Header
 var sectionname = document.getElementById('section-name');
