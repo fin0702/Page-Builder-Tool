@@ -687,3 +687,15 @@ startTreatment.classList.add('hide');
 treatmentContinue.classList.remove('hide')
 }, false);
 };
+
+function toggleFlamevideo() {
+var video = document.getElementById("arvl-flame-treat");
+var videobutton = document.getElementById("vid-btn");
+if (video.style.display === "none") {
+video.style.display = "block";
+videobutton.classList.add('blue-light');
+} else {
+video.style.display = "none";
+videobutton.classList.remove('blue-light');
+}
+}

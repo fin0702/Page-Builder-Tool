@@ -24,7 +24,7 @@
 <div class="column third light"><!--Start resources Container-->
 <h2 class="mono">resources</h2>
 <div class="row"><!--First row of cards-->
-<span class="card small black btn" onclick="this.classList.add('blue-light');document.getElementById('arvl-flame-treat').classList.remove('hide')"><!--Card-->
+<span id="vid-btn" class="card small black btn" onclick="toggleFlamevideo()"><!--Card-->
 <p class="mono">Flame Treatment Video</p><!--Card mono title-->
 </span><!--End Card-->
 </div><!--End first row-->
@@ -33,21 +33,17 @@
 <span class="card small black btn" onclick="this.classList.add('blue-light');window.open('https://wiki.arrival.com/display/VEHICLEPLATFORMS/ARVL+ST-25+Surface+Treatment+of+PPGF+for+Sikaflex+Adhesive+Bonding');"><!--Card-->
 <p class="mono">wiki link - ARVL ST-25 Surface Treatment of PPGF</p><!--Card mono title-->
 </span><!--End Card-->
-</div><!--End second row-->
-
-<div class="row"><!--Third row of cards-->
 <span class="card small black btn" onclick="this.classList.add('blue-light');window.open('https://wiki.arrival.com/display/public/VEHICLEPLATFORMS/ARVL+ST-6+Flame+Treatment+of+Composites');"><!--Card-->
 <p class="mono">wiki link - ARVL ST-6 Flame Treatment of Composites</p><!--Card mono title-->
 </span><!--End Card-->
-</div><!--End third row-->
+</div><!--End second row-->
 
 </div><!--End resources Container-->
 
 
-<div id="arvl-flame-treat" class="column fill white mono overflow hide"><!--Right Video Column Container-->
+<div id="arvl-flame-treat" style="display:none;" class="column fill white mono overflow hide"><!--Right Video Column Container-->
 <video autoplay playsinline muted src="arvl-flame-treat.mp4"></video>
 </div><!--End Right Video Column Container-->
-
 
 </div><!--End Columns Container-->
 </div><!--End Learning Content Container-->
