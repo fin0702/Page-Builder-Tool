@@ -720,7 +720,7 @@ position:absolute;
 top:10%;
 cursor:pointer;
 }
-#composite-panel{
+[name="composite-panel"]{
 min-width:100%;
 min-height:100%;
 position:relative;

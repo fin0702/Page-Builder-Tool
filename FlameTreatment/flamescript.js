@@ -406,10 +406,10 @@ $("#move-burner").removeClass('error');
 $("#move-burner").html('<h2 class=\"mono\">Move the flame to the panel</h2>');
 }
 });
-$( "#good" ).droppable({
+$( "#panel" ).droppable({
   tolerance: "touch"
 });
-$("#good").droppable({
+$("#panel").droppable({
 //defines what to do when object is dropped
 over: function(event, ui) {
 // add hover color to dropzone
