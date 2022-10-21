@@ -62,7 +62,7 @@ footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
 // Insert Start Content
-startFrame();
+startFrameh();
 learningMenu();
 // Update Section Name in Header
 var sectionname = document.getElementById('section-name');
@@ -691,11 +691,23 @@ treatmentContinue.classList.remove('hide')
 function toggleFlamevideo() {
 var video = document.getElementById("arvl-flame-treat");
 var videobutton = document.getElementById("vid-btn");
-if (video.style.display === "none") {
-video.style.display = "block";
+if (video.classList.contains('hide')) {
+video.classList.remove('hide');
 videobutton.classList.add('blue-light');
 } else {
-video.style.display = "none";
+video.classList.add('hide');
 videobutton.classList.remove('blue-light');
+}
+}
+
+function toggleSt25() {
+var iframe = document.getElementById("st25");
+var iframebutton = document.getElementById("st25-btn");
+if (iframe.classList.contains('hide')) {
+iframe.classList.remove('hide');
+iframebutton.classList.add('blue-light');
+} else {
+iframe.classList.add('hide');
+iframebutton.classList.remove('blue-light');
 }
 }
