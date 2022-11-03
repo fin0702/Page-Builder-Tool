@@ -27,15 +27,19 @@
 <h2 id="process-text" class="mono">flame treat the panel</h2>
 </div><!--End Start treatment button Container-->
 
+<div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
+<video id="flame-treat" playsinline muted src="flame-treatment-torch.mp4"></video>
+</div><!--End Right Video Column Container-->
+
 <div id="treatment-continue" class="column quarter success btn hide" onclick="document.getElementById('treatment').classList.add('hide');document.getElementById('flame-once').classList.remove('hide');"><!--Success move forward button container-->
 <p class="mono">move forward</p>
 <br>
 <h2 class="mono">flame treatment complete</h2>
 </div><!--End move forward button container-->
 
-<div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
-<video id="flame-treat" playsinline muted src="flame-treatment-torch.mp4"></video>
-</div><!--End Right Video Column Container-->
+<div id="play" class="column media-action btn hide" onclick="document.getElementById('treatment-continue').play();"><!--play button container-->
+<p class="mono">play again</p>
+</div><!--End play button container-->
 
 </div><!--End Columns Container-->
 

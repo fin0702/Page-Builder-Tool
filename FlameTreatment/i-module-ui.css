@@ -322,6 +322,11 @@ display:block;
 margin:auto;
 clip-path: inset(0.5px 0.5px);
 }
+.media-action{
+flex:10%;
+background-color:#009c5b;
+color:var(--white);
+}
 .img-center{
 display:flex;
 justify-content: center;
@@ -742,5 +747,15 @@ display:block;
 box-sizing:border-box;
 width:100%;
 height:fit-content;
+margin:auto;
+}
+#close{
+display:block;
+position:absolute;
+bottom:0;
+left:20%;
+box-sizing:border-box;
+width:65%;
+height:15%;
 margin:auto;
 }

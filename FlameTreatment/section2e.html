@@ -21,11 +21,15 @@
 
 <div id="content" name="section2e" class="container"><!--Learning Content Container-->
 <div class="columns animate__animated animate__slideInLeft" onclick="startCleanse()"><!--Columns Container-->
-<div id="start-clean" class="column quarter success btn blue"><!--Left (Desktop) Column Container-->
+<div id="start-clean" class="column quarter btn blue"><!--Left (Desktop) Column Container-->
 <p id="start-text" class="mono">start</p>
 <br>
 <h2 id="process-text" class="mono">Cleanse & Wipe</h2>
 </div><!--End Left (Desktop) Column Container-->
+
+<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
+<video id="clean-panel" playsinline muted src="flame-treatment-clean-panel.mp4"></video>
+</div><!--End Right (Desktop) Column Container-->
 
 <div id="clean-continue" class="column quarter success btn hide" onclick="sectionTwof()"><!--Success move forward button container-->
 <p class="mono">move forward</p>
@@ -33,9 +37,9 @@
 <h2 class="mono">contaminants removed - cleanse complete</h2>
 </div><!--End move forward button container-->
 
-<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
-<video id="clean-panel" playsinline muted src="flame-treatment-clean-panel.mp4"></video>
-</div><!--End Right (Desktop) Column Container-->
+<div id="play" class="column media-action btn hide" onclick="document.getElementById('clean-panel').play();"><!--play button container-->
+<p class="mono">play again</p>
+</div><!--End play button container-->
 
 
 </div><!--End Columns Container-->

@@ -21,11 +21,15 @@
 
 <div id="content" name="section2c" class="container"><!--Learning Content Container-->
 <div class="columns animate__animated animate__slideInLeft" onclick="startDust()"><!--Columns Container-->
-<div id="start-dust" class="column quarter success btn"><!--Left (Desktop) Column Container-->
+<div id="start-dust" class="column quarter blue btn"><!--Left (Desktop) Column Container-->
 <p id="start-text" class="mono">start</p>
 <br>
 <h2 id="process-text" class="mono">Remove Dust & Debris</h2>
 </div><!--End Left (Desktop) Column Container-->
+
+<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
+<video id="remove-dust" playsinline muted src="flame-treatment-brush-panel.mp4"></video>
+</div><!--End Right (Desktop) Column Container-->
 
 <div id="dust-continue" class="column quarter success btn hide" onclick="sectionTwod()"><!--Success move forward button container-->
 <p class="mono">move forward</p>
@@ -33,10 +37,9 @@
 <h2 class="mono">Dust & debris removed</h2>
 </div><!--End move forward button container-->
 
-<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
-<video id="remove-dust" playsinline muted src="flame-treatment-brush-panel.mp4"></video>
-</div><!--End Right (Desktop) Column Container-->
-
+<div id="play" class="column media-action btn hide" onclick="document.getElementById('remove-dust').play();"><!--play button container-->
+<p class="mono">play again</p>
+</div><!--End play button container-->
 
 </div><!--End Columns Container-->
 </div><!--End Learning Content Container-->

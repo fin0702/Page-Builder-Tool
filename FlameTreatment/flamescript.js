@@ -416,12 +416,12 @@ $("#bad").droppable({
 //defines what to do when object is dropped
 over: function(event, ui) {
 // add hover color to dropzone
-$("#move-burner").addClass('error');
+$("#move-burner").addClass('caution-color');
 $("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
 },
 out: function(event, ui) {
 //remove class when object moves outside dropzone
-$("#move-burner").removeClass('error');
+$("#move-burner").removeClass('caution-color');
 $("#move-burner").html('<h2 class=\"mono\">Move the flame to the panel</h2>');
 }
 });
@@ -432,7 +432,7 @@ $("#panel").droppable({
 //defines what to do when object is dropped
 over: function(event, ui) {
 // add hover color to dropzone
-$("#move-burner").removeClass('error');
+$("#move-burner").removeClass('caution-color');
 $("#move-burner").addClass('hide');
 $("#move-forward").removeClass('hide');
 },
@@ -440,12 +440,35 @@ out: function(event, ui) {
 //remove class when object moves outside dropzone
 $("#move-burner").removeClass('success');
 $("#move-burner").removeClass('hide');
-$("#move-burner").addClass('error');
+$("#move-burner").addClass('caution-color');
 $("#move-forward").addClass('hide');
+}
+});
+$( "#close" ).droppable({
+  tolerance: "touch"
+});
+$("#close").droppable({
+//defines what to do when object is dropped
+over: function(event, ui) {
+// add hover color to dropzone
+$("#move-burner").removeClass('success');
+$("#move-burner").removeClass('hide');
+$("#move-burner").addClass('error');
+$("#move-burner").html('<h2 class=\"mono\">too close!</h2>');
+$("#move-forward").addClass('hide');
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$("#move-burner").removeClass('error');
+$("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
+$("#move-burner").addClass('hide');
+$("#move-burner").addClass('success');
+$("#move-forward").removeClass('hide');
 }
 });
 });
 };
+
 
 function sectionThreee(){
 fetch(section3e).then(function (response) {
@@ -654,6 +677,7 @@ var dustContinue = document.getElementById('dust-continue');
 var startDust = document.getElementById('start-dust');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 dustVideo.play();
 startDust.classList.remove('btn');
 startDust.classList.add('blue-light');
@@ -661,7 +685,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'removing dust with soft brush';
 dustVideo.addEventListener('ended', function () {
 dustVideo.currentTime = 0;
-dustVideo.play();
+restart.classList.remove('hide');
 startDust.classList.add('hide');
 dustContinue.classList.remove('hide')
 }, false);
@@ -674,6 +698,7 @@ var cleanContinue = document.getElementById('clean-continue');
 var startClean = document.getElementById('start-clean');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 cleanseVideo.play();
 startClean.classList.remove('btn');
 startClean.classList.add('blue-light');
@@ -681,7 +706,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'cleaning panel';
 cleanseVideo.addEventListener('ended', function () {
 cleanseVideo.currentTime = 0;
-cleanseVideo.play();
+restart.classList.remove('hide');
 startClean.classList.add('hide');
 cleanContinue.classList.remove('hide')
 }, false);
@@ -694,6 +719,7 @@ var treatmentContinue = document.getElementById('treatment-continue');
 var startTreatment = document.getElementById('start-treatment');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 flameVideo.play();
 startTreatment.classList.remove('btn');
 startTreatment.classList.add('blue-light');
@@ -701,7 +727,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'approx. 50cm per second';
 flameVideo.addEventListener('ended', function () {
 flameVideo.currentTime = 0;
-flameVideo.play();
+restart.classList.remove('hide');
 startTreatment.classList.add('hide');
 treatmentContinue.classList.remove('hide')
 }, false);
