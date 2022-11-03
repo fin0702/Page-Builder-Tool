@@ -7,6 +7,8 @@ const section4 = 'Resources';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
+
+const section1intro = 'section1.html';
 const section1a = 'section1a.html';
 const section1b = 'section1b.html';
 const section1c = 'section1c.html';
@@ -103,6 +105,23 @@ menucontainer.outerHTML = menucontent;
 
 function hideOverlays(){
 Array.from(document.querySelectorAll('.overlay, .menuoverlay')).forEach((el) => el.classList.remove('show'));
+};
+
+function sectionOne(){
+fetch(section1intro).then(function (response) {
+// The API call was successful!
+return response.text();
+}).then(function (html) {
+// Convert the HTML string into a document object
+var parser = new DOMParser();
+var doc = parser.parseFromString(html, 'text/html');
+// get the element
+const learningcontent = document.getElementById('content');
+var frame = doc.getElementById('content').outerHTML;
+// insert Html
+learningcontent.outerHTML = frame;
+document.getElementById('section-name').innerHTML = startsection;
+});
 };
 
 function sectionOnea(){
