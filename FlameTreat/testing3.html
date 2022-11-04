@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="i-module-ui3.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+<header><!--Header Fixed-->
+<button class="button white sm-btn menu" title="Learning Menu" onclick="document.getElementById('learningmenu').classList.add('show');"></button><!--Menu Button-->
+<button class="button white sm-btn not-btn not-mobile">Manual Flame Treatment of Composite Panels</button><!--Module Name-->
+<button class="button blue sm-btn not-btn">Equipment</button><!--Module Name-->
+</header><!--End Header-->
+
+
+
+<!--LEARNING CONTENT-->
+  <!--HEADER END-->
+
+  <!--MENU OVERLAY-->
+
+  <div id="learningmenu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
+  <div class="columns"><!--Columns Container-->
+  <div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').classList.remove('show')">close</div><!--Close Button-->
+  <div class="column fill white"><!--Section Cards Container-->
+  <h1>Sections in this Module</h1><!--Heading-->
+  <div class="row"><!--First row of cards-->
+  <span class="card btn light" onclick="frameOne();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+  <span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+  <span class="card btn light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+  </div><!--End First row of cards-->
+
+  <div class="row"><!--Second row of cards-->
+  <span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+  </div><!--End Second row of cards-->
+
+  </div><!--End Section Cards Container-->
+  </div><!--End Columns Container-->
+  </div><!--End Learning Menu Overlay-->
+
+  <!--MENU OVERLAY END-->
+
+  <div id="start" class="overlay hide show animate pop"><!--Start Overlay-->
+  <div class="columns"><!--Columns Container-->
+  <div class="column quarter blue mono btn" onclick="document.getElementById('start').classList.remove('show');frameOne();">start</div><!--Close Button-->
+  <div class="column white overflow"><!--Start Section Container-->
+  <h1>Welcome!</h1><!--Heading-->
+  <h2>Are you ready to begin?</h2><!--Heading-->
+  <p>In this short Module we will explore the process of carrying out Manual Flame Treatment on composite panels.</p>
+  <p>This treatment process is extremely important and must be carried out precisely.</p>
+  <h3>The Module is split into the following sections:</h3>
+  <div class="row wrap"><!--First row of cards-->
+  <span class="card small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+  <span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+  </div><!--End First row of cards-->
+  <p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
+  </div><!--End Start Section Container-->
+  </div><!--End Columns Container-->
+  </div><!--End Start Overlay-->
+
+<div id="content" class="container"><!--Learning Content Container-->
+</div><!--End Learning Content Container-->
+
+<!--FOOTER-->
+<footer id="footer">
+<button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.display = 'none';">back to topic</button>
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript3.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+$("#object").draggable();
+$("#object2").draggable();
+$("#object3").draggable();
+$("#object4").draggable();
+$("#object5").draggable();
+$("#object6").draggable();
+$("#object7").draggable();
+$("#dropzone").droppable({
+//defines what to do when object is dropped
+drop: function(event, ui) {
+//defines what to do when object is dropped
+$(this).addClass('change').removeClass('over');
+//if all CORRECT objects are dropped:
+if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+// change color
+$("#dropzone").addClass('complete');
+// and show button
+$("#forward").removeClass('disabled');
+}
+//if INCORRECT objects are dropped:
+if ($("#object7").is(".dropped")) {
+// remove color
+$("#dropzone").removeClass('complete').addClass('error');
+// hide button
+$("#forward").addClass('disabled');
+}
+},
+over: function(event, ui) {
+// add hover color to dropzone
+$(this).addClass('over');
+// if objects are dragged over dropzone add dropped class
+if($("#object").is('.ui-draggable-dragging')){$("#object").addClass('dropped')};
+if($("#object2").is('.ui-draggable-dragging')){$("#object2").addClass('dropped')};
+if($("#object3").is('.ui-draggable-dragging')){$("#object3").addClass('dropped')};
+if($("#object4").is('.ui-draggable-dragging')){$("#object4").addClass('dropped')};
+if($("#object5").is('.ui-draggable-dragging')){$("#object5").addClass('dropped')};
+if($("#object6").is('.ui-draggable-dragging')){$("#object6").addClass('dropped')};
+if($("#object7").is('.ui-draggable-dragging')){$("#object7").addClass('dropped')};
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$(this).removeClass('over');
+// remove complete color and hide button when object leaves dropzone
+$(this).removeClass('complete');$("#forward").addClass('disabled');
+//if object moves out of dropzone AND is dragging AND has been dropped, remove dropped class
+if(($("#object").is('.ui-draggable-dragging'))&&($("#object").is('.dropped'))){$("#object").removeClass('dropped')};
+if(($("#object2").is('.ui-draggable-dragging'))&&($("#object2").is('.dropped'))){$("#object2").removeClass('dropped')};
+if(($("#object3").is('.ui-draggable-dragging'))&&($("#object3").is('.dropped'))){$("#object3").removeClass('dropped')};
+if(($("#object4").is('.ui-draggable-dragging'))&&($("#object4").is('.dropped'))){$("#object4").removeClass('dropped')};
+if(($("#object5").is('.ui-draggable-dragging'))&&($("#object5").is('.dropped'))){$("#object5").removeClass('dropped')};
+if(($("#object6").is('.ui-draggable-dragging'))&&($("#object6").is('.dropped'))){$("#object6").removeClass('dropped')};
+if(($("#object7").is('.ui-draggable-dragging'))&&($("#object7").is('.dropped'))){$("#object7").removeClass('dropped');$("#dropzone").removeClass('error')};
+// if all CORRECT objects remain in dropzone reinstate complete color and button
+if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+$("#dropzone").addClass('complete');
+$("#forward").removeClass('disabled');
+};
+}
+});
+});
+</script>
+</body>
+</html>

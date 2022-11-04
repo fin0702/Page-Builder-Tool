@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="i-module-ui3.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+
+<header><!--Header Fixed-->
+<button class="button white sm-btn menu" title="Learning Menu" onclick="document.getElementById('learningmenu').style.display = 'flex'"></button><!--Menu Button-->
+<button class="button white sm-btn not-btn not-mobile">Manual Flame Treatment of Composite Panels</button><!--Module Name-->
+<button class="button blue sm-btn not-btn">Equipment</button><!--Module Name-->
+</header><!--End Header-->
+
+<!--HEADER END-->
+
+<!--MENU OVERLAY-->
+
+<div id="learningmenu" class="overlay animate pop"><!--Learning Menu Overlay-->
+<div class="columns"><!--Columns Container-->
+<div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').style.display = 'none';">close</div><!--Close Button-->
+<div class="column fill white"><!--Section Cards Container-->
+<h1>Sections in this Module</h1><!--Heading-->
+<div class="row"><!--First row of cards-->
+<span class="card btn light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+</div><!--End First row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+</div><!--End Section Cards Container-->
+</div><!--End Columns Container-->
+</div><!--End Learning Menu Overlay-->
+
+<!--MENU OVERLAY END-->
+
+<!--LEARNING CONTENT-->
+<div id="content" class="container"><!--Learning Content Container-->
+<div class="columns"><!--Columns Container-->
+<div class="column half white"><!--Left (Desktop) Column Container-->
+<h1 class="not-mobile">Collect your equipment!</h1>
+<h2>Take a look at the items and move them into your toolbag.</h2>
+<div class="row"><!--First row of cards-->
+
+<span id="object" name="gloves" class="card small light btn"><!--Card-->
+<p class="mono">gloves</p><!--Card mono title-->
+</span><!--End Card-->
+
+<span id="object2" name="eyeprotection" class="card small light btn"><!--Card-->
+<p class="mono">eye protection</p><!--Card mono title-->
+</span><!--End Card-->
+
+<span id="object3" name="brush" class="card small light btn"><!--Card-->
+<p class="mono">soft brush</p><!--Card mono title-->
+</span><!--End Card-->
+
+<span id="object4" name="propanetorch" class="card small light btn"><!--Card-->
+<p class="mono">propane torch</p><!--Card mono title-->
+</span><!--End Card-->
+</div><!--End first row-->
+
+<div class="row"><!--Second row of cards-->
+
+<span id="objectwrong" name="cloth" class="card small light btn"><!--Card-->
+<p class="mono">scraper</p><!--Card mono title-->
+</span><!--End Card-->
+
+<span id="object5" name="cloth" class="card small light btn"><!--Card-->
+<p class="mono">lint free cloth</p><!--Card mono title-->
+</span><!--End Card-->
+
+<span id="object6" name="cloth" class="card small light btn"><!--Card-->
+<p class="mono">ipa alcohol</p><!--Card mono title-->
+</span><!--End Card-->
+</div><!--End Second row of cards-->
+</div><!--End Left (Desktop) Column Container-->
+
+<div id="dropzone" class="column half dark"><!--Right (Desktop) Column Container-->
+<div class="img-center"><!--Image center container-->
+<img src="tool-bag.svg"><!--Image-->
+</div><!--End Image center container-->
+</div><!--End Right (Desktop) Column Container-->
+
+</div><!--End Columns Container-->
+</div><!--End Learning Content Container-->
+
+<!--FOOTER-->
+
+<footer id="footer">
+<button class="button nav-btn return" onclick="parent.document.getElementById('i-module').style.display = 'none';">back to topic</button>
+<button id="forward" class="button nav-btn forward disabled-btn" onclick="">move forward</button>
+</footer>
+
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript3.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

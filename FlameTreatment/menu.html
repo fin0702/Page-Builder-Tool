@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+<header id="ui-header"><!--Header Fixed-->
+</header><!--End Header-->
+<!--HEADER END-->
+
+<!--MENU OVERLAY-->
+
+<aside id="learningmenu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
+<div class="columns"><!--Columns Container-->
+<div class="column quarter dark mono btn" onclick="document.getElementById('learningmenu').classList.remove('show')">close</div><!--Close Button-->
+<div class="column fill white overflow"><!--Section Cards Container-->
+<h1>Sections in this Module</h1><!--Heading-->
+<div class="row"><!--First row of cards-->
+<span class="card btn light" onclick="sectionOnea();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card btn light" onclick="sectionTwoa();hideOverlays();"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card btn light" onclick="sectionThreea();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+</div><!--End First row of cards-->
+
+<div class="row"><!--Second row of cards-->
+<span class="card btn light"onclick="sectionFoura();hideOverlays();"><p class="mono">Section 4</p><p>Resources</p></span><!--Section-->
+</div><!--End Second row of cards-->
+
+</div><!--End Section Cards Container-->
+</div><!--End Columns Container-->
+</aside><!--End Learning Menu Overlay-->
+
+<!--MENU OVERLAY END-->
+
+
+<!--FOOTER-->
+<footer id="footer">
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+</html>

@@ -27,6 +27,7 @@
 <h1>Let's get started!</h1>
 <div id="bad">
 <div id="good">
+<div id="close"></div>
 <img name="composite-panel" id="panel" src="panel-flat.svg">
 </div>
 </div>
@@ -42,11 +43,11 @@
 </div><!--End Columns Container-->
 
 <div id="flame-important" class="columns white animate__animated animate__slideInRight hide"><!--Columns Container-->
-<div name="scroll" class="column fill caution-color"><!--Start Section Container-->
-<h2 class="mono">important</h2><!--Heading-->
+<div id="caution-distance" name="scroll" class="column fill caution-color"><!--Start Section Container-->
+<h2 id="caution-title" class="mono">caution</h2><!--Heading-->
 <h2 class="mono">The distance of the flame from the panel is critical. The blue part of the flame should just touch the panel.</h2><!--Heading-->
 </div>
-<div class="column quarter dark mono btn" onclick="document.getElementById('flame-important').classList.add('hide');document.getElementById('test-run').classList.remove('hide');">move forward</div><!--Close Button-->
+<div class="column quarter purple-dark mono btn" onclick="document.getElementById('flame-important').classList.add('hide');document.getElementById('test-run').classList.remove('hide');">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 
 <div id="test-run" class="columns white animate__animated animate__slideInDown hide"><!--Columns Container-->

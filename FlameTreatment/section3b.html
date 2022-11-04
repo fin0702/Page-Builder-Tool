@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+<link rel="stylesheet" href="rangeslider.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+<header id="ui-header"><!--Header Fixed-->
+</header><!--End Header-->
+<!--HEADER END-->
+
+<!--MENU OVERLAY-->
+<aside id="learningmenu">
+</aside>
+<!--MENU OVERLAY END-->
+
+<!--LEARNING CONTENT-->
+
+<div id="content" name="section3b" class="slide purple-light"><!--Start Overlay-->
+<div id="slide1" class="columns fill light animate__animated animate__slideInLeft"><!--Columns Container-->
+<div id="flame-content" class="column half fixed overflow-icon"><!--Blow torch container-->
+<h1 id="flame-h1">Ready to begin?</h1>
+<h2 id="flame-h2">Let's ignite our burner.</h2>
+<img id="flame" src="flame1.png">
+<img id="torch" src="Propane torch.png"/>
+</div><!--End Blow torch container-->
+<div id="ignite-flame" class="column quarter fixed blue mono btn" onclick="igniteFlame()"><h2 class="mono">--> Ignite</h2></div><!--Ignite Button-->
+<span id="range">0</span>
+<div id="adjust-flame" class="column quarter fixed dark mono hide"><!--Adjust flame container-->
+<div id="flame-correct" class="row fifty hide btn blue" onclick="sectionThreec()"><!--Row - Move forward when correct button-->
+move forward
+</div><!--End Row - Move forward when correct button-->
+<div id="flame-not-correct" class="row fifty"><!--Row - Move forward placeholder when incorrect-->
+&nbsp;
+</div><!--End Row - move forward placeholder when incorrect-->
+<div class="row fifty"><!--Row - Flame slider row-->
+<div class="flame-range">
+<h2 class="mono">flame&nbsp;</h2>
+<input id="valR" type="range" min="1" max="12" value="1" step="1" oninput="showVal(this.value)" onchange="showVal(this.value)" />
+</div>
+</div><!--End Row - Flame slider row-->
+</div><!--End Adjust flame container-->
+
+</div><!--End Columns Container-->
+
+</div><!--End Content-->
+
+<!--LEARNING CONTENT END-->
+
+
+<!--FOOTER-->
+<footer id="footer">
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

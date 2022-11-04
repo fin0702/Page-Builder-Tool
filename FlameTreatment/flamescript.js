@@ -1,12 +1,13 @@
-const modulename = 'Manual Flame Treatment of Composite Panels &#92;'
+const modulename = 'Manual Flame Treatment of Composite Panels &#47;'
 const startsection = 'Welcome';
-const section1 = 'Equipment';
-const section2 = 'Surface Treatment';
-const section3 = 'Flame Treatment';
-const section4 = 'Resources';
+const section1 = 'Equipment &#47; 1 of 4';
+const section2 = 'Surface Treatment &#47; 2 of 4';
+const section3 = 'Flame Treatment &#47; 3 of 4';
+const section4 = 'Resources &#47; 4 of 4';
 
 const start = 'start.html'
 const learningmenu = 'menu.html'
+
 const section1intro = 'section1.html';
 const section1a = 'section1a.html';
 const section1b = 'section1b.html';
@@ -55,10 +56,10 @@ for (const scroll of scrolls) {scroll.classList.remove('scroll');}
 // Insert Header and Footer Content
 window.onload = function iHeader(){
 var headerelement = document.getElementById('ui-header');
-var headercontent = '<button class=\"button white sm-btn menu\" title=\"Learning Menu\" onclick=\"document.getElementById(\'learningmenu\').classList.add(\'show\');\"></button><button id=\"modulename\" class=\"button black sm-btn not-btn not-mobile\"></button><button id=\"section-name\" class=\"button blue sm-btn not-btn\"></button>';
+var headercontent = '<button class=\"button black-contrast back sm-btn\" onclick=\"document.getElementById(\'i-module-ui\').style.display = \'none\';\"></button><button id=\"modulename\" class=\"button black sm-btn not-btn not-mobile\" style=\"color:#868787\"></button><button id=\"section-name\" class=\"button black sm-btn not-btn\"></button><button class=\"button black sm-btn menu\" title=\"Learning Menu\" onclick=\"document.getElementById(\'learningmenu\').classList.add(\'show\');\"></button>';
 headerelement.insertAdjacentHTML( 'beforeend', headercontent );
 var footerelement = document.getElementById('footer');
-var footercontent = '<button class=\"button nav-btn return\" onclick=\"document.getElementById(\'i-module-ui\').style.display = \'none\';\">back to topic</button><button id=\"forward\" class=\"button nav-btn forward disabled-btn\" onclick=\"\">next section</button>';
+var footercontent = '<button id="step-back" class=\"button nav-btn return\" onclick=\"\">step back</button><button id=\"forward\" class=\"button nav-btn forward disabled-btn\" onclick=\"\">next section</button>';
 footerelement.insertAdjacentHTML( 'beforeend', footercontent );
 // Insert Learning Module Name
 document.getElementById('modulename').innerHTML = modulename;
@@ -120,6 +121,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = startsection;
+document.getElementById('step-back').setAttribute('onclick','startFrame()');
 });
 };
 
@@ -137,6 +139,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section1;
+document.getElementById('step-back').setAttribute('onclick','sectionOne()');
 });
 };
 
@@ -154,6 +157,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section1;
+document.getElementById('step-back').setAttribute('onclick','sectionOnea()');
 //defines object as being draggable
     $("#object").draggable();
     $("#object2").draggable();
@@ -233,6 +237,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section1;
+document.getElementById('step-back').setAttribute('onclick','sectionOneb()');
 });
 };
 
@@ -250,6 +255,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionOnec()');
 deactivateNext();
 });
 };
@@ -268,6 +274,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionTwoa()');
 });
 };
 
@@ -285,6 +292,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionTwob()');
 });
 };
 
@@ -302,6 +310,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionTwoc()');
 });
 };
 
@@ -319,6 +328,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionTwod()');
 });
 };
 
@@ -336,6 +346,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section2;
+document.getElementById('step-back').setAttribute('onclick','sectionTwoe()');
 });
 };
 
@@ -353,6 +364,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionTwof()');
 deactivateNext();
 });
 };
@@ -371,6 +383,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionThreea()');
 });
 };
 
@@ -388,6 +401,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionThreeb()');
 });
 };
 
@@ -405,6 +419,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionThreec()');
 //Section 3 move flame to panel
 //defines object as being draggable
 $("#torch-with-flame").draggable();
@@ -415,12 +430,12 @@ $("#bad").droppable({
 //defines what to do when object is dropped
 over: function(event, ui) {
 // add hover color to dropzone
-$("#move-burner").addClass('error');
+$("#move-burner").addClass('caution-color');
 $("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
 },
 out: function(event, ui) {
 //remove class when object moves outside dropzone
-$("#move-burner").removeClass('error');
+$("#move-burner").removeClass('caution-color');
 $("#move-burner").html('<h2 class=\"mono\">Move the flame to the panel</h2>');
 }
 });
@@ -431,7 +446,7 @@ $("#panel").droppable({
 //defines what to do when object is dropped
 over: function(event, ui) {
 // add hover color to dropzone
-$("#move-burner").removeClass('error');
+$("#move-burner").removeClass('caution-color');
 $("#move-burner").addClass('hide');
 $("#move-forward").removeClass('hide');
 },
@@ -439,12 +454,35 @@ out: function(event, ui) {
 //remove class when object moves outside dropzone
 $("#move-burner").removeClass('success');
 $("#move-burner").removeClass('hide');
-$("#move-burner").addClass('error');
+$("#move-burner").addClass('caution-color');
 $("#move-forward").addClass('hide');
+}
+});
+$( "#close" ).droppable({
+  tolerance: "touch"
+});
+$("#close").droppable({
+//defines what to do when object is dropped
+over: function(event, ui) {
+// add hover color to dropzone
+$("#move-burner").removeClass('success');
+$("#move-burner").removeClass('hide');
+$("#move-burner").addClass('error');
+$("#move-burner").html('<h2 class=\"mono\">too close!</h2>');
+$("#move-forward").addClass('hide');
+},
+out: function(event, ui) {
+//remove class when object moves outside dropzone
+$("#move-burner").removeClass('error');
+$("#move-burner").html('<h2 class=\"mono\">the tip of the flame should be on the surface of the panel.<br><br>Approx. 3 inches away.</h2>');
+$("#move-burner").addClass('hide');
+$("#move-burner").addClass('success');
+$("#move-forward").removeClass('hide');
 }
 });
 });
 };
+
 
 function sectionThreee(){
 fetch(section3e).then(function (response) {
@@ -460,6 +498,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionThreed()');
 });
 };
 
@@ -477,6 +516,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section3;
+document.getElementById('step-back').setAttribute('onclick','sectionThreee()');
 });
 };
 
@@ -494,6 +534,7 @@ var frame = doc.getElementById('content').outerHTML;
 // insert Html
 learningcontent.outerHTML = frame;
 document.getElementById('section-name').innerHTML = section4;
+document.getElementById('step-back').setAttribute('onclick','sectionThreef()');
 deactivateNext();
 });
 };
@@ -653,6 +694,7 @@ var dustContinue = document.getElementById('dust-continue');
 var startDust = document.getElementById('start-dust');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 dustVideo.play();
 startDust.classList.remove('btn');
 startDust.classList.add('blue-light');
@@ -660,7 +702,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'removing dust with soft brush';
 dustVideo.addEventListener('ended', function () {
 dustVideo.currentTime = 0;
-dustVideo.play();
+restart.classList.remove('invisible');
 startDust.classList.add('hide');
 dustContinue.classList.remove('hide')
 }, false);
@@ -673,6 +715,7 @@ var cleanContinue = document.getElementById('clean-continue');
 var startClean = document.getElementById('start-clean');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 cleanseVideo.play();
 startClean.classList.remove('btn');
 startClean.classList.add('blue-light');
@@ -680,7 +723,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'cleaning panel';
 cleanseVideo.addEventListener('ended', function () {
 cleanseVideo.currentTime = 0;
-cleanseVideo.play();
+restart.classList.remove('invisible');
 startClean.classList.add('hide');
 cleanContinue.classList.remove('hide')
 }, false);
@@ -693,6 +736,7 @@ var treatmentContinue = document.getElementById('treatment-continue');
 var startTreatment = document.getElementById('start-treatment');
 var startText = document.getElementById('start-text');
 var processText = document.getElementById('process-text');
+var restart = document.getElementById('play');
 flameVideo.play();
 startTreatment.classList.remove('btn');
 startTreatment.classList.add('blue-light');
@@ -700,7 +744,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'approx. 50cm per second';
 flameVideo.addEventListener('ended', function () {
 flameVideo.currentTime = 0;
-flameVideo.play();
+restart.classList.remove('invisible');
 startTreatment.classList.add('hide');
 treatmentContinue.classList.remove('hide')
 }, false);

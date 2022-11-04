@@ -1,0 +1,828 @@
+/* Default Fonts*/
+@font-face {
+font-family: "Arrival Apercu Pro";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Light.woff2") format("woff2");
+}
+@font-face {
+font-family: "Arrival Apercu Mono Pro";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuMonoPro-Regular.woff2") format("woff2");
+}
+@font-face {
+font-family: "Arrival Apercu Pro Medium";
+src: url("https://static.arrival.com/fonts/5.014-0/ArrivalApercuPro-Medium.woff2") format("woff2");
+}
+/* Default Colors*/
+:root {
+--active-blue: #2044ff;
+--black: #0F1011;
+--white: #ffffff;
+--error:#F34E16;
+--success:#00B469;
+--light-gray:#f4f4f4;
+--medium-gray:#e9e9e9;
+--dark-gray:#404040;
+--cyan-light:#00CFE6;
+--cyan-dark:#003D44;
+--purple-light:#D7BDCD;
+--purple-dark:#AD4E89;
+--light-blue:#617BFF;
+--caution:#ffd100;
+--caution-light:#fff3d4;
+}
+.animate__animated{
+--animate-duration: 0.8s;
+}
+* {
+box-sizing:border-box;
+margin: 0;
+text-align:left;
+scroll-behavior: smooth;
+overflow: -moz-scrollbars-none;
+-ms-overflow-style: none;
+}
+*::-webkit-scrollbar{
+width: 0 !important;
+}
+* {
+  margin: 0;
+}
+html, body {
+color:var(--black);
+background-color:var(--light-gray);
+font-size: calc(16px + 0.390625vw);
+min-height:100%;
+max-height:100%;
+height:100%;
+}
+/* Button style*/
+.button{
+display:flex;
+align-items:center;
+border:none;
+outline:0;
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+letter-spacing: 0.10em;
+cursor:pointer;
+}
+/* Button hover style*/
+.button:hover{
+opacity:85%;
+}
+.btn{
+border:none;
+outline:0;
+cursor:pointer !important;
+}
+/* Button hover style*/
+.btn:hover{
+opacity:85%;
+}
+/* Button style if used as a tag/badge - removes pointer*/
+.not-btn{
+cursor:initial;
+}
+/* Button hove style if used as a tag/badge - removes hover*/
+.not-btn:hover{
+opacity:100%;
+}
+/* Button style for disabled state - adds background pattern and prevents clicks*/
+.disabled-btn{
+background-image:linear-gradient(45deg, #ffffff 25%, #ededed 25%, #ededed 50%, #ffffff 50%, #ffffff 75%, #ededed 75%, #ededed 100%);
+background-size: 0.35375rem 0.35375rem;
+pointer-events:none;
+background-color:var(--white);
+color:var(--black)!important;
+}
+/* Button style for standard small button*/
+.sm-btn{
+height:3em;
+min-width:3em;
+border-radius:0.25em;
+font-size:0.5em;
+padding:0.5em 1em 0.5em 1em;
+margin-right:0.5em;
+}
+.back::before{
+content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.80769 8.50004L6.77905 11.6465L6.11129 12.3536L2 8.00004L6.11129 3.64648L6.77905 4.35359L3.80769 7.50004H14V8.50004H3.80769Z' fill='white'/%3E%3C/svg%3E%0A");
+margin-right:8px;
+}
+.back::after{
+content:'back to topic';
+}
+#section-name{
+padding:0.5em 0em 0.5em 0em;
+}
+/* Button style for large bottom navigation buttons*/
+.nav-btn{
+display:flex;
+align-items:center;
+height:100%;
+font-size:0.65em;
+padding:1em;
+}
+/* Button style for return button - adds background and text color */
+.nav-btn.return{
+background-color:var(--black);
+color:var(--white);
+}
+/* Button style for return button - adds return icon*/
+.nav-btn.return::after{
+margin-left:0.5em;
+content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuNjE1OSA0Ljg4ODg5SDEwLjIyMkMxMS40NDkzIDQuODg4ODkgMTIuNDQ0MiA1Ljg4MzgxIDEyLjQ0NDIgNy4xMTExMUMxMi40NDQyIDguMzM4NDEgMTEuNDQ5MyA5LjMzMzMzIDEwLjIyMiA5LjMzMzMzSDQuNjI4MjhMNi41MzYyMyA3LjQyNTM4TDUuOTA3NjkgNi43OTY4NEwyLjkyNjc2IDkuNzc3NzhMNS45MDc2OSAxMi43NTg3TDYuNTM2MjMgMTIuMTMwMkw0LjYyODI4IDEwLjIyMjJIMTAuMjIyQzExLjk0MDIgMTAuMjIyMiAxMy4zMzMxIDguODI5MzMgMTMuMzMzMSA3LjExMTExQzEzLjMzMzEgNS4zOTI4OSAxMS45NDAyIDQgMTAuMjIyIDRINS42MTU5VjQuODg4ODlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K');
+}
+/* Button style for forward button - adds background and text color and allows button to consume space */
+.nav-btn.forward{
+flex:50%;
+justify-content:space-between;
+background-color:var(--active-blue);
+color:var(--white);
+}
+/* Button style for return button - adds forward icon*/
+.nav-btn.forward::after{
+margin-left:0.5em;
+content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjQzOTQgOC41MDAwNEw5LjI5MjkzIDExLjY0NjVMMTAgMTIuMzUzNkwxNC4zNTM2IDguMDAwMDRMMTAgMy42NDY0OEw5LjI5MjkzIDQuMzUzNTlMMTIuNDM5NCA3LjUwMDA0SDEuNjQ2NDhWOC41MDAwNEgxMi40Mzk0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==')
+}
+/* Color style for Active Blue - adds background and text color*/
+.blue{
+background-color:var(--active-blue)!important;;
+color:var(--white)!important;;
+}
+/* Color style for Gray - adds background and text color*/
+.gray{
+background-color:var(--medium-gray);
+color:var(--black);
+}
+.dark{
+background-color:var(--dark-gray);
+color:var(--white);
+}
+.light{
+background-color:var(--light-gray);
+color:var(--black);
+}
+/* Color style for Black - adds background and text color*/
+.black{
+background-color:var(--black);
+color:var(--white);
+}
+.black-contrast{
+background-color:#1e1e1e;
+color:var(--white);
+opacity:0.75;
+}
+/* Color style for White - adds background and text color*/
+.white{
+background-color:var(--white);
+color:var(--black);
+}
+/* Color style for White - adds background and text color*/
+.cyan-light{
+background-color:var(--cyan-light);
+color:var(--black);
+}
+.cyan-dark{
+background-color:var(--cyan-dark);
+color:var(--white);
+}
+.purple-light{
+background-color:var(--purple-light);
+color:var(--black);
+}
+.purple-dark{
+background-color:var(--purple-dark);
+color:var(--white);
+}
+.success{
+background-color:var(--success)!important;
+color:var(--white);
+}
+.error{
+background-color:var(--error)!important;
+color:var(--white);
+}
+.blue-light{
+background-color:var(--light-blue)!important;
+color:var(--white);
+}
+.caution-color{
+background-color:var(--caution);
+color:var(--black);
+}
+.caution-color-light{
+background-color:var(--caution-light);
+color:var(--black);
+}
+/* H1 Header text style*/
+h1{
+font-weight:500;
+font-size:1.75em;
+line-height:1.5em;
+letter-spacing: -0.01em;
+font-style: normal;
+font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ margin: 0.4em 0 0.4em 0;
+}
+/* H2 Header text style*/
+h2{
+font-weight:300;
+font-size:1.75em;
+line-height:1.25em;
+font-style: normal;
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+margin: 0.6em 0 0.6em 0;
+}
+h2.mono{
+font-size:1.75em!important;
+}
+/* H3 Header text style*/
+h3{
+font-weight:500;
+font-size:1em;
+line-height:1.5em;
+letter-spacing: -0.01em;
+font-family: Arrival Apercu Pro Medium, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+margin: 1em 0 1em 0;
+}
+/* Paragragh text style*/
+p, li{
+font-weight:300;
+font-size:1em;
+line-height:1.5em;
+font-family: Arrival Apercu Pro, -apple-system, BlinkMacSystemFont,
+"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+margin: 0.9em 0 0.9em 0;
+}
+/* Arrival MONO text style*/
+.mono{
+font-family: "Arrival Apercu Mono Pro";
+text-transform:uppercase;
+letter-spacing: 0.10em;
+font-size:0.5em;
+line-height:1.5em;
+}
+header {
+position:fixed;
+top:0;
+display:flex;
+background: var(--black);
+height:4em;
+width:100%;
+align-items:center;
+padding: 1em;
+z-index:9999;
+}
+.menu{
+background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.88911 10.6664H7.11133V8.88867H8.88911V10.6664Z' fill='white'/%3E%3Cpath d='M7.11133 16.8887H8.88911V15.1109H7.11133V16.8887Z' fill='white'/%3E%3Cpath d='M24.8891 15.1109H12.4447V16.8887H24.8891V15.1109Z' fill='white'/%3E%3Cpath d='M24.8891 8.88867H12.4447V10.6664H24.8891V8.88867Z' fill='white'/%3E%3Cpath d='M12.4447 21.3331H24.8891V23.1109H12.4447V21.3331Z' fill='white'/%3E%3Cpath d='M7.11133 23.1109H8.88911V21.3331H7.11133V23.1109Z' fill='white'/%3E%3C/svg%3E%0A");
+background-repeat:no-repeat;
+background-position:center;
+background-size:contain;
+right:16px;
+position:absolute;
+}
+.container{
+position:absolute;
+top:4em;
+background-color:var(--white);
+overflow:auto;
+width:100%;
+height:calc(100% - 7em);
+z-index:1;
+}
+.row {
+display:flex;
+width:100%;
+flex:1;
+padding:1em 0em 1em 0em;
+}
+.row.fifty{
+height:50%;
+}
+#content{
+max-height:calc(100% - 7em);
+}
+.columns {
+display:flex;
+flex-direction:row;
+flex:1;
+overflow:auto;
+min-height:100%;
+height:100%;
+}
+.column{
+padding:1em;
+}
+.column.half,.card.half {
+flex:1 0 50%;
+}
+.column.quarter {
+flex:1 0 25%;
+}
+.column.third {
+flex:1 0 33.33%;
+}
+.column.fill, .card.fill {
+flex:100%;
+}
+.column > video {
+height:100%;
+width:auto;
+max-width:100%;
+display:block;
+margin:auto;
+clip-path: inset(0.5px 0.5px);
+}
+.media-action{
+flex:10%;
+background-color: #00804A;
+color:var(--white);
+}
+.img-center{
+display:flex;
+justify-content: center;
+align-items: center;
+height:100%;
+}
+.img-center img{
+height:auto;
+max-height:100%;
+max-width:100%;
+}
+.progress-section {
+position:fixed;
+top:4.5em;
+display:flex;
+align-items:center;
+height:6.5em;
+width:100%;
+padding: 1em;
+overflow-x:auto;
+overflow: -moz-scrollbars-none;
+-ms-overflow-style: none;
+background-color:var(--light-gray);
+z-index:9999;
+}
+.progress-section::-webkit-scrollbar{
+width: 0 !important;
+}
+.card{
+position:relative;
+min-height:9em;
+flex: 1 1 30%;
+border:none;
+outline:0;
+cursor:initial;
+border-radius:0.25em;
+margin-right:0.5em;
+padding:1em;
+}
+.card > button{
+position:relative;
+bottom:-2em;
+float:right;
+margin-bottom:2em;
+}
+.card.btn.light:hover,.card.btn.white:hover{
+background-color:var(--active-blue);
+color:var(--white);
+}
+.card.small{
+flex: 1 1 100%;
+min-height:5.5em;
+max-height:7em;
+padding:0.4em;
+overflow:hidden;
+}
+.card.small > .img-center img{
+height:2em;
+width:2em;
+}
+.overlay, .menuoverlay{
+position:absolute;
+width:100%;
+top:4em;
+left:0;
+min-height:calc(100% - 4em);
+max-height:calc(100% - 4em);
+height:100%;
+background-color:var(--white);
+animation-name: animate-pop;
+animation-duration: 0.3s;
+z-index:9998;
+overflow:hidden;
+}
+@keyframes animate-pop {
+0% {
+opacity: 0;
+transform: scale(0.95, 0.95);
+}
+100% {
+opacity: 1;
+transform: scale(1, 1);
+}
+}
+.menuoverlay{
+z-index:9999;
+}
+.slide{
+position:absolute;
+width:100%;
+top:4em;
+left:0;
+height:calc(100% - 7em);
+z-index:9998;
+overflow:hidden;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-b371f4f8-439a-4366-bd3f-e679832b1249' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 153.03 164'%3E%3Cg id='uuid-c3814362-47da-4fcc-91ab-8e15292c23ab'%3E%3Cpolygon points='153.03 50.53 142.03 31.47 88.01 62.66 88.01 0 65.01 0 65.01 62.66 11 31.47 0 50.53 54.51 82 0 113.47 11 132.53 65.01 101.34 65.01 164 88.01 164 88.01 101.34 142.03 132.53 153.03 113.47 98.51 82 153.03 50.53'/%3E%3C/g%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-position:10% 50%;
+background-size:10em 10em;
+}
+.slide > .columns{
+height:100%;
+}
+button.invisible{
+visibility:hidden;
+}
+button.visible{
+visibility:visible;
+}
+.overlay.hide,.menuoverlay.hide,.columns.hide,.column.hide,.container.hide,.slide.hide,.row.hide, button.hide{
+display:none;
+}
+.overlay.show,.menuoverlay.show,.columns.show,.column.show,.container.show,.slide.show,.row.show, button.show{
+display:flex;
+}
+.column.overflow {
+overflow-y:auto;
+overflow-x:none;
+}
+.column.overflow-icon {
+overflow-y:auto;
+overflow-x:hidden;
+}
+.overflow-icon.scroll::before{
+content:'\00A0';
+display:block;
+position:sticky;
+top:0%;
+float:right;
+width:2em;
+height:2.7em;
+background-color:var(--dark-gray);
+opacity:20%;
+border-radius:0.25em;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1200pt' height='1200pt' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff'%3E%3Cpath d='m838.26 849.24c-3.5195-3.5117-8.2852-5.4883-13.258-5.4883s-9.7383 1.9766-13.258 5.4883l-211.74 211.75-211.74-211.74v-0.003906c-4.7656-4.5977-11.598-6.3438-17.984-4.5938-6.3867 1.75-11.375 6.7383-13.125 13.125-1.75 6.3867-0.003907 13.219 4.5938 17.984l225 225c3.5195 3.5117 8.2852 5.4883 13.258 5.4883s9.7383-1.9766 13.258-5.4883l225-225c3.5117-3.5195 5.4883-8.2852 5.4883-13.258s-1.9766-9.7383-5.4883-13.258z'/%3E%3Cpath d='m838.26 324.24-225-225c-3.5195-3.5117-8.2852-5.4883-13.258-5.4883s-9.7383 1.9766-13.258 5.4883l-225 225c-4.5977 4.7656-6.3438 11.598-4.5938 17.984 1.75 6.3867 6.7383 11.375 13.125 13.125 6.3867 1.75 13.219 0.003907 17.984-4.5938l211.74-211.75 211.74 211.74v0.003906c4.7656 4.5977 11.598 6.3438 17.984 4.5938 6.3867-1.75 11.375-6.7383 13.125-13.125 1.75-6.3867 0.003907-13.219-4.5938-17.984z'/%3E%3Cpath d='m731.25 600c0-34.809-13.828-68.195-38.441-92.809-24.613-24.613-58-38.441-92.809-38.441s-68.195 13.828-92.809 38.441c-24.613 24.613-38.441 58-38.441 92.809s13.828 68.195 38.441 92.809c24.613 24.613 58 38.441 92.809 38.441 34.797-0.042969 68.156-13.883 92.762-38.488s38.445-57.965 38.488-92.762zm-225 0c0-24.863 9.8789-48.711 27.457-66.293 17.582-17.578 41.43-27.457 66.293-27.457s48.711 9.8789 66.293 27.457c17.578 17.582 27.457 41.43 27.457 66.293s-9.8789 48.711-27.457 66.293c-17.582 17.578-41.43 27.457-66.293 27.457-24.855-0.027344-48.688-9.9102-66.262-27.488-17.578-17.574-27.461-41.406-27.488-66.262z'/%3E%3C/g%3E%3C/svg%3E%0A");
+background-repeat:no-repeat;
+background-position:50% 50%;
+background-size:contain;
+z-index:9999;
+}
+.drag{
+position:relative;
+height:auto;
+min-height:100%;
+}
+footer {
+position:fixed;
+bottom:0px;
+display:flex;
+align-items: center;
+height:3em;
+width:100%;
+background-color:var(--white);
+}
+.fixed{
+flex-shrink:0;
+flex-grow:0;
+}
+@media only screen and (max-width: 768px){
+.columns {
+flex-direction:column;
+max-height:100%;
+height:100%;
+}
+.column.img-center img{
+max-width:auto;
+max-height:100%;
+}
+.row.wrap{
+flex-wrap:wrap;
+}
+.row.wrap > .card{
+margin-bottom:0.5em;
+margin-right:0em;
+}
+}
+@media only screen and (max-width: 780px){
+.not-mobile{
+display:none;
+}
+#section-name{
+padding:0.5em 1em 0.5em 1em;
+}
+}
+@media only screen and (max-width: 350px){
+.back::after{
+content:'';
+}
+.back::before{
+margin-right:0px;
+}
+}
+.ui-draggable-dragging{
+opacity:0.7;
+background-color:var(--active-blue);
+color:var(--white);
+z-index:9999!important;
+}
+#torch-with-flame.ui-draggable-dragging{
+opacity:1;
+background-color:transparent!important;
+color:var(--white);
+z-index:9999!important;
+}
+.normal{
+background-color:#555555;
+}
+.change{
+background-color:var(--light-gray);
+border:1px dashed var(--medium-gray);
+border-radius:4px;
+}
+.over{
+background-color:var(--light-gray);
+opacity:0.8;
+}
+.out{
+background-color:var(--white);
+}
+.complete{
+background-color:var(--success); !important;
+border:0;
+border-radius:0;
+}
+.error{
+background-color:var(--error);
+border:0;
+border-radius:0;
+}
+#dropzone{
+z-index:2;
+}
+.dropped{
+z-index:999;
+background-color:var(--black);
+color:var(--white);
+opacity:85%;
+}
+span[name=gloves]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2 %7B fill: none; %7D .cls-1, .cls-2, .cls-3 %7B stroke: %23231f20; %7D .cls-1, .cls-3 %7B stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px; %7D .cls-2 %7B stroke-width: 2px; %7D .cls-3 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cg%3E%3Cpath class='cls-2' d='M61,42.37l-21.97,12.68c-1.11,.64-1.8,1.83-1.8,3.11l-20.31-11.72c-.54-.31-.81-.72-.81-1.13v-2.07c0-.41,.27-.82,.81-1.13l19.85-11.46c1.08-.62,2.83-.62,3.91,0l20.31,11.73Z'/%3E%3Cpath class='cls-2' d='M80.89,53.85l-5.92,3.42-5.93,3.42-5.92,3.42-3.16,1.77,.09,1.23c0,.55-.32,1.09-.94,1.53-.09,.07-.18,.13-.28,.19-.18,.1-.38,.2-.59,.28-.3,.12-.62,.21-.94,.28-1.75,.37-3.78,.03-4.89-.9l-15.16-10.34c0-1.28,.69-2.47,1.8-3.11l21.97-12.68,19.89,11.49Z'/%3E%3Cpath class='cls-2' d='M95.73,63.42v2.07c0,.62-.41,1.24-1.23,1.71-.41,.24-.89,.42-1.41,.54l-4.52-2.61-13.61-7.86,5.92-3.42h0l13.61,7.86c.82,.47,1.23,1.1,1.23,1.71Z'/%3E%3Cpath class='cls-2' d='M94.43,69.52v2.07c0,.62-.41,1.24-1.23,1.71-.73,.42-1.66,.65-2.62,.7-.06-.57-.46-1.13-1.21-1.57l-2.09-1.21-18.24-10.53,5.93-3.42,13.61,7.86,4.52,2.61,.11,.06c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3Cpath class='cls-2' d='M90.59,74.15v2.07c0,.62-.41,1.24-1.22,1.71-1.64,.95-4.29,.95-5.93,0l-.86-.5v-1.07c0-.62-.41-1.24-1.23-1.71l-18.24-10.53,5.92-3.42,18.24,10.53,2.09,1.21c.75,.44,1.15,1,1.21,1.57,.01,.05,.01,.1,.01,.14Z'/%3E%3Cpath class='cls-2' d='M82.58,76.37v2.08c0,.62-.41,1.23-1.23,1.7-1.64,.95-4.29,.95-5.92,0l-18.14-10.75c.32-.06,.64-.16,.94-.28,.21-.09,.41-.18,.59-.28,.1-.06,.2-.12,.28-.19,.62-.44,.94-.98,.94-1.53,0-.51-.03-.87-.09-1.23l3.16-1.77,18.24,10.53c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3Cpath class='cls-2' d='M60.04,67.12l-.09-1.23c.06,.36,.09,.72,.09,1.23Z'/%3E%3Cpath id='Axo_panel' data-name='Axo panel' class='cls-2' d='M49.9,56.34l9.4,7.9c.1,.09,.47,.51,.64,1.59'/%3E%3Cline id='Axo_panel-2' data-name='Axo panel' class='cls-2' x1='59.1' y1='68.65' x2='75.42' y2='78.07'/%3E%3Cline id='Axo_base' data-name='Axo base' class='cls-2' x1='75.42' y1='78.07' x2='59.1' y2='68.65'/%3E%3Cpath class='cls-2' d='M41.1,58.16s11.34,8.2,11.45,8.2'/%3E%3C/g%3E%3Cg%3E%3Cpath class='cls-3' d='M61,42.37l-21.97,12.68c-1.11,.64-1.8,1.83-1.8,3.11l-20.31-11.72c-.54-.31-.81-.72-.81-1.13v-2.07c0-.41,.27-.82,.81-1.13l19.85-11.46c1.08-.62,2.83-.62,3.91,0l20.31,11.73Z'/%3E%3Cpath class='cls-3' d='M80.89,53.85l-5.92,3.42-5.93,3.42-5.92,3.42-3.16,1.77,.09,1.23c0,.55-.32,1.09-.94,1.53-.09,.07-.18,.13-.28,.19-.18,.1-.38,.2-.59,.28-.3,.12-.62,.21-.94,.28-1.75,.37-3.78,.03-4.89-.9l-15.16-10.34c0-1.28,.69-2.47,1.8-3.11l21.97-12.68,19.89,11.49Z'/%3E%3Cpath class='cls-3' d='M95.73,63.42v2.07c0,.62-.41,1.24-1.23,1.71-.41,.24-.89,.42-1.41,.54l-4.52-2.61-13.61-7.86,5.92-3.42h0l13.61,7.86c.82,.47,1.23,1.1,1.23,1.71Z'/%3E%3Cpath class='cls-3' d='M94.43,69.52v2.07c0,.62-.41,1.24-1.23,1.71-.73,.42-1.66,.65-2.62,.7-.06-.57-.46-1.13-1.21-1.57l-2.09-1.21-18.24-10.53,5.93-3.42,13.61,7.86,4.52,2.61,.11,.06c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3Cpath class='cls-3' d='M90.59,74.15v2.07c0,.62-.41,1.24-1.22,1.71-1.64,.95-4.29,.95-5.93,0l-.86-.5v-1.07c0-.62-.41-1.24-1.23-1.71l-18.24-10.53,5.92-3.42,18.24,10.53,2.09,1.21c.75,.44,1.15,1,1.21,1.57,.01,.05,.01,.1,.01,.14Z'/%3E%3Cpath class='cls-3' d='M82.58,76.37v2.08c0,.62-.41,1.23-1.23,1.7-1.64,.95-4.29,.95-5.92,0l-18.14-10.75c.32-.06,.64-.16,.94-.28,.21-.09,.41-.18,.59-.28,.1-.06,.2-.12,.28-.19,.62-.44,.94-.98,.94-1.53,0-.51-.03-.87-.09-1.23l3.16-1.77,18.24,10.53c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3Cpath class='cls-3' d='M60.04,67.12l-.09-1.23c.06,.36,.09,.72,.09,1.23Z'/%3E%3Cpath id='Axo_panel-3' data-name='Axo panel' class='cls-3' d='M49.9,56.34l9.4,7.9c.1,.09,.47,.51,.64,1.59'/%3E%3Cline id='Axo_panel-4' data-name='Axo panel' class='cls-1' x1='59.1' y1='68.65' x2='75.42' y2='78.07'/%3E%3Cline id='Axo_base-2' data-name='Axo base' class='cls-3' x1='75.42' y1='78.07' x2='59.1' y2='68.65'/%3E%3Cpath class='cls-3' d='M41.1,58.16s11.34,8.2,11.45,8.2'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cg%3E%3Cg id='Axo_Extrusion' data-name='Axo Extrusion'%3E%3Cg id='Axo_cap' data-name='Axo cap'%3E%3Cpath class='cls-2' d='M49.04,43.34l-22.32,12.88c-.89,.52-1.44,1.47-1.44,2.49v.55L4.97,47.54c-.54-.31-.81-.72-.81-1.13v-2.21c0-.4,.27-.81,.81-1.12l19.85-11.46c1.08-.62,2.83-.62,3.91,0l20.31,11.73Z'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-2' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_' data-name='Axo Surface*'%3E%3Cpath class='cls-2' d='M83.77,64.39v2.21c0,.62-.41,1.24-1.23,1.71-.38,.22-.95,.27-1.41,.39l.12,.07c.82,.47,1.23,1.1,1.23,1.72v2.21c0,.62-.41,1.24-1.23,1.71-.73,.42-1.66,.65-2.61,.7v2.21c0,.62-.41,1.24-1.23,1.72-1.63,.94-4.29,.94-5.92,0l-.87-.47v.97c0,.62-.4,1.24-1.22,1.71-1.64,.95-4.29,.95-5.93,0l-16.32-9.42-19.29-10.45-2.58-2.11v-.55c0-1.03,.55-1.98,1.44-2.49l22.32-12.88,19.9,11.49,13.61,7.86c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3C/g%3E%3Cg id='Axo_Surface' data-name='Axo Surface'%3E%3Cpath id='Axo_panel-5' data-name='Axo panel' class='cls-2' d='M80.8,66.71c-1.43,.25-3.05,.05-4.17-.61l-13.61-7.86'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-3' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-2' data-name='Axo Surface*'%3E%3Cpath class='cls-2' d='M47.15,71.83c-.09,.06-.19,.12-.29,.18-.18,.11-.38,.2-.6,.29-1.9,.76-4.51,.48-5.82-.62l-12.59-10.3,3.66,2.1,15.63,8.35Z'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-4' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface-2' data-name='Axo Surface'%3E%3Cpolyline class='cls-2' points='63.01 58.25 76.62 66.11 81.13 68.71'/%3E%3C/g%3E%3Cg id='Axo_Surface_-3' data-name='Axo Surface*'%3E%3Cpath id='Axo_panel-6' data-name='Axo panel' class='cls-2' d='M57.09,61.67l18.24,10.53c1.17,.67,2.85,.87,4.31,.58'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-5' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-4' data-name='Axo Surface*'%3E%3Cpath class='cls-2' d='M78.64,75.11c0-.62-.41-1.24-1.22-1.71l-2.09-1.21-18.24-10.53'/%3E%3C/g%3E%3Cg id='Axo_Surface-3' data-name='Axo Surface'%3E%3Cpath id='Axo_panel-7' data-name='Axo panel' class='cls-2' d='M72.87,77.36c-.5-.12-.98-.3-1.39-.53l-2.09-1.21-18.24-10.53'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-6' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-5' data-name='Axo Surface*'%3E%3Cpath class='cls-2' d='M70.62,78.57v-1.24c0-.62-.41-1.24-1.22-1.71l-18.24-10.53'/%3E%3C/g%3E%3Cg id='Axo_Surface-4' data-name='Axo Surface'%3E%3Cline class='cls-2' x1='70.62' y1='78.57' x2='70.62' y2='77.33'/%3E%3Cpath id='Axo_panel-8' data-name='Axo panel' class='cls-2' d='M65.94,79.74c-.9-.06-1.77-.29-2.47-.69l-16.32-9.42'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cg id='Axo_Extrusion-7' data-name='Axo Extrusion'%3E%3Cg id='Axo_cap-2' data-name='Axo cap'%3E%3Cpath class='cls-3' d='M49.04,43.34l-22.32,12.88c-.89,.52-1.44,1.47-1.44,2.49v.55L4.97,47.54c-.54-.31-.81-.72-.81-1.13v-2.21c0-.4,.27-.81,.81-1.12l19.85-11.46c1.08-.62,2.83-.62,3.91,0l20.31,11.73Z'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-8' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-6' data-name='Axo Surface*'%3E%3Cpath class='cls-3' d='M83.77,64.39v2.21c0,.62-.41,1.24-1.23,1.71-.38,.22-.95,.27-1.41,.39l.12,.07c.82,.47,1.23,1.1,1.23,1.72v2.21c0,.62-.41,1.24-1.23,1.71-.73,.42-1.66,.65-2.61,.7v2.21c0,.62-.41,1.24-1.23,1.72-1.63,.94-4.29,.94-5.92,0l-.87-.47v.97c0,.62-.4,1.24-1.22,1.71-1.64,.95-4.29,.95-5.93,0l-16.32-9.42-19.29-10.45-2.58-2.11v-.55c0-1.03,.55-1.98,1.44-2.49l22.32-12.88,19.9,11.49,13.61,7.86c.82,.47,1.23,1.09,1.23,1.71Z'/%3E%3C/g%3E%3Cg id='Axo_Surface-5' data-name='Axo Surface'%3E%3Cpath id='Axo_panel-9' data-name='Axo panel' class='cls-3' d='M80.8,66.71c-1.43,.25-3.05,.05-4.17-.61l-13.61-7.86'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-9' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-7' data-name='Axo Surface*'%3E%3Cpath class='cls-3' d='M47.15,71.83c-.09,.06-.19,.12-.29,.18-.18,.11-.38,.2-.6,.29-1.9,.76-4.51,.48-5.82-.62l-12.59-10.3,3.66,2.1,15.63,8.35Z'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-10' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface-6' data-name='Axo Surface'%3E%3Cpolyline class='cls-1' points='63.01 58.25 76.62 66.11 81.13 68.71'/%3E%3C/g%3E%3Cg id='Axo_Surface_-8' data-name='Axo Surface*'%3E%3Cpath id='Axo_panel-10' data-name='Axo panel' class='cls-1' d='M57.09,61.67l18.24,10.53c1.17,.67,2.85,.87,4.31,.58'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-11' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-9' data-name='Axo Surface*'%3E%3Cpath class='cls-1' d='M78.64,75.11c0-.62-.41-1.24-1.22-1.71l-2.09-1.21-18.24-10.53'/%3E%3C/g%3E%3Cg id='Axo_Surface-7' data-name='Axo Surface'%3E%3Cpath id='Axo_panel-11' data-name='Axo panel' class='cls-1' d='M72.87,77.36c-.5-.12-.98-.3-1.39-.53l-2.09-1.21-18.24-10.53'/%3E%3C/g%3E%3C/g%3E%3Cg id='Axo_Extrusion-12' data-name='Axo Extrusion'%3E%3Cg id='Axo_Surface_-10' data-name='Axo Surface*'%3E%3Cpath class='cls-1' d='M70.62,78.57v-1.24c0-.62-.41-1.24-1.22-1.71l-18.24-10.53'/%3E%3C/g%3E%3Cg id='Axo_Surface-8' data-name='Axo Surface'%3E%3Cline class='cls-1' x1='70.62' y1='78.57' x2='70.62' y2='77.33'/%3E%3Cpath id='Axo_panel-12' data-name='Axo panel' class='cls-1' d='M65.94,79.74c-.9-.06-1.77-.29-2.47-.69l-16.32-9.42'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+span[name=eyeprotection]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2 %7B stroke-width: .5px; %7D .cls-1, .cls-2, .cls-3 %7B stroke: %23231f20; stroke-linecap: round; stroke-linejoin: round; %7D .cls-1, .cls-3 %7B fill: none; %7D .cls-2 %7B fill: %23fff; %7D .cls-3 %7B stroke-width: 2px; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class='cls-3' d='M45.39,64.31v12.43s-23.61-22.59-27.9-25.07c-3.62-2.09-6.42-3.2-6.87-.06-.27,1.83-3,.99-3-2.17,0-7.08,7.91-2.37,20.77,5.06,4.19,2.42,8.59,4.96,11.87,6.85h.01c3.06,1.76,5.13,2.96,5.13,2.96Z'/%3E%3Cpath class='cls-3' d='M45.39,64.31v12.43s-23.61-22.59-27.9-25.07c-3.62-2.09-6.42-3.2-6.87-.06-.27,1.83-3,.99-3-2.17,0-7.08,7.91-2.37,20.77,5.06,4.19,2.42,8.59,4.96,11.87,6.85h.01c3.06,1.76,5.13,2.96,5.13,2.96Z'/%3E%3Cpath class='cls-3' d='M84.4,37.39c-1.03,2.5-2.58,4.77-4.46,6.81-7.25-6.78-17.01-15.74-19.62-17.25-3.63-2.09-6.44-3.2-6.88-.07-.26,1.84-3,1-3-2.16,0-7.08,7.92-2.37,20.77,5.05,4.81,2.77,9.87,5.69,13.2,7.62Z'/%3E%3Cpath class='cls-3' d='M88.21,39.59v11.5c0,6.12-1.77,10.73-3.44,13.21-2.03,3.05-4.84,4.04-6.57,1.17-1.72-2.88-2.36-5.32-4.12-4.08-1.77,1.23-2.81,6.81-4.36,11.01-1.54,4.2-3.71,7.21-12.56,9.02-8.84,1.81-11.77-1.55-11.77-4.69v-12.43c7.78-1.37,37.26-14.69,42.82-24.72Z'/%3E%3Cpath class='cls-3' d='M88.21,39.59c-5.56,10.03-35.03,23.35-42.82,24.72,0,0-2.08-1.2-5.13-2.96,.7-.1,27.49-4.02,39.68-17.15,1.89-2.04,3.43-4.31,4.46-6.81,2.32,1.34,3.81,2.2,3.81,2.2Z'/%3E%3Cpath class='cls-3' d='M40.26,61.35h-.01'/%3E%3C/g%3E%3Cg%3E%3Cpath class='cls-2' d='M45.39,64.31v12.43s-23.61-22.59-27.9-25.07c-3.62-2.09-6.42-3.2-6.87-.06-.27,1.83-3,.99-3-2.17,0-7.08,7.91-2.37,20.77,5.06,4.19,2.42,8.59,4.96,11.87,6.85h.01c3.06,1.76,5.13,2.96,5.13,2.96Z'/%3E%3Cpath class='cls-2' d='M45.39,64.31v12.43s-23.61-22.59-27.9-25.07c-3.62-2.09-6.42-3.2-6.87-.06-.27,1.83-3,.99-3-2.17,0-7.08,7.91-2.37,20.77,5.06,4.19,2.42,8.59,4.96,11.87,6.85h.01c3.06,1.76,5.13,2.96,5.13,2.96Z'/%3E%3Cpath class='cls-2' d='M84.4,37.39c-1.03,2.5-2.58,4.77-4.46,6.81-7.25-6.78-17.01-15.74-19.62-17.25-3.63-2.09-6.44-3.2-6.88-.07-.26,1.84-3,1-3-2.16,0-7.08,7.92-2.37,20.77,5.05,4.81,2.77,9.87,5.69,13.2,7.62Z'/%3E%3Cpath class='cls-2' d='M88.21,39.59v11.5c0,6.12-1.77,10.73-3.44,13.21-2.03,3.05-4.84,4.04-6.57,1.17-1.72-2.88-2.36-5.32-4.12-4.08-1.77,1.23-2.81,6.81-4.36,11.01-1.54,4.2-3.71,7.21-12.56,9.02-8.84,1.81-11.77-1.55-11.77-4.69v-12.43c7.78-1.37,37.26-14.69,42.82-24.72Z'/%3E%3Cpath class='cls-2' d='M88.21,39.59c-5.56,10.03-35.03,23.35-42.82,24.72,0,0-2.08-1.2-5.13-2.96,.7-.1,27.49-4.02,39.68-17.15,1.89-2.04,3.43-4.31,4.46-6.81,2.32,1.34,3.81,2.2,3.81,2.2Z'/%3E%3Cpath class='cls-1' d='M40.26,61.35h-.01'/%3E%3C/g%3E%3C/svg%3E");
+}
+span[name=propanetorch]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 %7B stroke: %23231f20; %7D .cls-1, .cls-2, .cls-4, .cls-5 %7B stroke-linecap: round; stroke-linejoin: round; %7D .cls-1, .cls-4 %7B fill: %23fff; %7D .cls-1, .cls-5 %7B stroke-width: .19px; %7D .cls-2, .cls-3, .cls-5 %7B fill: none; %7D .cls-2, .cls-4 %7B stroke-width: .5px; %7D .cls-3 %7B stroke-width: 1.96px; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath id='Axo_base' data-name='Axo base' class='cls-3' d='M55.66,55.84c0-2.75-3.86-5.97-8.62-5.97s-8.62,3.22-8.62,5.97v37.15c0,2.75,3.86,4.98,8.62,4.98s8.62-2.23,8.62-4.98V55.84Z'/%3E%3Cpath id='Axo_panel' data-name='Axo panel' class='cls-3' d='M42.41,33.17l-1.01-.59c-.34-.19-.54-.61-.54-1.2,0-1.19,.83-2.63,1.86-3.22,.51-.3,.98-.32,1.32-.13l1.01,.59'/%3E%3Cpath id='Axo_base-2' data-name='Axo base' class='cls-3' d='M42.41,33.17c-.34-.19-.54-.61-.54-1.2,0-1.19,.83-2.63,1.86-3.22,.51-.3,.98-.32,1.32-.13'/%3E%3Cpath id='Axo_base-3' data-name='Axo base' class='cls-3' d='M45.04,28.61c.34,.19,.54,.61,.54,1.2,0,1.19-.83,2.63-1.86,3.22-.51,.3-.98,.32-1.32,.13'/%3E%3Cpath id='Axo_panel-2' data-name='Axo panel' class='cls-3' d='M43.2,31.79c-.13-.08-.22-.24-.22-.48,0-.47,.33-1.04,.74-1.28,.2-.12,.39-.13,.52-.05'/%3E%3Cpath id='Axo_panel-3' data-name='Axo panel' class='cls-3' d='M44.25,29.99l2.12,1.22c-.13-.08-.32-.07-.52,.05-.41,.24-.74,.81-.74,1.28,0,.24,.08,.4,.22,.48l-2.12-1.22'/%3E%3Cpath id='Axo_base-4' data-name='Axo base' class='cls-3' d='M46.36,31.21c.13,.08,.22,.24,.22,.48,0,.47-.33,1.04-.74,1.28-.2,.12-.39,.13-.52,.05s-.22-.24-.22-.48c0-.47,.33-1.04,.74-1.28,.2-.12,.39-.13,.52-.05Z'/%3E%3Cpath id='Axo_panel-4' data-name='Axo panel' class='cls-3' d='M39.04,57.67c1.27,1.84,4.38,3.14,8.01,3.14s6.57-1.23,7.9-2.98'/%3E%3Cpath id='Axo_panel-5' data-name='Axo panel' class='cls-3' d='M45,49.77c0,.65,.91,1.18,2.04,1.18s2.04-.53,2.04-1.18v2.17c0,.65-.91,1.18-2.04,1.18s-2.04-.53-2.04-1.18v-2.17Z'/%3E%3Cellipse id='Axo_base-5' data-name='Axo base' class='cls-3' cx='47.05' cy='49.77' rx='2.04' ry='1.18'/%3E%3Cpath id='Axo_panel-6' data-name='Axo panel' class='cls-3' d='M52.13,44.97v4.83c0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-2.66-1.53c-.22-.13-.33-.35-.33-.58v-8.42'/%3E%3Cpath id='Axo_panel-7' data-name='Axo panel' class='cls-3' d='M44.08,40.31v-6.17c0,.22,.11,.45,.33,.58l6.08,3.51c1.06,.61,2.34,.79,3.52,.43,1.03-.32,1.55-.89,1.55-1.46v6.17c0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-2.15-1.24'/%3E%3Cpath id='Axo_base-6' data-name='Axo base' class='cls-3' d='M44.08,34.14c0-.22,.11-.45,.33-.58l1.94-1.12c.67-.39,1.5-.39,2.17,0l6.21,3.58c.56,.32,.83,.74,.83,1.16,0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-6.08-3.51c-.22-.13-.33-.35-.33-.58Z'/%3E%3Cpolygon id='Axo_base-7' data-name='Axo base' class='cls-3' points='55.45 39.42 56.24 44.14 55.05 44.83 53.72 44.06 53.72 39.8 54.91 39.11 55.45 39.42'/%3E%3Cpath id='Axo_panel-8' data-name='Axo panel' class='cls-3' d='M45.07,32.13c0,.85,1.19,1.54,2.66,1.54s2.66-.69,2.66-1.54v1.9c0,.85-1.19,1.54-2.66,1.54s-2.66-.69-2.66-1.54v-1.9Z'/%3E%3Cellipse id='Axo_base-8' data-name='Axo base' class='cls-3' cx='47.73' cy='32.13' rx='2.66' ry='1.54'/%3E%3Cpath id='Axo_panel-9' data-name='Axo panel' class='cls-3' d='M45.92,31.91v-1.84c0,.58,.81,1.05,1.81,1.05s1.81-.47,1.81-1.05v1.84'/%3E%3Cpath id='Axo_panel-10' data-name='Axo panel' class='cls-3' d='M49.55,31.91c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05'/%3E%3Cellipse id='Axo_base-9' data-name='Axo base' class='cls-3' cx='47.73' cy='30.07' rx='1.81' ry='1.05'/%3E%3Cpath id='Axo_panel-11' data-name='Axo panel' class='cls-3' d='M46.41,29.84v-1.34c0,.42,.59,.76,1.32,.76s1.32-.34,1.32-.76v1.34'/%3E%3Cpath id='Axo_panel-12' data-name='Axo panel' class='cls-3' d='M49.06,29.84c0,.42-.59,.76-1.32,.76s-1.32-.34-1.32-.76'/%3E%3Cellipse id='Axo_base-10' data-name='Axo base' class='cls-3' cx='47.73' cy='28.5' rx='1.32' ry='.76'/%3E%3Cpath id='Axo_panel-13' data-name='Axo panel' class='cls-3' d='M49.55,26.49v1.84c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05v-1.84'/%3E%3Cpath id='Axo_base-11' data-name='Axo base' class='cls-3' d='M49.55,26.49c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05'/%3E%3Cpath id='Axo_base-12' data-name='Axo base' class='cls-3' d='M45.92,26.49c0-.58,.81-1.05,1.81-1.05s1.81,.47,1.81,1.05'/%3E%3Cpath class='cls-3' d='M46.41,26.16v-6.28c0-2.15,.82-4.23,2.29-5.8l.35-.37,7.41-7.9c-.34,.37-.19,1.07,.34,1.57,.53,.5,1.24,.61,1.59,.24l-8.28,8.83c-.68,.72-1.06,1.68-1.06,2.67v7.04'/%3E%3Cpath class='cls-3' d='M49.06,26.16c0,.42-.59,.76-1.32,.76s-1.32-.34-1.32-.76'/%3E%3Cellipse id='Axo_base-13' data-name='Axo base' class='cls-3' cx='57.43' cy='6.72' rx='.76' ry='1.32' transform='translate(13.23 44) rotate(-46.82)'/%3E%3Cpath id='Axo_panel-14' data-name='Axo panel' class='cls-3' d='M58.58,2.3c-.48,.51-.15,1.59,.73,2.42s1.98,1.08,2.46,.58l-2.9,3.09c-.48,.51-1.58,.25-2.46-.58s-1.21-1.91-.73-2.42l2.9-3.09Z'/%3E%3Cpath id='Axo_base-14' data-name='Axo base' class='cls-3' d='M61.77,5.29c-.48,.51-1.58,.25-2.46-.58s-1.21-1.91-.73-2.42'/%3E%3Cpath id='Axo_base-15' data-name='Axo base' class='cls-3' d='M58.58,2.3c.48-.51,1.58-.25,2.46,.58s1.21,1.91,.73,2.42'/%3E%3Cellipse id='Axo_base-16' data-name='Axo base' class='cls-3' cx='60.18' cy='3.79' rx='.76' ry='1.32' transform='translate(16.23 45.08) rotate(-46.82)'/%3E%3Cpolyline class='cls-3' points='54 39.94 54.38 40.21 55.05 44.48'/%3E%3Cpath class='cls-3' d='M45,82.12c0,1.22-.99,1.82-2.21,1.35s-2.21-1.86-2.21-3.08,2.21-8.96,2.21-8.96c0,0,2.21,9.46,2.21,10.69Z'/%3E%3Cpath class='cls-3' d='M43.39,81.74c0,.56-.27,.92-.6,.79s-.6-.69-.6-1.26,.6-4.3,.6-4.3c0,0,.6,4.21,.6,4.77Z'/%3E%3C/g%3E%3Cg%3E%3Cpath id='Axo_base-17' data-name='Axo base' class='cls-4' d='M55.66,55.84c0-2.75-3.86-5.97-8.62-5.97s-8.62,3.22-8.62,5.97v37.15c0,2.75,3.86,4.98,8.62,4.98s8.62-2.23,8.62-4.98V55.84Z'/%3E%3Cpath id='Axo_panel-15' data-name='Axo panel' class='cls-4' d='M42.41,33.17l-1.01-.59c-.34-.19-.54-.61-.54-1.2,0-1.19,.83-2.63,1.86-3.22,.51-.3,.98-.32,1.32-.13l1.01,.59'/%3E%3Cpath id='Axo_base-18' data-name='Axo base' class='cls-5' d='M42.41,33.17c-.34-.19-.54-.61-.54-1.2,0-1.19,.83-2.63,1.86-3.22,.51-.3,.98-.32,1.32-.13'/%3E%3Cpath id='Axo_base-19' data-name='Axo base' class='cls-4' d='M45.04,28.61c.34,.19,.54,.61,.54,1.2,0,1.19-.83,2.63-1.86,3.22-.51,.3-.98,.32-1.32,.13'/%3E%3Cpath id='Axo_panel-16' data-name='Axo panel' class='cls-5' d='M43.2,31.79c-.13-.08-.22-.24-.22-.48,0-.47,.33-1.04,.74-1.28,.2-.12,.39-.13,.52-.05'/%3E%3Cpath id='Axo_panel-17' data-name='Axo panel' class='cls-4' d='M44.25,29.99l2.12,1.22c-.13-.08-.32-.07-.52,.05-.41,.24-.74,.81-.74,1.28,0,.24,.08,.4,.22,.48l-2.12-1.22'/%3E%3Cpath id='Axo_base-20' data-name='Axo base' class='cls-4' d='M46.36,31.21c.13,.08,.22,.24,.22,.48,0,.47-.33,1.04-.74,1.28-.2,.12-.39,.13-.52,.05s-.22-.24-.22-.48c0-.47,.33-1.04,.74-1.28,.2-.12,.39-.13,.52-.05Z'/%3E%3Cpath id='Axo_panel-18' data-name='Axo panel' class='cls-2' d='M39.04,57.67c1.27,1.84,4.38,3.14,8.01,3.14s6.57-1.23,7.9-2.98'/%3E%3Cpath id='Axo_panel-19' data-name='Axo panel' class='cls-4' d='M45,49.77c0,.65,.91,1.18,2.04,1.18s2.04-.53,2.04-1.18v2.17c0,.65-.91,1.18-2.04,1.18s-2.04-.53-2.04-1.18v-2.17Z'/%3E%3Cellipse id='Axo_base-21' data-name='Axo base' class='cls-4' cx='47.05' cy='49.77' rx='2.04' ry='1.18'/%3E%3Cpath id='Axo_panel-20' data-name='Axo panel' class='cls-4' d='M52.13,44.97v4.83c0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-2.66-1.53c-.22-.13-.33-.35-.33-.58v-8.42'/%3E%3Cpath id='Axo_panel-21' data-name='Axo panel' class='cls-4' d='M44.08,40.31v-6.17c0,.22,.11,.45,.33,.58l6.08,3.51c1.06,.61,2.34,.79,3.52,.43,1.03-.32,1.55-.89,1.55-1.46v6.17c0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-2.15-1.24'/%3E%3Cpath id='Axo_base-22' data-name='Axo base' class='cls-4' d='M44.08,34.14c0-.22,.11-.45,.33-.58l1.94-1.12c.67-.39,1.5-.39,2.17,0l6.21,3.58c.56,.32,.83,.74,.83,1.16,0,.57-.52,1.14-1.55,1.46-1.17,.37-2.45,.19-3.52-.43l-6.08-3.51c-.22-.13-.33-.35-.33-.58Z'/%3E%3Cpolygon id='Axo_base-23' data-name='Axo base' class='cls-4' points='55.45 39.42 56.24 44.14 55.05 44.83 53.72 44.06 53.72 39.8 54.91 39.11 55.45 39.42'/%3E%3Cpath id='Axo_panel-22' data-name='Axo panel' class='cls-4' d='M45.07,32.13c0,.85,1.19,1.54,2.66,1.54s2.66-.69,2.66-1.54v1.9c0,.85-1.19,1.54-2.66,1.54s-2.66-.69-2.66-1.54v-1.9Z'/%3E%3Cellipse id='Axo_base-24' data-name='Axo base' class='cls-4' cx='47.73' cy='32.13' rx='2.66' ry='1.54'/%3E%3Cpath id='Axo_panel-23' data-name='Axo panel' class='cls-4' d='M45.92,31.91v-1.84c0,.58,.81,1.05,1.81,1.05s1.81-.47,1.81-1.05v1.84'/%3E%3Cpath id='Axo_panel-24' data-name='Axo panel' class='cls-5' d='M49.55,31.91c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05'/%3E%3Cellipse id='Axo_base-25' data-name='Axo base' class='cls-4' cx='47.73' cy='30.07' rx='1.81' ry='1.05'/%3E%3Cpath id='Axo_panel-25' data-name='Axo panel' class='cls-4' d='M46.41,29.84v-1.34c0,.42,.59,.76,1.32,.76s1.32-.34,1.32-.76v1.34'/%3E%3Cpath id='Axo_panel-26' data-name='Axo panel' class='cls-5' d='M49.06,29.84c0,.42-.59,.76-1.32,.76s-1.32-.34-1.32-.76'/%3E%3Cellipse id='Axo_base-26' data-name='Axo base' class='cls-4' cx='47.73' cy='28.5' rx='1.32' ry='.76'/%3E%3Cpath id='Axo_panel-27' data-name='Axo panel' class='cls-4' d='M49.55,26.49v1.84c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05v-1.84'/%3E%3Cpath id='Axo_base-27' data-name='Axo base' class='cls-1' d='M49.55,26.49c0,.58-.81,1.05-1.81,1.05s-1.81-.47-1.81-1.05'/%3E%3Cpath id='Axo_base-28' data-name='Axo base' class='cls-4' d='M45.92,26.49c0-.58,.81-1.05,1.81-1.05s1.81,.47,1.81,1.05'/%3E%3Cpath class='cls-4' d='M46.41,26.16v-6.28c0-2.15,.82-4.23,2.29-5.8l.35-.37,7.41-7.9c-.34,.37-.19,1.07,.34,1.57,.53,.5,1.24,.61,1.59,.24l-8.28,8.83c-.68,.72-1.06,1.68-1.06,2.67v7.04'/%3E%3Cpath class='cls-5' d='M49.06,26.16c0,.42-.59,.76-1.32,.76s-1.32-.34-1.32-.76'/%3E%3Cellipse id='Axo_base-29' data-name='Axo base' class='cls-4' cx='57.43' cy='6.72' rx='.76' ry='1.32' transform='translate(13.23 44) rotate(-46.82)'/%3E%3Cpath id='Axo_panel-28' data-name='Axo panel' class='cls-4' d='M58.58,2.3c-.48,.51-.15,1.59,.73,2.42s1.98,1.08,2.46,.58l-2.9,3.09c-.48,.51-1.58,.25-2.46-.58s-1.21-1.91-.73-2.42l2.9-3.09Z'/%3E%3Cpath id='Axo_base-30' data-name='Axo base' class='cls-1' d='M61.77,5.29c-.48,.51-1.58,.25-2.46-.58s-1.21-1.91-.73-2.42'/%3E%3Cpath id='Axo_base-31' data-name='Axo base' class='cls-4' d='M58.58,2.3c.48-.51,1.58-.25,2.46,.58s1.21,1.91,.73,2.42'/%3E%3Cellipse id='Axo_base-32' data-name='Axo base' class='cls-1' cx='60.18' cy='3.79' rx='.76' ry='1.32' transform='translate(16.23 45.08) rotate(-46.82)'/%3E%3Cpolyline class='cls-5' points='54 39.94 54.38 40.21 55.05 44.48'/%3E%3Cpath class='cls-4' d='M45,82.12c0,1.22-.99,1.82-2.21,1.35s-2.21-1.86-2.21-3.08,2.21-8.96,2.21-8.96c0,0,2.21,9.46,2.21,10.69Z'/%3E%3Cpath class='cls-1' d='M43.39,81.74c0,.56-.27,.92-.6,.79s-.6-.69-.6-1.26,.6-4.3,.6-4.3c0,0,.6,4.21,.6,4.77Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+span[name=cloth]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3 %7B fill: none; %7D .cls-1, .cls-2, .cls-3, .cls-4 %7B stroke: %23231f20; %7D .cls-1, .cls-2, .cls-4 %7B stroke-linecap: round; stroke-linejoin: round; %7D .cls-2, .cls-4 %7B stroke-width: .5px; %7D .cls-3 %7B stroke-width: 2px; %7D .cls-4 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cg%3E%3Cpath id='Axo_base' data-name='Axo base' class='cls-3' d='M83.97,51.57l3.05,1.76c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63l-34.23,19.76c-.46,.26-1.09,.22-1.78-.18L16.45,57.93c-2.78-1.61-5.04-5.51-5.04-8.73,0-1.61,.56-2.74,1.48-3.26L47.12,26.18c.91-.53,2.17-.45,3.56,.35l32.24,18.61c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63,0,0-.74,.43-.74,.43Z'/%3E%3Cpath id='Axo_panel' data-name='Axo panel' class='cls-3' d='M50.95,67.85c-.41-1.2-1.27-2.36-2.26-2.94L16.45,46.3'/%3E%3Cpath id='Axo_panel-2' data-name='Axo panel' class='cls-3' d='M83.97,51.57l-33.5,19.34c.46-.26,.74-.83,.74-1.63,0-.46-.09-.95-.26-1.43'/%3E%3Cpath id='Axo_base-2' data-name='Axo base' class='cls-3' d='M48.69,70.73l-27.2-15.7,31.3,18.07c.97,.56,1.8,1.67,2.23,2.84'/%3E%3Cpath id='Axo_base-3' data-name='Axo base' class='cls-3' d='M16.45,46.3l32.24,18.61c1,.57,1.86,1.74,2.26,2.94'/%3E%3C/g%3E%3Cg%3E%3Cpath id='Axo_base-4' data-name='Axo base' class='cls-4' d='M83.97,51.57l3.05,1.76c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63l-34.23,19.76c-.46,.26-1.09,.22-1.78-.18L16.45,57.93c-2.78-1.61-5.04-5.51-5.04-8.73,0-1.61,.56-2.74,1.48-3.26L47.12,26.18c.91-.53,2.17-.45,3.56,.35l32.24,18.61c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63,0,0-.74,.43-.74,.43Z'/%3E%3Cpath id='Axo_panel-3' data-name='Axo panel' class='cls-1' d='M50.95,67.85c-.41-1.2-1.27-2.36-2.26-2.94L16.45,46.3'/%3E%3Cpath id='Axo_panel-4' data-name='Axo panel' class='cls-1' d='M83.97,51.57l-33.5,19.34c.46-.26,.74-.83,.74-1.63,0-.46-.09-.95-.26-1.43'/%3E%3Cpath id='Axo_base-5' data-name='Axo base' class='cls-1' d='M48.69,70.73l-27.2-15.7,31.3,18.07c.97,.56,1.8,1.67,2.23,2.84'/%3E%3Cpath id='Axo_base-6' data-name='Axo base' class='cls-1' d='M16.45,46.3l32.24,18.61c1,.57,1.86,1.74,2.26,2.94'/%3E%3C/g%3E%3C/g%3E%3Cline class='cls-2' x1='25.82' y1='43.93' x2='49.43' y2='30.18'/%3E%3Cline class='cls-2' x1='50.48' y1='58.26' x2='74.09' y2='44.5'/%3E%3C/svg%3E");
+}
+span[name=brush]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B stroke: %23231f20; stroke-width: 2px; %7D .cls-1, .cls-2 %7B fill: none; %7D .cls-2, .cls-3 %7B stroke: %23000; stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px; %7D .cls-3 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath id='Axo_panel' data-name='Axo panel' class='cls-1' d='M32.53,67.59c0,.61,.4,1.21,1.2,1.68l1.69,.98c1.6,.92,4.2,.92,5.8,0l26.24-15.15c.8-.46,1.2-1.06,1.2-1.67v26.68c0,.6-.4,1.21-1.2,1.67l-26.24,15.15c-1.6,.92-4.2,.92-5.8,0l-1.69-.98c-.8-.46-1.2-1.07-1.2-1.68v-26.68Z'/%3E%3Cpath id='Axo_base' data-name='Axo base' class='cls-1' d='M32.53,67.59c0-.6,.4-1.21,1.2-1.67l26.24-15.15c1.6-.92-.04-3.37,1.57-2.44l5.93,3.42c.8,.46,1.2,1.07,1.2,1.68s-.4,1.21-1.2,1.67l-26.24,15.15c-1.6,.92-4.2,.92-5.8,0l-1.69-.98c-.8-.46-1.2-1.07-1.2-1.68Z'/%3E%3Cpath id='Axo_base-2' data-name='Axo base' class='cls-1' d='M70.03,47.64c0-.61-.4-1.21-1.2-1.68l-5.63-3.25c-1.6-.92-4.2-.92-5.8,0l-26.24,15.15c-.8,.46-1.2,1.06-1.2,1.67v9.17c0,.61,.4,1.21,1.2,1.68l5.63,3.25c1.6,.92,4.2,.92,5.8,0l26.24-15.15c.8-.46,1.2-1.06,1.2-1.67v-9.17Z'/%3E%3Cline class='cls-1' x1='42.05' y1='78.52' x2='42.05' y2='96.09'/%3E%3Cline class='cls-1' x1='45.46' y1='76.54' x2='45.46' y2='94.12'/%3E%3Cline class='cls-1' x1='48.88' y1='74.57' x2='48.88' y2='92.14'/%3E%3Cline class='cls-1' x1='52.29' y1='72.6' x2='52.29' y2='90.17'/%3E%3Cline class='cls-1' x1='55.71' y1='70.63' x2='55.71' y2='88.2'/%3E%3Cline class='cls-1' x1='59.12' y1='68.66' x2='59.12' y2='86.23'/%3E%3Cline class='cls-1' x1='62.54' y1='66.69' x2='62.54' y2='84.26'/%3E%3Cline class='cls-1' x1='65.95' y1='64.71' x2='65.95' y2='82.29'/%3E%3Cpath class='cls-1' d='M46.5,50.53c-.14,.07-.3,.12-.43,.2-.14,.08-.27,.16-.39,.24-.04,.03-.07,.06-.11,.09-.08,.06-.16,.11-.23,.17-.04,.04-.08,.07-.12,.11-.06,.05-.12,.11-.17,.16-.04,.04-.07,.08-.1,.12-.05,.05-.09,.11-.13,.16-.03,.04-.06,.09-.08,.13-.03,.05-.07,.11-.1,.17-.02,.05-.04,.09-.06,.14-.02,.06-.05,.11-.07,.17-.02,.05-.03,.1-.04,.14-.01,.05-.03,.11-.04,.17,0,.05-.01,.1-.02,.15,0,.06-.01,.11-.01,.17,0,0,0,.01,0,.02,0,.05,0,.1,.01,.14,0,.05,0,.1,.01,.14,0,.05,.02,.11,.04,.16,.01,.05,.02,.1,.03,.14,.02,.05,.04,.11,.06,.16,.02,.05,.03,.09,.06,.14,.03,.05,.06,.11,.09,.16,.03,.04,.05,.09,.08,.13,.04,.05,.08,.11,.12,.16,.03,.04,.06,.08,.1,.13,.05,.06,.11,.11,.16,.16,.04,.04,.07,.08,.11,.11,.06,.06,.14,.11,.21,.17,.04,.03,.07,.06,.11,.09,.12,.08,.24,.17,.37,.25,2.14,1.28,5.67,1.32,7.88,.08,.14-.08,.27-.16,.39-.24,.04-.03,.08-.06,.12-.09,.08-.06,.15-.11,.22-.17,.04-.04,.08-.07,.12-.11,.06-.05,.12-.11,.17-.16,.04-.04,.07-.08,.1-.12,.05-.05,.09-.11,.13-.16,.03-.04,.06-.09,.08-.13,.03-.05,.07-.11,.1-.17,.02-.05,.04-.09,.06-.14,.02-.06,.05-.11,.07-.17,.02-.05,.03-.09,.04-.14,.02-.06,.03-.11,.04-.17,0-.05,.01-.1,.02-.14,0-.06,.01-.11,.01-.17,0,0,0-.01,0-.02,0-.05,0-.1-.01-.14,0-.05,0-.1-.01-.14,0-.05-.02-.11-.04-.16-.01-.05-.02-.1-.03-.14-.02-.05-.04-.11-.06-.16-.02-.05-.03-.09-.06-.14-.03-.05-.06-.11-.09-.16-.03-.04-.05-.09-.08-.13-.04-.05-.08-.11-.12-.16-.03-.04-.06-.08-.1-.12-.05-.06-.11-.11-.16-.16-.04-.04-.07-.08-.11-.11-.07-.06-.14-.12-.21-.17-.04-.03-.07-.06-.11-.09-.12-.08-.24-.17-.37-.25-.17-.1-.35-.18-.53-.26'/%3E%3Cpath class='cls-1' d='M53.42,50.54s0,0,0-.01c-.01-.03-.02-.07-.03-.11-.03-.09-.06-.19-.09-.31,0-.02-.01-.05-.02-.07-.02-.07-.04-.16-.07-.27-.02-.09-.04-.18-.06-.28,0-.03-.01-.06-.02-.09-.03-.14-.06-.3-.08-.47,0,0,0,0,0,0-.03-.18-.06-.37-.08-.58-.02-.16-.04-.31-.05-.47,0-.05-.01-.09-.02-.14-.02-.17-.03-.34-.04-.51,0-.04,0-.07,0-.11-.01-.16-.02-.31-.03-.46,0-.05,0-.1,0-.15,0-.17-.01-.33-.02-.49,0-.02,0-.05,0-.07-.02-.75-.02-1.44-.01-1.98,.02-6.31,2.82-11.16,2.85-22.32,0-1.34,0-2.52-.03-3.56,0-.42-.02-.84-.03-1.28,0-.03,0-.05,0-.08,0-.1,0-.19-.01-.29-.07-1.99-.17-3.21-.23-3.78-.02-.22-.05-.48-.08-.77-.02-.17-.04-.34-.05-.51-.05-.46-.13-1-.21-1.46-.02-.1-.03-.2-.05-.3-.05-.26-.08-.47-.11-.59-.13-.64-.29-1.28-.48-1.87,0,0,0,0,0,0-.05-.17-.12-.36-.2-.55,0-.02-.01-.04-.02-.06-.02-.04-.03-.07-.04-.11-.02-.04-.04-.09-.05-.13-.12-.29-.25-.55-.38-.79-.02-.04-.04-.07-.06-.11-.03-.04-.05-.09-.08-.13,0,0,0,0,0,0-.16-.26-.3-.46-.4-.57,0,0-.01-.02-.02-.02,0,0-.01-.02-.02-.03-.09-.11-.21-.24-.35-.37-.04-.04-.09-.08-.13-.12-.02-.02-.04-.04-.07-.06-.08-.07-.18-.14-.28-.21-.04-.03-.07-.05-.11-.08-.09-.06-.18-.11-.28-.17-.02-.01-.04-.02-.06-.03-.02-.01-.05-.02-.07-.03-.04-.02-.08-.04-.13-.06-.05-.02-.13-.06-.24-.09,0,0,0,0,0,0-.09-.03-.21-.07-.35-.1-.04-.01-.09-.02-.13-.03-.09-.02-.19-.03-.29-.04-.04,0-.08-.01-.13-.02-.13-.01-.28-.02-.43-.01-.01,0-.03,0-.04,0,0,0,0,0,0,0-.18,0-.36,.02-.56,.06-.18,.04-.35,.08-.49,.13-.06,.02-.11,.05-.17,.07-.19,.08-.36,.16-.46,.21-.12,.07-.24,.15-.37,.24-.02,.02-.04,.03-.06,.05-.12,.09-.24,.19-.36,.3,0,0,0,0,0,0,0,0,0,0-.01,.01-.19,.18-.38,.39-.56,.65-.04,.05-.07,.1-.11,.16-.04,.06-.08,.12-.11,.18-.02,.03-.04,.05-.05,.08,0,.01-.02,.03-.02,.04-.18,.3-.35,.66-.52,1.07-.02,.04-.03,.07-.05,.11-.03,.08-.06,.16-.09,.25-.03,.08-.06,.16-.09,.25-.02,.07-.05,.15-.07,.23-.03,.1-.06,.2-.1,.31-.03,.1-.06,.2-.08,.3-.03,.1-.05,.19-.08,.29-.05,.22-.11,.44-.16,.67-.05,.21-.09,.44-.13,.66-.01,.07-.03,.14-.04,.21-.03,.16-.05,.32-.08,.48-.01,.09-.03,.17-.04,.26-.02,.15-.04,.31-.07,.46-.03,.24-.06,.49-.09,.73,0,.07-.02,.13-.02,.2-.02,.19-.04,.39-.06,.59,0,.05,0,.09-.01,.14-.02,.21-.04,.42-.06,.63,0,.04,0,.07,0,.11-.02,.22-.04,.45-.05,.67,0,.04,0,.07,0,.11-.02,.22-.03,.44-.04,.66,0,.07,0,.15-.01,.22-.01,.18-.02,.35-.03,.53,0,.18-.02,.36-.03,.54,0,.05,0,.11,0,.16-.07,1.59-.11,3.36-.11,5.34-.03,11.16,2.74,16.02,2.72,22.33,0,.69,0,1.6-.05,2.58,0,0,0,0,0,0,0,0,0,0,0,.01-.03,.58-.09,1.2-.17,1.83-.09,.65-.19,1.14-.29,1.53-.06,.25-.13,.46-.19,.63'/%3E%3Cellipse class='cls-1' cx='52.35' cy='10.64' rx='1.79' ry='3.39' transform='translate(-.82 5.46) rotate(-5.92)'/%3E%3Cpath id='Axo_panel-2' data-name='Axo panel' class='cls-1' d='M31.17,61.2l5.63,3.25c1.6,.92,4.2,.92,5.8,0l26.24-15.15'/%3E%3C/g%3E%3Cg%3E%3Cpath id='Axo_panel-3' data-name='Axo panel' class='cls-3' d='M32.53,67.59c0,.61,.4,1.21,1.2,1.68l1.69,.98c1.6,.92,4.2,.92,5.8,0l26.24-15.15c.8-.46,1.2-1.06,1.2-1.67v26.68c0,.6-.4,1.21-1.2,1.67l-26.24,15.15c-1.6,.92-4.2,.92-5.8,0l-1.69-.98c-.8-.46-1.2-1.07-1.2-1.68v-26.68Z'/%3E%3Cpath id='Axo_base-3' data-name='Axo base' class='cls-2' d='M32.53,67.59c0-.6,.4-1.21,1.2-1.67l26.24-15.15c1.6-.92-.04-3.37,1.57-2.44l5.93,3.42c.8,.46,1.2,1.07,1.2,1.68s-.4,1.21-1.2,1.67l-26.24,15.15c-1.6,.92-4.2,.92-5.8,0l-1.69-.98c-.8-.46-1.2-1.07-1.2-1.68Z'/%3E%3Cpath id='Axo_base-4' data-name='Axo base' class='cls-3' d='M70.03,47.64c0-.61-.4-1.21-1.2-1.68l-5.63-3.25c-1.6-.92-4.2-.92-5.8,0l-26.24,15.15c-.8,.46-1.2,1.06-1.2,1.67v9.17c0,.61,.4,1.21,1.2,1.68l5.63,3.25c1.6,.92,4.2,.92,5.8,0l26.24-15.15c.8-.46,1.2-1.06,1.2-1.67v-9.17Z'/%3E%3Cline class='cls-2' x1='42.05' y1='78.52' x2='42.05' y2='96.09'/%3E%3Cline class='cls-2' x1='45.46' y1='76.54' x2='45.46' y2='94.12'/%3E%3Cline class='cls-2' x1='48.88' y1='74.57' x2='48.88' y2='92.14'/%3E%3Cline class='cls-2' x1='52.29' y1='72.6' x2='52.29' y2='90.17'/%3E%3Cline class='cls-2' x1='55.71' y1='70.63' x2='55.71' y2='88.2'/%3E%3Cline class='cls-2' x1='59.12' y1='68.66' x2='59.12' y2='86.23'/%3E%3Cline class='cls-2' x1='62.54' y1='66.69' x2='62.54' y2='84.26'/%3E%3Cline class='cls-2' x1='65.95' y1='64.71' x2='65.95' y2='82.29'/%3E%3Cpath class='cls-3' d='M46.5,50.53c-.14,.07-.3,.12-.43,.2-.14,.08-.27,.16-.39,.24-.04,.03-.07,.06-.11,.09-.08,.06-.16,.11-.23,.17-.04,.04-.08,.07-.12,.11-.06,.05-.12,.11-.17,.16-.04,.04-.07,.08-.1,.12-.05,.05-.09,.11-.13,.16-.03,.04-.06,.09-.08,.13-.03,.05-.07,.11-.1,.17-.02,.05-.04,.09-.06,.14-.02,.06-.05,.11-.07,.17-.02,.05-.03,.1-.04,.14-.01,.05-.03,.11-.04,.17,0,.05-.01,.1-.02,.15,0,.06-.01,.11-.01,.17,0,0,0,.01,0,.02,0,.05,0,.1,.01,.14,0,.05,0,.1,.01,.14,0,.05,.02,.11,.04,.16,.01,.05,.02,.1,.03,.14,.02,.05,.04,.11,.06,.16,.02,.05,.03,.09,.06,.14,.03,.05,.06,.11,.09,.16,.03,.04,.05,.09,.08,.13,.04,.05,.08,.11,.12,.16,.03,.04,.06,.08,.1,.13,.05,.06,.11,.11,.16,.16,.04,.04,.07,.08,.11,.11,.06,.06,.14,.11,.21,.17,.04,.03,.07,.06,.11,.09,.12,.08,.24,.17,.37,.25,2.14,1.28,5.67,1.32,7.88,.08,.14-.08,.27-.16,.39-.24,.04-.03,.08-.06,.12-.09,.08-.06,.15-.11,.22-.17,.04-.04,.08-.07,.12-.11,.06-.05,.12-.11,.17-.16,.04-.04,.07-.08,.1-.12,.05-.05,.09-.11,.13-.16,.03-.04,.06-.09,.08-.13,.03-.05,.07-.11,.1-.17,.02-.05,.04-.09,.06-.14,.02-.06,.05-.11,.07-.17,.02-.05,.03-.09,.04-.14,.02-.06,.03-.11,.04-.17,0-.05,.01-.1,.02-.14,0-.06,.01-.11,.01-.17,0,0,0-.01,0-.02,0-.05,0-.1-.01-.14,0-.05,0-.1-.01-.14,0-.05-.02-.11-.04-.16-.01-.05-.02-.1-.03-.14-.02-.05-.04-.11-.06-.16-.02-.05-.03-.09-.06-.14-.03-.05-.06-.11-.09-.16-.03-.04-.05-.09-.08-.13-.04-.05-.08-.11-.12-.16-.03-.04-.06-.08-.1-.12-.05-.06-.11-.11-.16-.16-.04-.04-.07-.08-.11-.11-.07-.06-.14-.12-.21-.17-.04-.03-.07-.06-.11-.09-.12-.08-.24-.17-.37-.25-.17-.1-.35-.18-.53-.26'/%3E%3Cpath class='cls-3' d='M53.42,50.54s0,0,0-.01c-.01-.03-.02-.07-.03-.11-.03-.09-.06-.19-.09-.31,0-.02-.01-.05-.02-.07-.02-.07-.04-.16-.07-.27-.02-.09-.04-.18-.06-.28,0-.03-.01-.06-.02-.09-.03-.14-.06-.3-.08-.47,0,0,0,0,0,0-.03-.18-.06-.37-.08-.58-.02-.16-.04-.31-.05-.47,0-.05-.01-.09-.02-.14-.02-.17-.03-.34-.04-.51,0-.04,0-.07,0-.11-.01-.16-.02-.31-.03-.46,0-.05,0-.1,0-.15,0-.17-.01-.33-.02-.49,0-.02,0-.05,0-.07-.02-.75-.02-1.44-.01-1.98,.02-6.31,2.82-11.16,2.85-22.32,0-1.34,0-2.52-.03-3.56,0-.42-.02-.84-.03-1.28,0-.03,0-.05,0-.08,0-.1,0-.19-.01-.29-.07-1.99-.17-3.21-.23-3.78-.02-.22-.05-.48-.08-.77-.02-.17-.04-.34-.05-.51-.05-.46-.13-1-.21-1.46-.02-.1-.03-.2-.05-.3-.05-.26-.08-.47-.11-.59-.13-.64-.29-1.28-.48-1.87,0,0,0,0,0,0-.05-.17-.12-.36-.2-.55,0-.02-.01-.04-.02-.06-.02-.04-.03-.07-.04-.11-.02-.04-.04-.09-.05-.13-.12-.29-.25-.55-.38-.79-.02-.04-.04-.07-.06-.11-.03-.04-.05-.09-.08-.13,0,0,0,0,0,0-.16-.26-.3-.46-.4-.57,0,0-.01-.02-.02-.02,0,0-.01-.02-.02-.03-.09-.11-.21-.24-.35-.37-.04-.04-.09-.08-.13-.12-.02-.02-.04-.04-.07-.06-.08-.07-.18-.14-.28-.21-.04-.03-.07-.05-.11-.08-.09-.06-.18-.11-.28-.17-.02-.01-.04-.02-.06-.03-.02-.01-.05-.02-.07-.03-.04-.02-.08-.04-.13-.06-.05-.02-.13-.06-.24-.09,0,0,0,0,0,0-.09-.03-.21-.07-.35-.1-.04-.01-.09-.02-.13-.03-.09-.02-.19-.03-.29-.04-.04,0-.08-.01-.13-.02-.13-.01-.28-.02-.43-.01-.01,0-.03,0-.04,0,0,0,0,0,0,0-.18,0-.36,.02-.56,.06-.18,.04-.35,.08-.49,.13-.06,.02-.11,.05-.17,.07-.19,.08-.36,.16-.46,.21-.12,.07-.24,.15-.37,.24-.02,.02-.04,.03-.06,.05-.12,.09-.24,.19-.36,.3,0,0,0,0,0,0,0,0,0,0-.01,.01-.19,.18-.38,.39-.56,.65-.04,.05-.07,.1-.11,.16-.04,.06-.08,.12-.11,.18-.02,.03-.04,.05-.05,.08,0,.01-.02,.03-.02,.04-.18,.3-.35,.66-.52,1.07-.02,.04-.03,.07-.05,.11-.03,.08-.06,.16-.09,.25-.03,.08-.06,.16-.09,.25-.02,.07-.05,.15-.07,.23-.03,.1-.06,.2-.1,.31-.03,.1-.06,.2-.08,.3-.03,.1-.05,.19-.08,.29-.05,.22-.11,.44-.16,.67-.05,.21-.09,.44-.13,.66-.01,.07-.03,.14-.04,.21-.03,.16-.05,.32-.08,.48-.01,.09-.03,.17-.04,.26-.02,.15-.04,.31-.07,.46-.03,.24-.06,.49-.09,.73,0,.07-.02,.13-.02,.2-.02,.19-.04,.39-.06,.59,0,.05,0,.09-.01,.14-.02,.21-.04,.42-.06,.63,0,.04,0,.07,0,.11-.02,.22-.04,.45-.05,.67,0,.04,0,.07,0,.11-.02,.22-.03,.44-.04,.66,0,.07,0,.15-.01,.22-.01,.18-.02,.35-.03,.53,0,.18-.02,.36-.03,.54,0,.05,0,.11,0,.16-.07,1.59-.11,3.36-.11,5.34-.03,11.16,2.74,16.02,2.72,22.33,0,.69,0,1.6-.05,2.58,0,0,0,0,0,0,0,0,0,0,0,.01-.03,.58-.09,1.2-.17,1.83-.09,.65-.19,1.14-.29,1.53-.06,.25-.13,.46-.19,.63'/%3E%3Cellipse class='cls-3' cx='52.35' cy='10.64' rx='1.79' ry='3.39' transform='translate(-.82 5.46) rotate(-5.92)'/%3E%3Cpath id='Axo_panel-4' data-name='Axo panel' class='cls-2' d='M31.17,61.2l5.63,3.25c1.6,.92,4.2,.92,5.8,0l26.24-15.15'/%3E%3C/g%3E%3C/svg%3E");
+}
+span[name=scraper]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2 %7B stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px; %7D .cls-1, .cls-2, .cls-3 %7B stroke: %23000; %7D .cls-1, .cls-3 %7B fill: none; %7D .cls-2 %7B fill: %23fff; %7D .cls-3 %7B stroke-width: 2px; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cg%3E%3Cpath class='cls-3' d='M49.78,45.8s-7.3-2.21-11.05-4.14c-4.6-2.37-7.68-6.19-15.59-10.79-3.73-2.09-8.13-4.97-13.09-4.51-.46,.04-.96,.25-1.35,.52-.39,.25-.74,.66-.97,1.08,0,0,0,0,0,0-.23,.39-.34,.96-.36,1.38,0,.27,.03,.54,.1,.81,0,0,0,.01,0,.02,.08,.34,.25,.75,.44,1.07,1.62,2.57,4.17,4.88,6.65,6.54,6.67,4.5,15.46,7.04,19.53,9.6,3.59,2.27,7.16,6.04,7.26,6.16'/%3E%3Cellipse class='cls-3' cx='14.59' cy='29.02' rx='1.48' ry='3.69' transform='translate(-17.47 34.22) rotate(-72.53)'/%3E%3Cpath class='cls-3' d='M48.99,49.92l-6.42,3.71c-.78,.45-1.41,.09-1.41-.82v-.68c0-.9,.63-2,1.41-2.45l6.42-3.71c.78-.45,1.41-.09,1.41,.82v.68c0,.9-.63,2-1.41,2.45Z'/%3E%3Cpath class='cls-3' d='M66.82,77.48c-9.5-5.49-22.39-22.85-24.37-26.16l6.64-3.83c5.72,1.14,35.8,8.59,45.3,14.07l-27.57,15.92Z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='cls-2' d='M49.78,45.8s-7.3-2.21-11.05-4.14c-4.6-2.37-7.68-6.19-15.59-10.79-3.73-2.09-8.13-4.97-13.09-4.51-.46,.04-.96,.25-1.35,.52-.39,.25-.74,.66-.97,1.08,0,0,0,0,0,0-.23,.39-.34,.96-.36,1.38,0,.27,.03,.54,.1,.81,0,0,0,.01,0,.02,.08,.34,.25,.75,.44,1.07,1.62,2.57,4.17,4.88,6.65,6.54,6.67,4.5,15.46,7.04,19.53,9.6,3.59,2.27,7.16,6.04,7.26,6.16'/%3E%3Cellipse class='cls-2' cx='14.59' cy='29.02' rx='1.48' ry='3.69' transform='translate(-17.47 34.22) rotate(-72.53)'/%3E%3Cpath class='cls-2' d='M48.99,49.92l-6.42,3.71c-.78,.45-1.41,.09-1.41-.82v-.68c0-.9,.63-2,1.41-2.45l6.42-3.71c.78-.45,1.41-.09,1.41,.82v.68c0,.9-.63,2-1.41,2.45Z'/%3E%3Cpath class='cls-2' d='M66.82,77.48c-9.5-5.49-22.39-22.85-24.37-26.16l6.64-3.83c5.72,1.14,35.8,8.59,45.3,14.07l-27.57,15.92Z'/%3E%3C/g%3E%3C/g%3E%3Cline id='Axo_Line' data-name='Axo Line' class='cls-1' x1='66.88' y1='74.75' x2='90.49' y2='61.12'/%3E%3C/svg%3E");
+}
+span[name=alcohol]{
+background-repeat:no-repeat;
+background-size:3em 3em;
+background-position:50% 85%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 %7B stroke: %23231f20; stroke-linecap: round; stroke-linejoin: round; %7D .cls-1, .cls-2, .cls-4 %7B fill: none; %7D .cls-2, .cls-3 %7B stroke-width: .5px; %7D .cls-3, .cls-5, .cls-6 %7B fill: %23fff; %7D .cls-4, .cls-5 %7B stroke-width: 2px; %7D .cls-7 %7B fill: %230f1011; %7D %3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class='cls-4' d='M32.84,28.89v56.04c0,5.47,7.68,9.91,17.16,9.91s17.16-4.44,17.16-9.91V28.9c.03-2.01-.98-4.03-3.06-5.75h0l-8.5-7.07h0c-.23-.19-.48-.37-.78-.54-2.66-1.54-6.98-1.54-9.65,0-.29,.17-.55,.35-.78,.54h0l-8.5,7.07h0c-2.07,1.72-3.08,3.73-3.05,5.73h0Z'/%3E%3Cpath class='cls-4' d='M34.07,32.49c.84,1.21,2.1,2.34,3.8,3.32,6.7,3.87,17.57,3.87,24.27,0,1.71-.99,2.98-2.13,3.82-3.35'/%3E%3Cpath id='Axo_panel' data-name='Axo panel' class='cls-4' d='M42.67,9.4c0,1.08,.72,2.17,2.15,2.99,2.86,1.65,7.51,1.65,10.37,0,1.43-.83,2.15-1.91,2.15-2.99'/%3E%3Cpath id='Axo_base' data-name='Axo base' class='cls-4' d='M57.09,16.93c.16-.35,.24-.72,.24-1.08v-6.45c0-1.08-.72-2.17-2.15-2.99-2.86-1.65-7.51-1.65-10.37,0-1.43,.83-2.15,1.91-2.15,2.99v6.45c0,.36,.08,.73,.24,1.08'/%3E%3Cpath id='Axo_base-2' data-name='Axo base' class='cls-4' d='M42.91,16.93c.32,.7,.95,1.36,1.91,1.91,2.86,1.65,7.51,1.65,10.37,0,.95-.55,1.59-1.21,1.91-1.91'/%3E%3Cpath id='Axo_base-3' data-name='Axo base' class='cls-4' d='M55.96,11.87c-.23,.18-.49,.36-.77,.52-2.86,1.65-7.51,1.65-10.37,0-.46-.27-.85-.56-1.17-.88'/%3E%3Cline class='cls-4' x1='43.46' y1='12.33' x2='43.46' y2='16.45'/%3E%3Cline class='cls-4' x1='44.51' y1='13.36' x2='44.51' y2='17.48'/%3E%3Cline class='cls-4' x1='46.03' y1='14.31' x2='46.03' y2='18.42'/%3E%3Cline class='cls-4' x1='48.46' y1='14.87' x2='48.46' y2='18.99'/%3E%3Cline class='cls-4' x1='56.54' y1='12.33' x2='56.54' y2='16.45'/%3E%3Cline class='cls-4' x1='55.49' y1='13.36' x2='55.49' y2='17.48'/%3E%3Cline class='cls-4' x1='53.97' y1='14.31' x2='53.97' y2='18.42'/%3E%3Cline class='cls-4' x1='51.54' y1='14.87' x2='51.54' y2='18.99'/%3E%3Cg%3E%3Crect class='cls-4' x='42.56' y='60.39' width='14.91' height='14.91' transform='translate(-33.33 55.24) rotate(-45)'/%3E%3Cpath class='cls-4' d='M48.8,72.43c0-.68,.53-1.23,1.21-1.23s1.23,.54,1.23,1.23-.54,1.21-1.23,1.21-1.21-.54-1.21-1.21Zm.11-10.04h2.21l-.41,7.63h-1.39l-.41-7.63Z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath class='cls-3' d='M32.84,28.89v56.04c0,5.47,7.68,9.91,17.16,9.91s17.16-4.44,17.16-9.91V28.9c.03-2.01-.98-4.03-3.06-5.75h0l-8.5-7.07h0c-.23-.19-.48-.37-.78-.54-2.66-1.54-6.98-1.54-9.65,0-.29,.17-.55,.35-.78,.54h0l-8.5,7.07h0c-2.07,1.72-3.08,3.73-3.05,5.73h0Z'/%3E%3Cpath class='cls-2' d='M34.07,32.49c.84,1.21,2.1,2.34,3.8,3.32,6.7,3.87,17.57,3.87,24.27,0,1.71-.99,2.98-2.13,3.82-3.35'/%3E%3Cpath id='Axo_panel-2' data-name='Axo panel' class='cls-5' d='M42.67,9.4c0,1.08,.72,2.17,2.15,2.99,2.86,1.65,7.51,1.65,10.37,0,1.43-.83,2.15-1.91,2.15-2.99'/%3E%3Cpath id='Axo_base-4' data-name='Axo base' class='cls-3' d='M57.09,16.93c.16-.35,.24-.72,.24-1.08v-6.45c0-1.08-.72-2.17-2.15-2.99-2.86-1.65-7.51-1.65-10.37,0-1.43,.83-2.15,1.91-2.15,2.99v6.45c0,.36,.08,.73,.24,1.08'/%3E%3Cpath id='Axo_base-5' data-name='Axo base' class='cls-6' d='M42.91,16.93c.32,.7,.95,1.36,1.91,1.91,2.86,1.65,7.51,1.65,10.37,0,.95-.55,1.59-1.21,1.91-1.91'/%3E%3Cpath id='Axo_base-6' data-name='Axo base' class='cls-2' d='M55.96,11.87c-.23,.18-.49,.36-.77,.52-2.86,1.65-7.51,1.65-10.37,0-.46-.27-.85-.56-1.17-.88'/%3E%3Cline class='cls-2' x1='43.46' y1='12.33' x2='43.46' y2='16.45'/%3E%3Cline class='cls-2' x1='44.51' y1='13.36' x2='44.51' y2='17.48'/%3E%3Cline class='cls-2' x1='46.03' y1='14.31' x2='46.03' y2='18.42'/%3E%3Cline class='cls-2' x1='48.46' y1='14.87' x2='48.46' y2='18.99'/%3E%3Cline class='cls-2' x1='56.54' y1='12.33' x2='56.54' y2='16.45'/%3E%3Cline class='cls-2' x1='55.49' y1='13.36' x2='55.49' y2='17.48'/%3E%3Cline class='cls-2' x1='53.97' y1='14.31' x2='53.97' y2='18.42'/%3E%3Cline class='cls-2' x1='51.54' y1='14.87' x2='51.54' y2='18.99'/%3E%3Cg%3E%3Crect class='cls-1' x='42.56' y='60.39' width='14.91' height='14.91' transform='translate(-33.33 55.24) rotate(-45)'/%3E%3Cpath class='cls-7' d='M48.8,72.43c0-.68,.53-1.23,1.21-1.23s1.23,.54,1.23,1.23-.54,1.21-1.23,1.21-1.21-.54-1.21-1.21Zm.11-10.04h2.21l-.41,7.63h-1.39l-.41-7.63Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+span.img-only{
+background-size:80% 80%;
+background-position:50% 50%;
+}
+.admonition{
+  padding: 15px;
+  margin: 2em 0 2em 0;
+  border-left: 8px solid transparent;
+  font-family:Arrival Apercu Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#23262C;
+}
+.admonition p, .admonition ul, .admonition ol, .admonition li{
+  font-family:Arrival Apercu Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 300 !important;
+  line-height: 32px !important;
+  letter-spacing: 0em !important;
+  text-align: left !important;
+}
+.admonition .title {
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+  font-weight:500;
+  font-size:20px;
+}
+.tip {
+  border-color: #000;
+  background-color: rgba(15, 16, 17, 0.06);
+}
+.caution {
+border-color: #ffd100;
+background-color: #fff3d4;
+background-image: url("data:image/svg+xml,%3Csvg id='bd5e4119-56b4-46d4-b602-3bb69550092b' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105 32'%3E%3Crect width='105' height='32' rx='2' style='fill:%230e1010;fill-opacity:0.05999999865889549'/%3E%3Cpath d='M217.53,380.25a1,1,0,0,0-.35-.36,1.05,1.05,0,0,0-.49-.13,1,1,0,0,0-.48.13,1,1,0,0,0-.36.36L210,390.31a1,1,0,0,0-.13.48,1.05,1.05,0,0,0,.13.49.93.93,0,0,0,.36.35.89.89,0,0,0,.48.13H222.5a1,1,0,0,0,.49-.13.84.84,0,0,0,.35-.35,1,1,0,0,0,.13-.49.91.91,0,0,0-.13-.48Zm-.84,9.77a.52.52,0,0,1-.29-.09.48.48,0,0,1-.19-.23.52.52,0,0,1,0-.3.54.54,0,0,1,.14-.27.59.59,0,0,1,.27-.14.51.51,0,0,1,.3,0,.57.57,0,0,1,.24.19.62.62,0,0,1,.09.29.57.57,0,0,1-.16.37.51.51,0,0,1-.37.15Zm.53-1.83h-1.05l-.2-4.43h1.45Z' transform='translate(-197.91 -369.76)'/%3E%3Cpath d='M237.94,389.85a2.85,2.85,0,0,0,2.82-2.39l-.93-.28c-.35,1.14-.9,1.73-1.89,1.73-1.34,0-2.23-.93-2.23-3.08s.89-3.09,2.23-3.09c1,0,1.54.59,1.89,1.74l.93-.28a2.85,2.85,0,0,0-2.82-2.4c-1.78,0-3.25,1.3-3.25,4S236.16,389.85,237.94,389.85Zm4.51-.09h1l.7-2.1h3.09l.71,2.1h1l-2.8-7.87h-.95Zm2.06-3,1.22-3.55,1.21,3.55Zm9.32,3.13a2.65,2.65,0,0,0,2.79-2.82v-5.14h-1v5.21a1.8,1.8,0,1,1-3.6,0v-5.21h-1V387A2.65,2.65,0,0,0,253.83,389.85Zm7.6-.09h1v-6.93h2.46v-.94H259v.94h2.45Zm6.21,0h4.79v-.85h-1.9v-6.17h1.9v-.85h-4.79v.85h1.9v6.17h-1.9Zm10.49.09c1.71,0,3.06-1.32,3.06-4s-1.35-4-3.06-4-3.06,1.33-3.06,4S276.42,389.85,278.13,389.85Zm0-.94c-1.16,0-2-.86-2-3.08s.87-3.09,2-3.09,2,.86,2,3.09S279.29,388.91,278.13,388.91Zm5.42.85h1v-6.07l3.29,6.07h1.08v-7.87h-1V388l-3.29-6.07h-1.08Z' transform='translate(-197.91 -369.76)' style='fill:%230e1010'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-size: 105px 32px;
+background-position:1em 1em;
+}
+.caution ul > li::marker {
+  color: #ffd100;
+}
+.warning {
+border-color: #da291c;
+background-color: #fff2ed;
+background-image: url("data:image/svg+xml,%3Csvg id='b635905f-cf07-4571-930e-f55c42573d0c' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105 32'%3E%3Crect width='105' height='32' rx='2' style='fill:%230e1010;fill-opacity:0.05999999865889549'/%3E%3Cpath d='M217.53,363.31a1,1,0,0,0-.35-.36,1.05,1.05,0,0,0-.49-.13,1,1,0,0,0-.48.13,1,1,0,0,0-.36.36L210,373.37a1,1,0,0,0-.13.48,1.05,1.05,0,0,0,.13.49.93.93,0,0,0,.36.35.89.89,0,0,0,.48.13H222.5a1,1,0,0,0,.49-.13.84.84,0,0,0,.35-.35,1,1,0,0,0,.13-.49.91.91,0,0,0-.13-.48Zm-.84,9.77a.52.52,0,0,1-.29-.09.54.54,0,0,1-.19-.23.52.52,0,0,1,0-.3.54.54,0,0,1,.14-.27.59.59,0,0,1,.27-.14.51.51,0,0,1,.3,0,.5.5,0,0,1,.24.19.62.62,0,0,1,.09.29.57.57,0,0,1-.16.37.51.51,0,0,1-.37.15Zm.53-1.83h-1.05l-.2-4.43h1.45Z' transform='translate(-197.91 -352.82)'/%3E%3Cpath d='M235.24,372.82h1.23l1.15-4.62,1.16,4.62H240l.75-7.87h-1l-.47,6.41-1.2-4.8h-.9l-1.19,4.8-.47-6.41h-1Zm7.21,0h1l.7-2.1h3.09l.71,2.1h1L246.2,365h-.95Zm2.06-3.05,1.22-3.54,1.21,3.54Zm6.73,3.05h1v-3.71h1.32l2.3,3.71H257L254.67,369a1.87,1.87,0,0,0,1.64-2c0-1.4-.92-2.08-2.31-2.08h-2.76Zm1-4.65v-2.28H254c.82,0,1.27.35,1.27,1.14s-.45,1.14-1.27,1.14Zm7,4.65h1v-6.07l3.3,6.07h1.08V365h-1V371l-3.3-6.07h-1.08Zm8.4,0h4.79V372h-1.9V365.8h1.9V365h-4.79v.85h1.9V372h-1.9Zm7.8,0h1v-6.07l3.3,6.07h1.08V365h-1V371l-3.3-6.07h-1.08Zm11,.09a2.08,2.08,0,0,0,2-1.14l0,1.05h.82v-4h-2.79v.95h1.77c-.1,1.39-.69,2.17-1.77,2.17-1.34,0-2.22-.94-2.22-3.08s.88-3.09,2.22-3.09c1,0,1.54.59,1.89,1.74l.94-.29a2.83,2.83,0,0,0-2.83-2.39c-1.77,0-3.25,1.3-3.25,4S284.72,372.91,286.43,372.91Z' transform='translate(-197.91 -352.82)' style='fill:%230e1010'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-size: 96px 32px;
+background-position:1em 1em;
+}
+.fragment .warning ul > li::marker {
+  color: #da291c;
+}
+.note {
+border-color: #2044ff;
+background-color: #E6F3FF;
+background-image: url("data:image/svg+xml,%3Csvg id='ba82c206-c221-40b4-abc2-ee2e03c27814' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 32'%3E%3Crect width='80' height='32' rx='2' style='fill:%230e1010;fill-opacity:0.05999999865889549'/%3E%3Cpath d='M230.41,374.82a6,6,0,1,0-6-6A6,6,0,0,0,230.41,374.82Zm-.5-9.5h1v4.5h-1Zm0,6h1v1h-1Z' transform='translate(-210.41 -352.82)' style='fill:%230e1010;fill-rule:evenodd'/%3E%3Cpath d='M247.44,372.82h1v-6.07l3.29,6.07h1.08V365h-1V371L248.52,365h-1.08Zm10.79.09c1.71,0,3.06-1.32,3.06-4s-1.35-4-3.06-4-3.06,1.33-3.06,4S256.52,372.91,258.23,372.91Zm0-.94c-1.16,0-2-.86-2-3.08s.88-3.09,2-3.09,2,.86,2,3.09S259.38,372,258.23,372Zm7.6.85h1v-6.93h2.46V365h-5.9v.94h2.45Zm6.14,0h5.1v-.94H273V369.1h3.44v-1H273v-2.26h4V365h-5Z' transform='translate(-210.41 -352.82)' style='fill:%230e1010'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-size: 80px 32px;
+background-position:1em 1em;
+}
+.inspection {
+border-color: #2044ff;
+background-color: #E6F3FF;
+background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg id='ba82c206-c221-40b4-abc2-ee2e03c27814' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132.72 32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1{font-family:Arrival Apercu Mono Pro,monospace,'monospace';font-size:11.15px;letter-spacing:.08em;}.cls-2{fill:%230f1011;}.cls-3{fill:none;stroke:%230f1011;}.cls-4{fill:rgba(14,16,16,.06);}%3C/style%3E%3C/defs%3E%3Cpath class='cls-4' d='M3.32,0h126.09c1.83,0,3.32,.9,3.32,2V30c0,1.1-1.49,2-3.32,2H3.32c-1.83,0-3.32-.9-3.32-2V2C0,.9,1.49,0,3.32,0Z'/%3E%3Ctext class='cls-1' transform='translate(36.26 20.09)'%3E%3Ctspan x='0' y='0'%3EINSPECTION%3C/tspan%3E%3C/text%3E%3Cg%3E%3Cpath class='cls-3' d='M26.88,16s-3.08,4.24-6.88,4.24-6.88-4.24-6.88-4.24c0,0,3.08-4.24,6.88-4.24s6.88,4.24,6.88,4.24Z'/%3E%3Ccircle class='cls-2' cx='20' cy='16' r='2.12'/%3E%3C/g%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-size: 132px 32px;
+background-position:1em 1em;
+}
+.progression {
+border-color: #2ec57e;
+background-color: #e9f5f3;
+background-image: url("data:image/svg+xml,%3Csvg width='113' height='32' viewBox='0 0 113 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_b_3133_31495)'%3E%3Crect width='113' height='32' rx='16' fill='%230F1011' fill-opacity='0.06'/%3E%3Cpath d='M20.6097 8.52482C22.2882 8.66172 23.8717 9.35954 25.1054 10.5059C26.3391 11.6523 27.151 13.1805 27.4105 14.8445C27.6699 16.5084 27.3618 18.2113 26.5357 19.6789C25.7097 21.1464 24.4137 22.2932 22.8566 22.9347C21.2995 23.5761 19.5718 23.6748 17.9517 23.2149C16.3317 22.755 14.9136 21.7632 13.9258 20.3993C12.9379 19.0353 12.4379 17.3786 12.5062 15.696C12.5744 14.0133 13.207 12.4025 14.3021 11.1231' stroke='%230F1011'/%3E%3Cpath d='M37.2263 20H38.2163V16.625H40.2075C41.7263 16.625 42.5475 15.7475 42.5475 14.375C42.5475 13.0025 41.7263 12.125 40.2075 12.125H37.2263V20ZM38.2163 15.68V13.07H40.185C41.0513 13.07 41.5238 13.5087 41.5238 14.375C41.5238 15.2412 41.0513 15.68 40.185 15.68H38.2163ZM45.2268 20H46.2168V16.2875H47.533L49.8393 20H51.0093L48.658 16.22C49.6818 16.0062 50.3005 15.365 50.3005 14.2062C50.3005 12.8112 49.378 12.125 47.983 12.125H45.2268V20ZM46.2168 15.3425V13.07H48.0055C48.8268 13.07 49.2768 13.4187 49.2768 14.2062C49.2768 14.9937 48.8268 15.3425 48.0055 15.3425H46.2168ZM55.916 20.09C57.626 20.09 58.976 18.7625 58.976 16.0625C58.976 13.3625 57.626 12.035 55.916 12.035C54.206 12.035 52.856 13.3625 52.856 16.0625C52.856 18.7625 54.206 20.09 55.916 20.09ZM55.916 19.145C54.7573 19.145 53.8798 18.29 53.8798 16.0625C53.8798 13.835 54.7573 12.98 55.916 12.98C57.0748 12.98 57.9523 13.835 57.9523 16.0625C57.9523 18.29 57.0748 19.145 55.916 19.145ZM64.209 20.09C65.0415 20.09 65.829 19.73 66.189 18.9425L66.2453 20H67.0665V16.0287H64.2765V16.9737H66.0428C65.9415 18.3687 65.3565 19.145 64.2765 19.145C62.9378 19.145 62.049 18.2112 62.049 16.0625C62.049 13.9137 62.9378 12.98 64.2765 12.98C65.2665 12.98 65.8178 13.565 66.1665 14.7125L67.1003 14.4312C66.7515 13.0362 65.829 12.035 64.2765 12.035C62.499 12.035 61.0253 13.34 61.0253 16.0625C61.0253 18.785 62.499 20.09 64.209 20.09ZM69.532 20H70.522V16.2875H71.8383L74.1445 20H75.3145L72.9633 16.22C73.987 16.0062 74.6058 15.365 74.6058 14.2062C74.6058 12.8112 73.6833 12.125 72.2883 12.125H69.532V20ZM70.522 15.3425V13.07H72.3108C73.132 13.07 73.582 13.4187 73.582 14.2062C73.582 14.9937 73.132 15.3425 72.3108 15.3425H70.522ZM77.7575 20H82.865V19.055H78.7475V16.2762H82.19V15.3312H78.7475V13.07H82.7525V12.125H77.7575V20ZM88.4355 20.09C89.7743 20.09 90.9893 19.3025 90.9893 17.7387C90.9893 16.2987 90.0105 15.8487 88.8068 15.5337C87.7605 15.2637 86.9843 15.0387 86.9843 14.195C86.9843 13.4187 87.5355 12.98 88.4018 12.98C89.1443 12.98 89.6618 13.385 89.9993 14.1612L90.8655 13.7225C90.5505 12.8675 89.7743 12.035 88.4018 12.035C86.8605 12.035 85.9943 12.98 85.9943 14.1387C85.9943 15.6012 87.153 16.1525 88.2668 16.4337C89.448 16.7262 89.9993 17.0525 89.9993 17.8737C89.9993 18.6725 89.2343 19.145 88.4355 19.145C87.3105 19.145 86.703 18.4475 86.4218 17.39L85.4993 17.75C85.803 19.2912 86.9505 20.09 88.4355 20.09ZM96.5373 20.09C97.8761 20.09 99.0911 19.3025 99.0911 17.7387C99.0911 16.2987 98.1123 15.8487 96.9086 15.5337C95.8623 15.2637 95.0861 15.0387 95.0861 14.195C95.0861 13.4187 95.6373 12.98 96.5036 12.98C97.2461 12.98 97.7636 13.385 98.1011 14.1612L98.9673 13.7225C98.6523 12.8675 97.8761 12.035 96.5036 12.035C94.9623 12.035 94.0961 12.98 94.0961 14.1387C94.0961 15.6012 95.2548 16.1525 96.3686 16.4337C97.5498 16.7262 98.1011 17.0525 98.1011 17.8737C98.1011 18.6725 97.3361 19.145 96.5373 19.145C95.4123 19.145 94.8048 18.4475 94.5236 17.39L93.6011 17.75C93.9048 19.2912 95.0523 20.09 96.5373 20.09Z' fill='%230F1011'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_b_3133_31495' x='-60' y='-60' width='233' height='152' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeGaussianBlur in='BackgroundImage' stdDeviation='30'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_3133_31495'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_3133_31495' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-size: 113px 32px;
+background-position:1em 1em;
+}
+.fragment .progress ul > li::marker {
+  color: #2ec57e;
+}
+.note .title {
+  color: #000;
+  border-color: #2044ff;
+}
+/*Flame adjustment of blow torch - section 3*/
+#torch {
+width: 60%;
+margin-left:2%;
+margin-top:-4.2%;
+display:block
+}
+#valR{
+width: 50%;
+}
+#flame {
+display:block;
+opacity:0;
+position: relative;
+width: 44%;
+left: 61%;
+mix-blend-mode: multiply;
+}
+.flame-complete{
+mix-blend-mode: normal !important;
+}
+#range {
+display: none;
+}
+.flame-range{
+display:flex;
+width:100%;
+height:100%;
+align-items:
+center;
+justify-content:center;
+}
+/*Flame adjustment of blow torch - section 3*/
+/*Flame positioning - section 3*/
+#torch-with-flame{
+min-width:150px;
+width:20vw;
+position:absolute;
+top:10%;
+cursor:pointer;
+}
+[name="composite-panel"]{
+min-width:100%;
+min-height:100%;
+position:relative;
+}
+#bad{
+display:flex;
+box-sizing:border-box;
+width:100%;
+height:fit-content;
+max-width:100vw;
+position:absolute;
+bottom:5%;
+right:0%;
+margin:auto;
+padding:10em 0em 0em 2em;
+}
+#good{
+display:block;
+box-sizing:border-box;
+width:100%;
+height:fit-content;
+margin:auto;
+}
+#play{
+justify-content: center;
+}
+#play::before{
+content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-31e257fc-5386-4c3a-aeff-72ccb83f5d16' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26.89 22.23'%3E%3Cg id='uuid-38f5ce17-a627-4e67-bbbc-ac3a44fd7aff'%3E%3Cg%3E%3Cpath d='M15.78,1c5.59,0,10.11,4.53,10.11,10.11,0,5.59-4.53,10.11-10.11,10.11-5.59,0-10.11-4.53-10.11-10.11V6.6' style='fill:none; stroke:%23fff; stroke-miterlimit:10; stroke-width:2px;'/%3E%3Cpolyline points='.71 11.11 5.66 6.16 10.62 11.11' style='fill:none; stroke:%23fff; stroke-miterlimit:10; stroke-width:2px;'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+margin-right:8px;
+width:1em;
+height:1em;
+}
+#play::after{
+content: 'replay';
+display:inline-block;
+}
+#close{
+display:block;
+position:absolute;
+bottom:0;
+left:20%;
+box-sizing:border-box;
+width:65%;
+height:15%;
+margin:auto;
+}
+#caution-title::before{
+content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-aa6ea408-8015-4736-9476-555d58523449' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32.18 28.6'%3E%3Cpath d='M18.47,1.37l13.34,23.1c1.06,1.83-.26,4.12-2.38,4.12H2.75c-2.12,0-3.44-2.29-2.38-4.12L13.71,1.37c1.06-1.83,3.7-1.83,4.76,0Zm-.86,21.91c0-.84-.68-1.52-1.52-1.52s-1.52,.68-1.52,1.52,.68,1.52,1.52,1.52,1.52-.68,1.52-1.52Zm.25-14.15h-3.53l.71,10.96h2.11l.71-10.96Z'/%3E%3C/svg%3E");
+height:0.85em;
+width:0.85em;
+display:inline-block;
+margin-right:16px;
+}
+#caution-distance{
+padding-bottom:18em;
+background-repeat:no-repeat;
+background-size:65%;
+background-position:50% 100%;
+background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='uuid-a932cb24-2f78-4cbd-9da8-bc1ea02b4631' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 544.57 230.16'%3E%3Cdefs%3E%3Cpattern id='uuid-7699eb80-b87a-43ed-9860-7cb4c3f94e9a' x='0' y='0' width='22.24' height='40.71' patternTransform='translate(2882.41 -10288.88) rotate(-45)' patternUnits='userSpaceOnUse' viewBox='0 0 22.24 40.71'%3E%3Cg%3E%3Crect width='22.24' height='40.71' style='fill:none;'/%3E%3Cline x1='1.5' x2='1.5' y2='40.71' style='fill:none; stroke:%230f1011; stroke-linejoin:round; stroke-width:3px;'/%3E%3Crect x='1.5' width='20.74' height='40.71' style='fill:none;'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Cg id='uuid-6cfc4e1e-a3b5-4c6e-b753-b2f959870e91'%3E%3Crect x='473.67' width='70.9' height='230.16' style='fill:url(%23uuid-7699eb80-b87a-43ed-9860-7cb4c3f94e9a);'/%3E%3Cpath d='M3.7,149.42l73.52-51.52c13.28-9.31,28.88-14.23,45.1-14.23h106.74v32H122.31c-9.62,0-18.86,2.92-26.73,8.43L1.5,190.04' style='fill:none; stroke:%230f1011; stroke-linecap:round; stroke-linejoin:round; stroke-width:3px;'/%3E%3Cpath d='M277.28,105.73c3.43,2.88,12.43,4.77,36.05,4.77,37.8,0,95.92-4.85,95.92-10.82s-58.11-10.82-95.92-10.82c-22.32,0-31.58,1.69-35.43,4.3' style='fill:none; stroke:%230f1011; stroke-miterlimit:10;'/%3E%3Cpath d='M277.9,112.71c5.68,4.71,18.7,7.73,48.57,7.73,52.45,0,137.54-20.77,137.54-20.77,0,0-85.09-20.77-137.54-20.77-29.51,0-42.57,2.94-48.36,7.56' style='fill:none; stroke:%230f1011; stroke-miterlimit:10; stroke-width:3px;'/%3E%3Cline x1='473.67' x2='473.67' y2='230.16' style='fill:none; stroke:%230f1011; stroke-miterlimit:10; stroke-width:5px;'/%3E%3Crect x='229.05' y='79.07' width='48.85' height='41.22' style='fill:none; stroke:%230f1011; stroke-linecap:round; stroke-linejoin:round; stroke-width:3px;'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media only screen and (max-width: 600px){
+#caution-distance{
+padding-bottom:10em;
+padding-right:1em;
+}
+}

@@ -21,7 +21,14 @@
 
 <div id="content" name="section2e" class="container"><!--Learning Content Container-->
 <div class="columns animate__animated animate__slideInLeft" onclick="startCleanse()"><!--Columns Container-->
-<div id="start-clean" class="column quarter success btn blue"><!--Left (Desktop) Column Container-->
+
+<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
+<video id="clean-panel" playsinline muted src="flame-treatment-clean-panel.mp4"></video>
+</div><!--End Right (Desktop) Column Container-->
+
+<button id="play" class="button media-action btn invisible" onclick="document.getElementById('treatment-continue').play();"></button><!--re play button-->
+
+<div id="start-clean" class="column quarter btn blue"><!--Left (Desktop) Column Container-->
 <p id="start-text" class="mono">start</p>
 <br>
 <h2 id="process-text" class="mono">Cleanse & Wipe</h2>
@@ -32,10 +39,6 @@
 <br>
 <h2 class="mono">contaminants removed - cleanse complete</h2>
 </div><!--End move forward button container-->
-
-<div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
-<video id="clean-panel" playsinline muted src="flame-treatment-clean-panel.mp4"></video>
-</div><!--End Right (Desktop) Column Container-->
 
 
 </div><!--End Columns Container-->

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #231f20;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: .5px;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <path id="Axo_base" data-name="Axo base" class="cls-3" d="M83.97,51.57l3.05,1.76c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63l-34.23,19.76c-.46,.26-1.09,.22-1.78-.18L16.45,57.93c-2.78-1.61-5.04-5.51-5.04-8.73,0-1.61,.56-2.74,1.48-3.26L47.12,26.18c.91-.53,2.17-.45,3.56,.35l32.24,18.61c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63,0,0-.74,.43-.74,.43Z"/>
+      <path id="Axo_panel" data-name="Axo panel" class="cls-3" d="M50.95,67.85c-.41-1.2-1.27-2.36-2.26-2.94L16.45,46.3"/>
+      <path id="Axo_panel-2" data-name="Axo panel" class="cls-3" d="M83.97,51.57l-33.5,19.34c.46-.26,.74-.83,.74-1.63,0-.46-.09-.95-.26-1.43"/>
+      <path id="Axo_base-2" data-name="Axo base" class="cls-3" d="M48.69,70.73l-27.2-15.7,31.3,18.07c.97,.56,1.8,1.67,2.23,2.84"/>
+      <path id="Axo_base-3" data-name="Axo base" class="cls-3" d="M16.45,46.3l32.24,18.61c1,.57,1.86,1.74,2.26,2.94"/>
+    </g>
+    <g>
+      <path id="Axo_base-4" data-name="Axo base" class="cls-4" d="M83.97,51.57l3.05,1.76c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63l-34.23,19.76c-.46,.26-1.09,.22-1.78-.18L16.45,57.93c-2.78-1.61-5.04-5.51-5.04-8.73,0-1.61,.56-2.74,1.48-3.26L47.12,26.18c.91-.53,2.17-.45,3.56,.35l32.24,18.61c1.39,.8,2.52,2.76,2.52,4.36,0,.8-.28,1.37-.74,1.63,0,0-.74,.43-.74,.43Z"/>
+      <path id="Axo_panel-3" data-name="Axo panel" class="cls-1" d="M50.95,67.85c-.41-1.2-1.27-2.36-2.26-2.94L16.45,46.3"/>
+      <path id="Axo_panel-4" data-name="Axo panel" class="cls-1" d="M83.97,51.57l-33.5,19.34c.46-.26,.74-.83,.74-1.63,0-.46-.09-.95-.26-1.43"/>
+      <path id="Axo_base-5" data-name="Axo base" class="cls-1" d="M48.69,70.73l-27.2-15.7,31.3,18.07c.97,.56,1.8,1.67,2.23,2.84"/>
+      <path id="Axo_base-6" data-name="Axo base" class="cls-1" d="M16.45,46.3l32.24,18.61c1,.57,1.86,1.74,2.26,2.94"/>
+    </g>
+  </g>
+  <line class="cls-2" x1="25.82" y1="43.93" x2="49.43" y2="30.18"/>
+  <line class="cls-2" x1="50.48" y1="58.26" x2="74.09" y2="44.5"/>
+</svg>
