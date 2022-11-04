@@ -21,17 +21,18 @@
 
 <div id="content" name="section3e" class="container"><!--Learning Content Container-->
 <div id="treatment" class="columns animate__animated animate__slideInUp" onclick="startFlametreat()"><!--Columns Container-->
-<div id="start-treatment" class="column quarter blue btn"><!--Start treatment button Container-->
-<p id="start-text" class="mono">start</p>
-<br>
-<h2 id="process-text" class="mono">flame treat the panel</h2>
-</div><!--End Start treatment button Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
 <video id="flame-treat" playsinline muted src="flame-treatment-torch.mp4"></video>
 </div><!--End Right Video Column Container-->
 
-<button id="play" class="button media-action btn hide" onclick="document.getElementById('treatment-continue').play();"></button><!--re play button-->
+<button id="play" class="button media-action btn invisible" onclick="document.getElementById('treatment-continue').play();"></button><!--re play button-->
+
+<div id="start-treatment" class="column quarter blue btn"><!--Start treatment button Container-->
+<p id="start-text" class="mono">start</p>
+<br>
+<h2 id="process-text" class="mono">flame treat the panel</h2>
+</div><!--End Start treatment button Container-->
 
 <div id="treatment-continue" class="column quarter success btn hide" onclick="document.getElementById('treatment').classList.add('hide');document.getElementById('flame-once').classList.remove('hide');"><!--Success move forward button container-->
 <p class="mono">move forward</p>
@@ -46,7 +47,7 @@
 <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
 <h2 class="mono">you can only apply flame treatment to an area once. If an error is made, the part must be recycled. Treated areas must not be touched and must be assembled within 24 hours.</h2><!--Heading-->
 </div>
-<div class="column quarter dark mono btn" onclick="sectionThreef()">move forward</div><!--Close Button-->
+<div class="column quarter purple-dark mono btn" onclick="sectionThreef()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 
 </div><!--End Learning Content Container-->

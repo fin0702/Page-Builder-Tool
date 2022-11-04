@@ -702,7 +702,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'removing dust with soft brush';
 dustVideo.addEventListener('ended', function () {
 dustVideo.currentTime = 0;
-restart.classList.remove('hide');
+restart.classList.remove('invisible');
 startDust.classList.add('hide');
 dustContinue.classList.remove('hide')
 }, false);
@@ -723,7 +723,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'cleaning panel';
 cleanseVideo.addEventListener('ended', function () {
 cleanseVideo.currentTime = 0;
-restart.classList.remove('hide');
+restart.classList.remove('invisible');
 startClean.classList.add('hide');
 cleanContinue.classList.remove('hide')
 }, false);
@@ -744,7 +744,7 @@ startText.innerHTML = '&nbsp;';
 processText.innerHTML = 'approx. 50cm per second';
 flameVideo.addEventListener('ended', function () {
 flameVideo.currentTime = 0;
-restart.classList.remove('hide');
+restart.classList.remove('invisible');
 startTreatment.classList.add('hide');
 treatmentContinue.classList.remove('hide')
 }, false);
