@@ -14,6 +14,11 @@ const nextsection = document.getElementById('i-forward'); // Next section button
 const modulename = document.getElementById('i-module-name'); // Contains name of module
 const sectionname = document.getElementById('i-section-name'); // Contains name of module
 
+function closeImodule() {
+var iModuleFrame = window.parent.document.getElementById('i-module');
+iModuleFrame.parentNode.removeChild(iModuleFrame);
+};
+
 var ov = setInterval(overFlow, 1000);
 window.addEventListener('resize', overFlowRemove);
 window.addEventListener('resize', overFlow);
