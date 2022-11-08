@@ -133,6 +133,7 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
+sectionname.innerHTML = 'Welcome';
 };
 //**********************************************************************************************************************************************************
 //
