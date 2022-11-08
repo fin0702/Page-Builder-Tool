@@ -14,9 +14,8 @@ const nextsection = document.getElementById('i-forward'); // Next section button
 const modulename = document.getElementById('i-module-name'); // Contains name of module
 const sectionname = document.getElementById('i-section-name'); // Contains name of module
 
-function closeImodule() {
-var iModuleFrame = window.parent.document.getElementById('i-module');
-iModuleFrame.parentNode.removeChild(iModuleFrame);
+function closeImoduleFrame() {
+parent.postMessage('closeimodule', '*');
 };
 
 var ov = setInterval(overFlow, 1000);
@@ -64,6 +63,7 @@ startFrame();}
 function loadLastView(){
 // Load last stored page from Local Storage
 learningcontent.innerHTML = localStorage.getItem(thismoduleshortname+'lastview');
+sectionname.innerHTML = localStorage.getItem(thismoduleshortname+'section');
 document.getElementById('i-step-back').outerHTML = localStorage.getItem(thismoduleshortname+'stepback');
 document.getElementById('i-forward').outerHTML = localStorage.getItem(thismoduleshortname+'nextsectionmarkup');
 return false;
@@ -72,6 +72,7 @@ function lastView(){
 // Store current page in Local Storage
 localStorage.setItem(thismoduleshortname+'stepback',document.getElementById('i-step-back').outerHTML);
 localStorage.setItem(thismoduleshortname+'lastview',learningcontent.innerHTML);
+localStorage.setItem(thismoduleshortname+'section',sectionname.innerHTML);
 localStorage.setItem(thismoduleshortname+'nextsectionmarkup',document.getElementById('i-forward').outerHTML);
 return false;
 };
@@ -149,6 +150,7 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
+sectionname.innerHTML = 'Welcome Back';
 };
 //**********************************************************************************************************************************************************
 //
@@ -242,7 +244,7 @@ var newcontent =
 </div><!--End Left (Desktop) Column Container-->
 <div id="dropzone" class="column half dark mono"><!--Right (Desktop) Column Container-->
 <div class="img-center"><!--Image center container-->
-<img src="media/tool-bag.svg"><!--Image-->
+<img src="Media/tool-bag.svg"><!--Image-->
 </div><!--End Image center container-->
 </div><!--End Right (Desktop) Column Container-->
 <div id="dropsuccess" class="column half success mono btn hide" onclick="sectionOnec();">move forward</div><!--Close Button-->
@@ -672,11 +674,11 @@ lastView(); // Update local storage with current page
 function sectionTwoc(){
 var newcontent =
 `
-<div name="section2c" class="container animate__animated animate__slideInRight"><!--Learning Content Container-->
-<div class="columns"><!--Columns Container-->
+<div name="section2c" class="container"><!--Learning Content Container-->
+<div class="columns animate__animated animate__slideInUp"><!--Columns Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
-<video id="remove-dust" playsinline muted src="media/flame-treatment-brush-panel.mp4"></video>
+<video id="remove-dust" playsinline muted src="Media/flame-treatment-brush-panel.mp4"></video>
 </div><!--End Right (Desktop) Column Container-->
 
 <button id="play" class="button media-action btn invisible" onclick="document.getElementById('remove-dust').currentTime = '0';document.getElementById('remove-dust').play()"></button><!--re play button-->
@@ -770,11 +772,11 @@ lastView(); // Update local storage with current page
 function sectionTwoe(){
 var newcontent =
 `
-<div name="section2e" class="container animate__animated animate__slideInRight"><!--Learning Content Container-->
-<div class="columns"><!--Columns Container-->
+<div name="section2e" class="container"><!--Learning Content Container-->
+<div class="columns animate__animated animate__slideInUp"><!--Columns Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right (Desktop) Column Container-->
-<video id="clean-panel" playsinline muted src="media/flame-treatment-clean-panel-edit.mp4"></video>
+<video id="clean-panel" playsinline muted src="Media/Flame-treatment-clean-panel-edit.mp4"></video>
 </div><!--End Right (Desktop) Column Container-->
 
 <button id="play" class="button media-action btn invisible" onclick="document.getElementById('clean-panel').currentTime = '0';document.getElementById('clean-panel').play();"></button><!--re play button-->
@@ -934,8 +936,8 @@ var newcontent =
 <div id="flame-content" class="column half fixed overflow-icon"><!--Blow torch container-->
 <h1 id="flame-h1">Ready to begin?</h1>
 <h2 id="flame-h2">Let's ignite our burner.</h2>
-<img id="flame" src="media/flame1.png">
-<img id="torch" src="media/Propane torch.png"/>
+<img id="flame" src="Media/flame1.png">
+<img id="torch" src="Media/Propane torch.png"/>
 </div><!--End Blow torch container-->
 <div id="ignite-flame" class="column quarter fixed blue mono btn" onclick="igniteFlame()"><h2 class="mono">--> Ignite</h2></div><!--Ignite Button-->
 <span id="range">0</span>
@@ -979,7 +981,7 @@ document.getElementById('flame-h1').innerHTML = 'Is the flame correct?';// Updat
 document.getElementById('flame-h2').innerHTML = 'Adjust the flame';// Update text
 }
 function showVal(newVal){
-var path = 'media/';
+var path = 'Media/';
 var val = document.getElementById("valR").value;
 document.getElementById("range").innerHTML=val;
 document.getElementById("flame").src = path + val + ".png";
@@ -1045,10 +1047,10 @@ var newcontent =
 <div id="bad">
 <div id="good">
 <div id="close"></div>
-<img name="composite-panel" id="panel" src="media/panel-flat.svg">
+<img name="composite-panel" id="panel" src="Media/panel-flat.svg">
 </div>
 </div>
-<img id="torch-with-flame" src="media/torch-with-flame.svg">
+<img id="torch-with-flame" src="Media/torch-with-flame.svg">
 </div>
 </div>
 <div id="move-burner" class="column third dark mono"><h2 class="mono">Move the flame to the panel</h2></div><!--Close Button-->
@@ -1161,7 +1163,7 @@ var newcontent =
 <div id="treatment" class="columns animate__animated animate__slideInUp" onclick="startFlametreat()"><!--Columns Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
-<video id="flame-treat" playsinline muted src="media/flame-treatment-torch.mp4"></video>
+<video id="flame-treat" playsinline muted src="Media/flame-treatment-torch.mp4"></video>
 </div><!--End Right Video Column Container-->
 
 <button id="play" class="button media-action btn invisible" onclick="document.getElementById('flame-treat').play();"></button><!--re play button-->
@@ -1322,7 +1324,7 @@ var newcontent =
 </div><!--End resources Container-->
 
 <div id="arvl-flame-treat" class="column fill white mono overflow hide"><!--Right Video Column Container-->
-<video autoplay playsinline muted src="media/arvl-flame-treat.mp4"></video>
+<video autoplay playsinline muted src="Media/arvl-flame-treat.mp4"></video>
 </div><!--End Right Video Column Container-->
 
 </div><!--End Columns Container-->
