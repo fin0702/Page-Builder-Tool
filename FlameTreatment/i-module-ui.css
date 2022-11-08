@@ -145,8 +145,8 @@ content:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZ
 }
 /* Color style for Active Blue - adds background and text color*/
 .blue{
-background-color:var(--active-blue)!important;;
-color:var(--white)!important;;
+background-color:var(--active-blue)!important;
+color:var(--white)!important;
 }
 /* Color style for Gray - adds background and text color*/
 .gray{
@@ -158,8 +158,8 @@ background-color:var(--dark-gray);
 color:var(--white);
 }
 .light{
-background-color:var(--light-gray);
-color:var(--black);
+background-color:var(--light-gray)!important;
+color:var(--black)!important;
 }
 /* Color style for Black - adds background and text color*/
 .black{
@@ -305,7 +305,7 @@ padding:1em 0em 1em 0em;
 .row.fifty{
 height:50%;
 }
-#content{
+#i-content, #i-content-template{
 max-height:calc(100% - 7em);
 }
 .columns {
