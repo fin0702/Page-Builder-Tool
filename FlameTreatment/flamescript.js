@@ -1336,7 +1336,7 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
-sectionname.innerHTML = section3; // Update with section name
+sectionname.innerHTML = section4; // Update with section name
 document.getElementById('i-step-back').setAttribute('onclick','sectionThreeEnd()'); // Update with previous content
 deactivateNext(); // De-activate next section Button
 lastView(); // Update local storage with current page
