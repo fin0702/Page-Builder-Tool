@@ -1197,10 +1197,10 @@ var newcontent =
 <div id="treatment" class="columns animate__animated animate__slideInUp"><!--Columns Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
-<video id="flame-treat" playsinline muted src="Media/flame-treatment-step1.mp4"></video>
+<video id="flame-treat" playsinline muted src="Media/Flame-treatment-step1.mp4"></video>
 </div><!--End Right Video Column Container-->
 
-<button id="play" class="button media-action btn invisible" onclick="document.getElementById('step-five').classList.add('hide');document.getElementById('treatment-continue').classList.remove('hide');document.getElementById('flame-treat').src = 'Media/flame-treatment-step-full.mp4';document.getElementById('flame-treat').play();"></button><!--re play button-->
+<button id="play" class="button media-action btn invisible" onclick="document.getElementById('step-five').classList.add('hide');document.getElementById('treatment-continue').classList.remove('hide');document.getElementById('flame-treat').src = 'Media/Flame-treatment-step-full.mp4';document.getElementById('flame-treat').play();"></button><!--re play button-->
 <!--Start -->
 <div id="step-start" class="column quarter blue btn" onclick="document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">start</p>
@@ -1209,28 +1209,28 @@ var newcontent =
 </div><!--End Start treatment button Container-->
 
 <!--STEP ONE -->
-<div id="step-one" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step2.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<div id="step-one" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/Flame-treatment-step2.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">click to continue</p>
 <br>
 <h2 id="process-text" class="mono process-text-long">Refer to working instructions for details of the bead path.</h2>
 </div><!--End Start treatment button Container-->
 
 <!--STEP TWO -->
-<div id="step-two" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step3.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<div id="step-two" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/Flame-treatment-step3.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">click to continue</p>
 <br>
 <h2 id="process-text" class="mono process-text-long">Apply flame treatment in 45° passes relative to the direction of the bond paths.<br><br>This should ensure that significant areas of bonding are not missed in any single pass.</h2>
 </div><!--End Start treatment button Container-->
 
 <!--STEP THREE -->
-<div id="step-three" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step4.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<div id="step-three" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/Flame-treatment-step4.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">click to continue</p>
 <br>
 <h2 id="process-text" class="mono process-text-long">Try to maintain 50 cm of coverage per second.</h2>
 </div><!--End Start treatment button Container-->
 
 <!--STEP FOUR -->
-<div id="step-four" class="column quarter blue btn hide" onclick="document.getElementById('play').classList.remove('invisible');document.getElementById('flame-treat').src = 'Media/flame-treatment-step5.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<div id="step-four" class="column quarter blue btn hide" onclick="document.getElementById('play').classList.remove('invisible');document.getElementById('flame-treat').src = 'Media/Flame-treatment-step5.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">click to continue</p>
 <br>
 <h2 id="process-text" class="mono process-text-long">Bring the flame past the edge of the panel to ensure that excessive heat is not applied at the end of each pass.</h2>
