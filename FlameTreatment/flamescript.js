@@ -241,6 +241,9 @@ var newcontent =
 <span id="object6" name="alcohol" class="card small light btn"><!--Card-->
 <p class="mono">ipa alcohol</p><!--Card mono title-->
 </span><!--End Card-->
+<span id="object7" name="primer" class="card small light btn"><!--Card-->
+<p class="mono">primer/applicator</p><!--Card mono title-->
+</span><!--End Card-->
 </div><!--End Second row of cards-->
 </div><!--End Left (Desktop) Column Container-->
 <div id="dropzone" class="column half dark mono"><!--Right (Desktop) Column Container-->
@@ -279,7 +282,7 @@ if($('#section1b').length){
       //defines what to do when object is dropped
       $(this).addClass('change').removeClass('over');
       //if all CORRECT objects are dropped:
-      if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+      if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))&&($("#object7").is(".dropped"))) {
       // change color
       $("#dropzone").addClass('hide');
       $("#dropsuccess").removeClass('hide');
@@ -320,7 +323,7 @@ if($('#section1b').length){
       if(($("#object7").is('.ui-draggable-dragging'))&&($("#object7").is('.dropped'))){$("#object7").removeClass('dropped')};
       if(($("#objectwrong").is('.ui-draggable-dragging'))&&($("#objectwrong").is('.dropped'))){$("#objectwrong").removeClass('dropped');$("#dropzone").removeClass('error')};
       // if all CORRECT objects remain in dropzone reinstate complete color and button
-      if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))) {
+      if (($("#object").is(".dropped"))&&($("#object2").is(".dropped"))&&($("#object3").is(".dropped"))&&($("#object4").is(".dropped"))&&($("#object5").is(".dropped"))&&($("#object6").is(".dropped"))&&($("#object7").is(".dropped"))) {
       $("#dropzone").addClass('hide');
       $("#dropsuccess").removeClass('hide');
       };
@@ -517,8 +520,8 @@ var newcontent =
 <h2>IPA Alcohol</h2><!--Heading-->
 <p>IPA Alcohol is used in conjunction with the lint-free cloth.</p>
 <div class="row"><!--First row of cards-->
-<span class="card white"><p class="mono">selected equipment</p><p>IPA Alcohol</p></span>
-<span name="alcohol" class="card black img-only"></span>
+<span name="alcohol" class="card white img-only"></span>
+<span class="card black"><p class="mono">selected equipment</p><p>IPA Alcohol</p></span>
 </div><!--End First row -->
 <p>Isopropyl alcohol (IPA) is a colourless, flammable chemical with a strong odour.</p>
 <p>To ensure that the composite panel is thoroughly cleansed before Flame Treatment, a high purity, high strength (>95%) IPA must be used to wipe down the composite panel.</p>
@@ -544,15 +547,15 @@ var newcontent =
 <div name="section1cslideeight" class="slide cyan-light"><!--Start Overlay-->
 <div id="section1slide8" class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
 <div class="column overflow-icon"><!--Start Section Container-->
-<h2>Jigs & Fixtures</h2><!--Heading-->
-<p>Jigs & Fixtures may be required for certain tasks.</p>
+<h2>Primer & Applicator</h2><!--Heading-->
+<p>Primer is applied to the bonded area after flame treatment to promote adhesion.</p>
 <div class="row"><!--First row of cards-->
-<span class="card black"><p class="mono">selected equipment</p><p>Jigs & Fixtures</p></span>
+<span class="card black"><p class="mono">selected equipment</p><p>Primer & Applicator</p></span>
+<span name="primer" class="card white img-only"></span>
 </div><!--End First row -->
-<p>Whilst we didn't not explicitly list jigs & fixtures in our equipment list at the start of this section, it must be noted that certain tasks may require the use of these items.</p>
-<p>If a treatment area is large or there are areas that are hard to reach jigs & fixtures are used to make the task easier and safer to complete.</p>
+<p>The primer can be applied with a clean brush, but specialist foam applicators make it easier to apply a consistent coat.</p>
 </div><!--End Start Section Container-->
-<div class="column third cyan-dark mono btn" onclick="sectionOneEnd()">move forward</div><!--Close Button-->
+<div class="column third cyan-dark mono btn" onclick="sectionOnecSlideNine()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 </div><!--End Slide Overlay-->
 <!--LEARNING CONTENT END-->
@@ -566,6 +569,35 @@ lastView(); // Update local storage with current page
 };
 //**********************************************************************************************************************************************************
 //
+// ***********************************************************SECTION 1 C SLIDE 9******************************************************************************************
+function sectionOnecSlideNine(){
+  var newcontent =
+  `
+  <div name="section1cslidenine" class="slide cyan-light"><!--Start Overlay-->
+  <div id="section1slide8" class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
+  <div class="column overflow-icon"><!--Start Section Container-->
+  <h2>Jigs & Fixtures</h2><!--Heading-->
+  <p>Jigs & Fixtures may be required for certain tasks.</p>
+  <div class="row"><!--First row of cards-->
+  <span class="card black"><p class="mono">selected equipment</p><p>Jigs & Fixtures</p></span>
+  </div><!--End First row -->
+  <p>Whilst we didn't not explicitly list jigs & fixtures in our equipment list at the start of this section, it must be noted that certain tasks may require the use of these items.</p>
+  <p>If a treatment area is large or there are areas that are hard to reach jigs & fixtures are used to make the task easier and safer to complete.</p>
+  </div><!--End Start Section Container-->
+  <div class="column third purple-dark mono btn" onclick="sectionOneEnd()">move forward</div><!--Close Button-->
+  </div><!--End Columns Container-->
+  </div><!--End Slide Overlay-->
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section1; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionOnecSlideEight()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
 // ***********************************************************SECTION 1 END ******************************************************************************************
 function sectionOneEnd(){
 var newcontent =
@@ -1073,6 +1105,7 @@ var newcontent =
 <div id="test-run" class="columns white animate__animated animate__slideInDown hide"><!--Columns Container-->
 <div name="scroll" class="column fill black"><!--Start Section Container-->
 <h2 class="mono">You must test your speed and distance on a non-critical area of the panel before proceeding to flame treat the bond path.</h2><!--Heading-->
+<h2 class="mono">Ensure you are prepared to complete the Flame Treatment in one go before continuing.</h2><!--Heading-->
 </div>
 <div class="column quarter blue mono btn" onclick="sectionThreee()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
@@ -1161,24 +1194,59 @@ function sectionThreee(){
 var newcontent =
 `
 <div name="section3e" class="container"><!--Learning Content Container-->
-<div id="treatment" class="columns animate__animated animate__slideInUp" onclick="startFlametreat()"><!--Columns Container-->
+<div id="treatment" class="columns animate__animated animate__slideInUp"><!--Columns Container-->
 
 <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
-<video id="flame-treat" playsinline muted src="Media/flame-treatment-torch.mp4"></video>
+<video id="flame-treat" playsinline muted src="Media/flame-treatment-step1.mp4"></video>
 </div><!--End Right Video Column Container-->
 
-<button id="play" class="button media-action btn invisible" onclick="document.getElementById('flame-treat').play();"></button><!--re play button-->
-
-<div id="start-treatment" class="column quarter blue btn"><!--Start treatment button Container-->
+<button id="play" class="button media-action btn invisible" onclick="document.getElementById('step-five').classList.add('hide');document.getElementById('treatment-continue').classList.remove('hide');document.getElementById('flame-treat').src = 'Media/flame-treatment-step-full.mp4';document.getElementById('flame-treat').play();"></button><!--re play button-->
+<!--Start -->
+<div id="step-start" class="column quarter blue btn" onclick="document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
 <p id="start-text" class="mono">start</p>
 <br>
-<h2 id="process-text" class="mono">flame treat the panel</h2>
+<h2 id="process-text" class="mono">Let's start the Flame Treatment.</h2>
+</div><!--End Start treatment button Container-->
+
+<!--STEP ONE -->
+<div id="step-one" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step2.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<p id="start-text" class="mono">click to continue</p>
+<br>
+<h2 id="process-text" class="mono process-text-long">Refer to working instructions for details of the bead path.</h2>
+</div><!--End Start treatment button Container-->
+
+<!--STEP TWO -->
+<div id="step-two" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step3.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<p id="start-text" class="mono">click to continue</p>
+<br>
+<h2 id="process-text" class="mono process-text-long">Apply flame treatment in 45° passes relative to the direction of the bond paths.<br><br>This should ensure that significant areas of bonding are not missed in any single pass.</h2>
+</div><!--End Start treatment button Container-->
+
+<!--STEP THREE -->
+<div id="step-three" class="column quarter blue btn hide" onclick="document.getElementById('flame-treat').src = 'Media/flame-treatment-step4.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<p id="start-text" class="mono">click to continue</p>
+<br>
+<h2 id="process-text" class="mono process-text-long">Try to maintain 50 cm of coverage per second.</h2>
+</div><!--End Start treatment button Container-->
+
+<!--STEP FOUR -->
+<div id="step-four" class="column quarter blue btn hide" onclick="document.getElementById('play').classList.remove('invisible');document.getElementById('flame-treat').src = 'Media/flame-treatment-step5.mp4';document.getElementById('flame-treat').play();this.nextElementSibling.classList.remove('hide');this.classList.add('hide');"><!--Start treatment button Container-->
+<p id="start-text" class="mono">click to continue</p>
+<br>
+<h2 id="process-text" class="mono process-text-long">Bring the flame past the edge of the panel to ensure that excessive heat is not applied at the end of each pass.</h2>
+</div><!--End Start treatment button Container-->
+
+<!--STEP FIVE -->
+<div id="step-five" class="column quarter success btn hide" onclick="document.getElementById('treatment').classList.add('hide');document.getElementById('flame-once').classList.remove('hide');"><!--Start treatment button Container-->
+<p id="start-text" class="mono">move forward</p>
+<br>
+<h2 id="process-text" class="mono process-text-long">Apply flame treatment evenly to the whole panel surface.</h2>
 </div><!--End Start treatment button Container-->
 
 <div id="treatment-continue" class="column quarter success btn hide" onclick="document.getElementById('treatment').classList.add('hide');document.getElementById('flame-once').classList.remove('hide');"><!--Success move forward button container-->
 <p class="mono">move forward</p>
 <br>
-<h2 class="mono">flame treatment complete</h2>
+<h2 class="mono">full sequence</h2>
 </div><!--End move forward button container-->
 
 </div><!--End Columns Container-->
