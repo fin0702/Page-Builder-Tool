@@ -1,10 +1,11 @@
 const thismodulename = 'Manual Flame Treatment of Composite Panels &#47;'
 const thismoduleshortname = 'flametreat';
 const startsection = 'Welcome';
-const section1 = 'Equipment &#47; 1 of 4';
-const section2 = 'Surface Treatment &#47; 2 of 4';
-const section3 = 'Flame Treatment &#47; 3 of 4';
-const section4 = 'Resources &#47; 4 of 4';
+const section1 = 'Equipment &#47; 1 of 5';
+const section2 = 'Surface Treatment &#47; 2 of 5';
+const section3 = 'Flame Treatment &#47; 3 of 5';
+const section4 = 'Primer Application &#47; 4 of 5';
+const section5 = 'Resources &#47; 5 of 5';
 
 const learningcontent = document.getElementById('i-content'); // Content container where content will be replaced
 const imenu = document.getElementById('i-menu'); // Menu
@@ -94,7 +95,8 @@ var newcontent =
 <span class="card btn light" onclick="sectionThreea();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
 </div><!--End First row of cards-->
 <div class="row"><!--Second row of cards-->
-<span class="card btn light"onclick="sectionFoura();hideOverlays();"><p class="mono">Section 4</p><p>Resources</p></span><!--Section-->
+<span class="card btn light"onclick="sectionFoura();hideOverlays();"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card btn light"onclick="sectionFivea();hideOverlays();"><p class="mono">Section 5</p><p>Resources</p></span><!--Section-->
 </div><!--End Second row of cards-->
 </div><!--End Section Cards Container-->
 </div><!--End Columns Container-->
@@ -122,7 +124,10 @@ var newcontent =
 <span class="card small light"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
 <span class="card small light"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
 <span class="card small light"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
-<span class="card small light btn" onclick="sectionFoura()"><p class="mono">Section 4</p><p>Resources</p></span><!--Section-->
+</div><!--End First row of cards-->
+<div class="row wrap"><!--Second row of cards-->
+<span class="card small light"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card small light btn" onclick="sectionFivea()"><p class="mono">Section 5</p><p>Resources</p></span><!--Section-->
 </div><!--End First row of cards-->
 <p>When you have completed all sections, you can return to the Topic and complete the Quiz.</p>
 </div><!--End Start Section Container-->
@@ -1256,7 +1261,7 @@ var newcontent =
 <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
 <h2 class="mono">you can only apply flame treatment to an area once. If an error is made, the part must be recycled. Treated areas must not be touched and must be assembled within 24 hours.</h2><!--Heading-->
 </div>
-<div class="column quarter purple-dark mono btn" onclick="sectionThreef()">move forward</div><!--Close Button-->
+<div class="column quarter purple-dark mono btn" onclick="sectionThreeEnd()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 
 </div><!--End Learning Content Container-->
@@ -1295,6 +1300,69 @@ treatmentContinue.classList.remove('hide')
 };
 //**********************************************************************************************************************************************************
 //
+// ***********************************************************SECTION 3 END ******************************************************************************************
+function sectionThreeEnd(){
+  var newcontent =
+  `
+  <div name="section3end" class="slide light"><!--Start Overlay-->
+  <div id="section3end" class="columns success animate__animated animate__slideInDown"><!--Columns Container-->
+  <div class="column"><!--Start Section Container-->
+  <h2 class="mono">That's it for this section.</h2><!--Heading-->
+  <p class="mono">select next section to continue.</p>
+  </div><!--End Start Section -->
+  </div><!--End Columns Container-->
+  
+  </div><!--End Learning Content Container-->
+  
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section2; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionThreee()'); // Update with previous content
+  document.getElementById('i-forward').classList.remove('disabled-btn');
+  document.getElementById('i-forward').setAttribute('onclick', 'sectionFoura()');
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+  // ***********************************************************SECTION 4 A ******************************************************************************************
+  function sectionFoura(){
+  var newcontent =
+  `
+  <div name="section4a" class="slide purple-light animate__animated animate__slideInLeft"><!--Start Overlay-->
+  <div id="slide1" class="columns white"><!--Columns Container-->
+  <div class="column overflow-icon"><!--Start Section Container-->
+  <h1>Next Stage</h1><!--Heading-->
+  <h2>\ Primer Application</h2><!--Heading-->
+  <p>In the previous section we carried out the flame treatment process itself.</p>
+  <p>The final stage in preparing a panel for adhesive is the application of primer to the area of the bond path. Primer forms a thin layer on the prepared panel surface that improves adhesion.</p>
+  <br>
+  <h3>Move forward to begin.</h3>
+  </div>
+  <div class="column third blue mono btn" onclick="sectionFourb();">move forward</div><!--Close Button-->
+  </div><!--End Columns Container-->
+  </div><!--End Slide Overlay-->
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionThreee()'); // Update with previous content
+  deactivateNext(); // De-activate Next Section Button
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+
+
+
+
+
+
+
 // ***********************************************************SECTION 3 F ******************************************************************************************
 function sectionThreef(){
 var newcontent =
@@ -1340,8 +1408,8 @@ lastView(); // Update local storage with current page
 };
 //**********************************************************************************************************************************************************
 //
-// ***********************************************************SECTION 3 END ******************************************************************************************
-function sectionThreeEnd(){
+// ***********************************************************SECTION 4 END ******************************************************************************************
+function sectionFourEnd(){
 var newcontent =
 `
 <div name="section3end" class="slide light"><!--Start Overlay-->
@@ -1359,19 +1427,19 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
-sectionname.innerHTML = section3; // Update with section name
+sectionname.innerHTML = section4; // Update with section name
 document.getElementById('i-step-back').setAttribute('onclick','sectionThreef()'); // Update with previous content
 document.getElementById('i-forward').classList.remove('disabled-btn');
-document.getElementById('i-forward').setAttribute('onclick', 'sectionFoura()');
+document.getElementById('i-forward').setAttribute('onclick', 'sectionFivea()');
 lastView(); // Update local storage with current page
 };
 //**********************************************************************************************************************************************************
 //
-// ***********************************************************SECTION 4 A ******************************************************************************************
-function sectionFoura(){
+// ***********************************************************SECTION 5 A ******************************************************************************************
+function sectionFivea(){
 var newcontent =
 `
-<div name="section3e" class="container"><!--Learning Content Container-->
+<div name="section5a" class="container"><!--Learning Content Container-->
 <div class="columns animate__animated animate__slideInLeft"><!--Columns Container-->
 <div class="column third light"><!--Start resources Container-->
 <h2 class="mono">resources</h2>
@@ -1404,8 +1472,8 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
-sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionThreeEnd()'); // Update with previous content
+sectionname.innerHTML = section5; // Update with section name
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourEnd()'); // Update with previous content
 deactivateNext(); // De-activate next section Button
 lastView(); // Update local storage with current page
 };
