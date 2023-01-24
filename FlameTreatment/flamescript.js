@@ -1356,7 +1356,211 @@ function sectionThreeEnd(){
   };
   //**********************************************************************************************************************************************************
   //
+// ***********************************************************SECTION 4 B ******************************************************************************************
+function sectionFourb(){
+  var newcontent =
+  `
+  <div name="section4b" class="slide light"><!--Learning Content Container-->
+  <div class="columns drag animate__animated animate__slideInLeft"><!--Columns Container-->
+  <div class="column third light"><!--Left (Desktop) Column Container-->
+  <p>How long after flame treatment should you wait before applying primer?</p>
+  <div class="row cp"><!--First row of cards-->
+  <span class="card small cp black btn" onclick="this.style.backgroundColor = 'var(--error)';document.getElementById('incorrect-one').classList.remove('hide');document.getElementById('normal').classList.add('hide');document.getElementById('correct').classList.add('hide');document.getElementById('incorrect-two').classList.add('hide');"><!--Card-->
+  <p class="mono">5 minutes</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  <div class="row cp"><!--Second Row-->
+  <span class="card small cp black btn" onclick="this.style.backgroundColor = 'var(--success)';document.getElementById('correct').classList.remove('hide');document.getElementById('normal').classList.add('hide');document.getElementById('incorrect-one').classList.add('hide');document.getElementById('incorrect-two').classList.add('hide')"><!--Card-->
+  <p class="mono">15 minutes</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End second row-->
+  <div class="row cp"><!--Third Row-->
+  <span class="card small cp black btn" onclick="this.style.backgroundColor = 'var(--error)';document.getElementById('incorrect-two').classList.remove('hide');document.getElementById('normal').classList.add('hide');document.getElementById('correct').classList.add('hide');document.getElementById('incorrect-one').classList.add('hide')"><!--Card-->
+  <p class="mono">1 hour</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End third row-->
+  
+  </div><!--End Left (Desktop) Column Container-->
+  
+  <div id="normal" class="column fill white mono cp-image"><!--Right (Desktop) Column Container-->
+  <img style="width:100%;height:auto;margin:auto;" src="Media/flame-treatment-loop-frame.png">
+  </div><!--End Right (Desktop) Column Container-->
+  
+  <div id="incorrect-one" class="column fill error mono hide"><!--Right (Desktop) Column Container-->
+  <h2 class="mono">5 minutes is too short an interval to ensure the panel is fully cooled.</h2>
+  <br>
+  <br>
+  <h2 class="mono">try again</h2>
+  </div><!--End Right (Desktop) Column Container-->
 
+  <div id="incorrect-two" class="column fill error mono hide"><!--Right (Desktop) Column Container-->
+  <h2 class="mono">1 hour is too long an interval. Flame treatment deactivates over time, and the bond effectiveness is likely to be compromised if primer is applied after this period.</h2>
+  <br>
+  <br>
+  <h2 class="mono">try again</h2>
+  </div><!--End Right (Desktop) Column Container-->
+  
+  <div id="correct" class="column fill success mono hide btn" onclick="sectionFourc()"><!--Right (Desktop) Column Container-->
+  move forward
+  <h2 class="mono">That's right!</h2>
+  <br>
+  <h2 class="mono">Primer should be applied at least 15 minutes after flame treatment.</h2>
+  </div><!--End Right (Desktop) Column Container-->
+  
+  
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFoura()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 C ******************************************************************************************
+function sectionFourc(){
+  var newcontent =
+  `
+  <div name="section4c" class="container white"><!--Learning Content Container-->
+  <div class="columns drag animate__animated animate__slideInLeft"><!--Columns Container-->
+  <div id="dropsuccess" class="column third blue mono btn hide" onclick="sectionFourd();">move forward</div><!--Close Button-->
+  <div id="collect" class="column third white"><!--Left (Desktop) Column Container-->
+  <h1 class="not-mobile">Prepare your primer applicator.</h1>
+  <h2>Drag the primer can below to the applicator bottle.</h2>
+  <div class="row"><!--First row of cards-->
+  <span id="object" name="primer-open" class="card small light btn" style="max-width:7.5em;min-height:7.5em;"><!--Card-->
+  <p class="mono">primer</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  </div><!--End Left (Desktop) Column Container-->
+  <button id="play" class="button media-action btn blue-light invisible" onclick="document.getElementById('prime-treat').play();"></button><!--re play button-->
+  <div id="dropzone" class="column half white mono overflow"><!--Right (Desktop) Column Container-->
+  <video id="prime-treat" playsinline muted src="Media/prepare-primer-applicator.mp4"></video>
+  </div><!--End Right (Desktop) Column Container-->
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourb()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+  // ***********************************************************SECTION 4 C INTERACTION DRAG AND DROP******************************************************************************************
+  $("body").on('DOMSubtreeModified', "#i-content", function() {
+  if($('#section4c').length){
+    //defines object as being draggable
+        $("#object").draggable();
+        $("#dropzone,#dropsuccess").droppable({
+        //defines what to do when object is dropped
+        drop: function(event, ui) {
+        //if all CORRECT objects are dropped:
+        if (($("#object").is(".success"))) {
+        // play video
+        $("#prime-treat").trigger('play');
+        $('#prime-treat').on('ended',function(){
+        $("#collect").addClass('hide');
+        $("#dropsuccess").removeClass('hide');
+        $("#play").removeClass('invisible');
+        });
+        }
+        },
+        over: function(event, ui) {
+        // if objects are dragged over dropzone add dropped class
+        if($("#object").is('.ui-draggable-dragging')){$("#object").addClass('success')};
+        },
+        });
+      }
+  });
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 D ******************************************************************************************
+function sectionFourd(){
+  var newcontent =
+  `
+  <div name="section4d" class="container"><!--Learning Content Container-->
+  <div class="columns animate__animated animate__slideInRight"><!--Columns Container-->
+  
+  <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
+  <video id="primer-start" autoplay playsinline muted src="Media/primer-application.mp4"></video>
+  </div><!--End Right Video Column Container-->
+  
+  <div id="primer-continue" class="column quarter blue"><!--move forward button container-->
+  <p id="forward-text" class="mono">&nbsp;</p>
+  <br>
+  <h2 id="process-text" class="mono process-text-long">Refer to Working Instructions and prime the bead path area.</h2>
+  </div><!--End move forward button container-->
+  
+  </div><!--End Columns Container-->
+  </div><!--End Content Container-->
+  
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourc()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  document.getElementById('primer-start').addEventListener('ended', function(e) {
+  document.getElementById('primer-continue').classList.add('btn');
+  document.getElementById('primer-continue').setAttribute('onclick','sectionFoure()');
+  document.getElementById('forward-text').innerText = 'move forward';
+})
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 E ******************************************************************************************
+function sectionFoure(){
+  var newcontent =
+  `
+  <div name="section4e" class="slide purple-light"><!--Start Overlay-->
+  <div id="move" class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
+   
+  <div id="flame-important" class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
+  <div id="caution-coverage" name="scroll" class="column fill caution-color"><!--Start Section Container-->
+  <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
+  <h2 class="mono process-text-long">Applying too much primer to any one area may mean the part should be discarded. Take care to ensure that a single application gives adequately dense coverage.</h2><!--Heading-->
+  </div>
+  <div class="column quarter purple-dark mono btn" onclick="sectionFourf()">move forward</div><!--Close Button-->
+  </div><!--End Columns Container-->
+  
+  </div><!--End Content-->
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourd()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ***********************************************************SECTION 2 C ******************************************************************************************
 
 
 
