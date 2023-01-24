@@ -1426,7 +1426,7 @@ function sectionFourb(){
 function sectionFourc(){
   var newcontent =
   `
-  <div name="section4c" class="container white"><!--Learning Content Container-->
+  <div id="section4c" class="container white"><!--Learning Content Container-->
   <div class="columns drag animate__animated animate__slideInLeft"><!--Columns Container-->
   <div id="dropsuccess" class="column third blue mono btn hide" onclick="sectionFourd();">move forward</div><!--Close Button-->
   <div id="collect" class="column third white"><!--Left (Desktop) Column Container-->
@@ -1493,7 +1493,7 @@ function sectionFourd(){
   <video id="primer-start" autoplay playsinline muted src="Media/primer-application.mp4"></video>
   </div><!--End Right Video Column Container-->
   
-  <div id="primer-continue" class="column quarter blue"><!--move forward button container-->
+  <div id="primer-continue" class="column quarter blue-light"><!--move forward button container-->
   <p id="forward-text" class="mono">&nbsp;</p>
   <br>
   <h2 id="process-text" class="mono process-text-long">Refer to Working Instructions and prime the bead path area.</h2>
@@ -1512,6 +1512,8 @@ function sectionFourd(){
   lastView(); // Update local storage with current page
   document.getElementById('primer-start').addEventListener('ended', function(e) {
   document.getElementById('primer-continue').classList.add('btn');
+  document.getElementById('primer-continue').classList.remove('blue-light');
+  document.getElementById('primer-continue').classList.add('blue');
   document.getElementById('primer-continue').setAttribute('onclick','sectionFoure()');
   document.getElementById('forward-text').innerText = 'move forward';
 })
@@ -1522,15 +1524,15 @@ function sectionFourd(){
 function sectionFoure(){
   var newcontent =
   `
-  <div name="section4e" class="slide purple-light"><!--Start Overlay-->
-  <div id="move" class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
+  <div name="section4e" class="container purple-light"><!--Start Overlay-->
+  <div class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
    
   <div id="flame-important" class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
   <div id="caution-coverage" name="scroll" class="column fill caution-color"><!--Start Section Container-->
   <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
   <h2 class="mono process-text-long">Applying too much primer to any one area may mean the part should be discarded. Take care to ensure that a single application gives adequately dense coverage.</h2><!--Heading-->
   </div>
-  <div class="column quarter purple-dark mono btn" onclick="sectionFourf()">move forward</div><!--Close Button-->
+  <div class="column quarter purple-dark mono btn" onclick="sectionFourj()">move forward</div><!--Close Button-->
   </div><!--End Columns Container-->
   
   </div><!--End Content-->
@@ -1548,30 +1550,55 @@ function sectionFoure(){
 
 
 
+// SLIDER STUFF TO GO HERE!!!
+// SLIDER STUFF TO GO HERE!!!
+// SLIDER STUFF TO GO HERE!!!
+// SLIDER STUFF TO GO HERE!!!
 
 
-
-
-
-
-
-
-
-
-
-
-  // ***********************************************************SECTION 2 C ******************************************************************************************
-
-
-
-
-
-
-// ***********************************************************SECTION 3 F ******************************************************************************************
-function sectionThreef(){
+ // ***********************************************************SECTION 4 J ******************************************************************************************
+function sectionFourj(){
+  var newcontent =
+  `
+  <div name="section4j" class="container"><!--Learning Content Container-->
+  <div class="columns animate__animated animate__slideInRight"><!--Columns Container-->
+  
+  <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
+  <video id="bond-start" autoplay playsinline muted src="Media/apply-adhesive.mp4"></video>
+  </div><!--End Right Video Column Container-->
+  
+  <div id="bond-continue" class="column quarter blue-light"><!--move forward button container-->
+  <p id="forward-text" class="mono">&nbsp;</p>
+  <br>
+  <h2 id="process-text" class="mono process-text-long">Now you can bond the panel.</h2>
+  </div><!--End move forward button container-->
+  
+  </div><!--End Columns Container-->
+  </div><!--End Content Container-->
+  
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFouri()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  document.getElementById('bond-start').addEventListener('ended', function(e) {
+  document.getElementById('bond-continue').classList.add('btn');
+  document.getElementById('bond-continue').classList.remove('blue-light');
+  document.getElementById('bond-continue').classList.add('blue');
+  document.getElementById('bond-continue').setAttribute('onclick','sectionFourk()');
+  document.getElementById('forward-text').innerText = 'move forward';
+})
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 K ******************************************************************************************
+function sectionFourk(){
 var newcontent =
 `
-<div name="section3f" class="slide light"><!--Start Overlay-->
+<div name="section4k" class="slide light"><!--Start Overlay-->
 <div id="section3fslide1" class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
 <div class="column light overflow-icon"><!--Start Section Container-->
 <h1>That's it!</h1><!--Heading-->
@@ -1596,7 +1623,7 @@ var newcontent =
 <p>You can find additional useful resources on the Arrival Wiki. Links to these resources are also provided in this Module.</p>
 <h3>You can move forward to visit the resources.</h3>
 </div>
-<div class="column third purple-dark mono btn" onclick="sectionThreeEnd();">move forward</div><!--Close Button-->
+<div class="column third purple-dark mono btn" onclick="sectionFourEnd();">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 
 </div><!--End Slide Overlay-->
@@ -1606,8 +1633,8 @@ var newcontent =
 ;
 // insert Html
 learningcontent.innerHTML = newcontent;
-sectionname.innerHTML = section3; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionThreee()'); // Update with previous content
+sectionname.innerHTML = section4; // Update with section name
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourj()'); // Update with previous content
 lastView(); // Update local storage with current page
 };
 //**********************************************************************************************************************************************************
@@ -1616,7 +1643,7 @@ lastView(); // Update local storage with current page
 function sectionFourEnd(){
 var newcontent =
 `
-<div name="section3end" class="slide light"><!--Start Overlay-->
+<div name="section4end" class="slide light"><!--Start Overlay-->
 <div id="section3end" class="columns success animate__animated animate__slideInDown"><!--Columns Container-->
 <div class="column"><!--Start Section Container-->
 <h2 class="mono">That's it for this section.</h2><!--Heading-->
@@ -1632,7 +1659,7 @@ var newcontent =
 // insert Html
 learningcontent.innerHTML = newcontent;
 sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionThreef()'); // Update with previous content
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourk()'); // Update with previous content
 document.getElementById('i-forward').classList.remove('disabled-btn');
 document.getElementById('i-forward').setAttribute('onclick', 'sectionFivea()');
 lastView(); // Update local storage with current page
