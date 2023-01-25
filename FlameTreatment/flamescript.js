@@ -1903,7 +1903,7 @@ var newcontent =
 <div class="columns success animate__animated animate__slideInDown"><!--Columns Container-->
 <div class="column"><!--Start Section Container-->
 <h2 class="mono">That's it for this section.</h2><!--Heading-->
-<p class="mono">continue to the resources or return to the topic to complete the quiz.</p>
+<p class="mono">continue to the resources or return to the topic to complete the quiz. You can return to the topic by selecting the 'back to topic' button at the top of this page.</p>
 </div><!--End Start Section -->
 </div><!--End Columns Container-->
 
