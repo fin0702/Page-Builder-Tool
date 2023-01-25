@@ -87,16 +87,16 @@ var newcontent =
 <aside id="i-menu" class="menuoverlay hide animate pop"><!--Learning Menu Overlay-->
 <div class="columns"><!--Columns Container-->
 <div class="column quarter dark mono btn" onclick="document.getElementById('i-menu').classList.remove('show')">close</div><!--Close Button-->
-<div class="column fill white overflow"><!--Section Cards Container-->
+<div class="column fill white overflow-icon"><!--Section Cards Container-->
 <h1>Sections in this Module</h1><!--Heading-->
-<div class="row"><!--First row of cards-->
-<span class="card btn light" onclick="sectionOnea();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
-<span class="card btn light" onclick="sectionTwoa();hideOverlays();"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
-<span class="card btn light" onclick="sectionThreea();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
+<div class="row wrap"><!--First row of cards-->
+<span class="card small btn light" onclick="sectionOnea();hideOverlays();"><p class="mono">Section 1</p><p>Equipment</p></span><!--Section-->
+<span class="card small btn light" onclick="sectionTwoa();hideOverlays();"><p class="mono">Section 2</p><p>Surface Treatment</p></span><!--Section-->
+<span class="card small btn light" onclick="sectionThreea();hideOverlays();"><p class="mono">Section 3</p><p>Flame Treatment</p></span><!--Section-->
 </div><!--End First row of cards-->
-<div class="row"><!--Second row of cards-->
-<span class="card btn light"onclick="sectionFoura();hideOverlays();"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
-<span class="card btn light"onclick="sectionFivea();hideOverlays();"><p class="mono">Section 5</p><p>Resources</p></span><!--Section-->
+<div class="row wrap"><!--Second row of cards-->
+<span class="card small btn light"onclick="sectionFoura();hideOverlays();"><p class="mono">Section 4</p><p>Primer Application</p></span><!--Section-->
+<span class="card small btn light"onclick="sectionFivea();hideOverlays();"><p class="mono">Section 5</p><p>Resources</p></span><!--Section-->
 </div><!--End Second row of cards-->
 </div><!--End Section Cards Container-->
 </div><!--End Columns Container-->
@@ -1102,7 +1102,7 @@ var newcontent =
 <div id="flame-important" class="columns white animate__animated animate__slideInRight hide"><!--Columns Container-->
 <div id="caution-distance" name="scroll" class="column fill caution-color"><!--Start Section Container-->
 <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
-<h2 class="mono">The distance of the flame from the panel is critical. The blue part of the flame should just touch the panel.</h2><!--Heading-->
+<h2 class="mono process-text-long">The distance of the flame from the panel is critical. The blue part of the flame should just touch the panel.</h2><!--Heading-->
 </div>
 <div class="column quarter purple-dark mono btn" onclick="document.getElementById('flame-important').classList.add('hide');document.getElementById('test-run').classList.remove('hide');">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
