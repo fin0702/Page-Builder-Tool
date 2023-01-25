@@ -1261,7 +1261,7 @@ var newcontent =
 <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
 <h2 class="mono">you can only apply flame treatment to an area once. If an error is made, the part must be recycled. Treated areas must not be touched and must be assembled within 24 hours.</h2><!--Heading-->
 </div>
-<div class="column quarter purple-dark mono btn" onclick="sectionThreeEnd()">move forward</div><!--Close Button-->
+<div class="column quarter purple-dark mono btn" onclick="sectionThreef()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
 
 </div><!--End Learning Content Container-->
@@ -1300,6 +1300,47 @@ treatmentContinue.classList.remove('hide')
 };
 //**********************************************************************************************************************************************************
 //
+// ***********************************************************SECTION 3 F ******************************************************************************************
+function sectionThreef(){
+  var newcontent =
+  `
+  <div name="section3f" class="slide light"><!--Learning Content Container-->
+  <div class="columns animate__animated animate__slideInLeft"><!--Columns Container-->
+  
+  <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
+  <video id="energy-test" autoplay playsinline muted src="Media/surface-energy-test.mp4"></video>
+  </div><!--End Right Video Column Container-->
+  
+  <!--Start -->
+  <div id="next" class="column quarter blue-light" onclick=""><!--Start treatment button Container-->
+  <p id="move-forward" class="mono"></p>
+  <br>
+  <h2 id="process-text" class="mono process-text-long">A dyne ink test can be used to confirm that the flame treatment has been successful. However, this test is not carried out by production operatives and is reserved for Quality Technicians.</h2>
+  </div><!--End Start treatment button Container-->
+    
+  </div><!--End Columns Container-->
+  
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section3; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionThreee()'); // Update with previous content
+  var energyTestVideo = document.getElementById('energy-test');
+  var continueText = document.getElementById('move-forward');
+  var nextButton = document.getElementById('next');
+  energyTestVideo.addEventListener('ended', function () {
+  continueText.innerText = 'click to continue';
+  next.classList.remove('blue-light');
+  next.classList.add('blue');
+  next.classList.add('btn');
+  next.setAttribute('onclick', 'sectionThreeEnd()')
+    }, false);
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
 // ***********************************************************SECTION 3 END ******************************************************************************************
 function sectionThreeEnd(){
   var newcontent =
