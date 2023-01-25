@@ -1259,7 +1259,7 @@ var newcontent =
 <div id="flame-once" class="columns white animate__animated animate__slideInRight hide"><!--Columns Container-->
 <div name="scroll" class="column fill caution-color"><!--Start Section Container-->
 <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
-<h2 class="mono">you can only apply flame treatment to an area once. If an error is made, the part must be recycled. Treated areas must not be touched and must be assembled within 24 hours.</h2><!--Heading-->
+<h2 class="mono process-text-long">you can only apply flame treatment to an area once. If an error is made, the part must be recycled. Treated areas must not be touched and must be assembled within 24 hours.</h2><!--Heading-->
 </div>
 <div class="column quarter purple-dark mono btn" onclick="sectionThreef()">move forward</div><!--Close Button-->
 </div><!--End Columns Container-->
@@ -1315,7 +1315,7 @@ function sectionThreef(){
   <div id="next" class="column quarter blue-light" onclick=""><!--Start treatment button Container-->
   <p id="move-forward" class="mono"></p>
   <br>
-  <h2 id="process-text" class="mono process-text-long">A dyne ink test can be used to confirm that the flame treatment has been successful. However, this test is not carried out by production operatives and is reserved for Quality Technicians.</h2>
+  <h2 id="process-text" class="mono process-text-long">A dyne ink test can be used to confirm that the flame treatment has been successful.<br><br>However, this test is not carried out by production operatives and is reserved for Quality Technicians.</h2>
   </div><!--End Start treatment button Container-->
     
   </div><!--End Columns Container-->
