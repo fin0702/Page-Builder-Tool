@@ -1426,7 +1426,7 @@ function sectionFourb(){
 function sectionFourc(){
   var newcontent =
   `
-  <div id="section4c" class="container white"><!--Learning Content Container-->
+  <div id="section4c" class="slide white"><!--Learning Content Container-->
   <div class="columns drag animate__animated animate__slideInLeft"><!--Columns Container-->
   <div id="dropsuccess" class="column third blue mono btn hide" onclick="sectionFourd();">move forward</div><!--Close Button-->
   <div id="collect" class="column third white"><!--Left (Desktop) Column Container-->
@@ -1486,7 +1486,7 @@ function sectionFourc(){
 function sectionFourd(){
   var newcontent =
   `
-  <div name="section4d" class="container"><!--Learning Content Container-->
+  <div name="section4d" class="slide light"><!--Learning Content Container-->
   <div class="columns animate__animated animate__slideInRight"><!--Columns Container-->
   
   <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
@@ -1524,19 +1524,18 @@ function sectionFourd(){
 function sectionFoure(){
   var newcontent =
   `
-  <div name="section4e" class="container purple-light"><!--Start Overlay-->
-  <div class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
-   
-  <div id="flame-important" class="columns white animate__animated animate__slideInRight"><!--Columns Container-->
+  <div name="section4e" class="slide purple-light"><!--Start Content-->   
+  <div id="flame-important" class="columns white animate__animated animate__slideInUp"><!--Columns Container-->
+
   <div id="caution-coverage" name="scroll" class="column fill caution-color"><!--Start Section Container-->
   <h2 id="caution-title" class="mono">caution</h2><!--Heading-->
   <h2 class="mono process-text-long">Applying too much primer to any one area may mean the part should be discarded. Take care to ensure that a single application gives adequately dense coverage.</h2><!--Heading-->
   </div>
-  <div class="column quarter purple-dark mono btn" onclick="sectionFourj()">move forward</div><!--Close Button-->
+  <div class="column quarter purple-dark mono btn" onclick="sectionFourf()">move forward</div><!--Close Button-->
   </div><!--End Columns Container-->
   
   </div><!--End Content-->
-  <!--LEARNING CONTENT END-->
+
   `
   ;
   // insert Html
@@ -1547,20 +1546,166 @@ function sectionFoure(){
   };
   //**********************************************************************************************************************************************************
   //
-
-
-
-// SLIDER STUFF TO GO HERE!!!
-// SLIDER STUFF TO GO HERE!!!
-// SLIDER STUFF TO GO HERE!!!
-// SLIDER STUFF TO GO HERE!!!
-
-
- // ***********************************************************SECTION 4 J ******************************************************************************************
-function sectionFourj(){
+// ***********************************************************SECTION 4 F ******************************************************************************************
+function sectionFourf(){
   var newcontent =
   `
-  <div name="section4j" class="container"><!--Learning Content Container-->
+  <div name="section4f" class="slide light"><!--Learning Content Container-->
+  <div class="columns drag animate__animated animate__slideInLeft"><!--Columns Container-->
+  <div class="column half light"><!--Left (Desktop) Column Container-->
+
+<!--d.roberts input slider-->
+<style>
+.column.half.light{
+margin:auto;
+}
+#timer-container {
+display: flex;
+width: 100%;
+height: 200px;
+}
+#time-text {
+display: flex;
+width: 100%;
+height: 50px;
+position: relative;
+top:0;
+}
+.time-annotation {
+position: absolute;
+}
+#time0 {
+width: 5%;
+}
+#time1 {
+background-color: red;
+width: 5%;
+}
+#time2 {
+background-color: green;
+width: 20%;
+}
+#time3 {
+background-color: orange;
+width: 60%;
+}
+#time4 {
+background-color: red;
+width: 10%;
+}
+.time-slidecontainer {
+padding-top: 20px;
+}
+@media only screen and (max-width: 768px){
+.column.half.light{
+margin:initial;
+}
+}
+</style>
+<div id="time-text">
+    <p class="time-annotation mono" style="left:10%;">10 min</p>
+    <p class="time-annotation mono" style="left:30%;">1 hr</p>
+    <p class="time-annotation mono" style="left:90%;">24 hrs</p>
+</div>
+<div id="timer-container">
+    <div class="timers disabled-btn" id="time0"></div>
+    <div class="timers" id="time1"></div>
+    <div class="timers" id="time2"></div>
+    <div class="timers" id="time3"></div>
+    <div class="timers" id="time4"></div>
+</div>
+<div class="time-slider-container">
+    <input type="range" min="1" max="100" value="1" class="slider" name="time-slider" id="time-slider" oninput="updateTimeSlider()">
+</div>
+<!--d.roberts input slider--> 
+
+</div><!--End Left (Desktop) Column Container-->
+  
+  <div id="normal" class="column third blue-light mono"><!--Right (Desktop) Column Container-->
+  <br>
+  <h2 class="mono">How long should you wait before bonding?
+  <br>
+  <br>
+  Adjust the slider to find out.</h2>
+  </div><!--End Right (Desktop) Column Container-->
+  
+  <div id="too-soon" class="column third error mono hide"><!--Right (Desktop) Column Container-->
+  <br>
+  <br>
+  <h2 class="mono">TOO SOON! PRIMER SHOULD BE ALLOWED AT LEAST 10 MINUTES TO FLASH OFF.</h2>
+  </div><!--End Right (Desktop) Column Container-->
+
+  <div id="just-right" class="column third success mono hide btn" onclick="sectionFourg()"><!--Right (Desktop) Column Container-->
+  move forward
+  <br>
+  <br>
+  <h2 class="mono">JUST RIGHT! BONDING SHOULD IDEALLY OCCUR WITHIN 1 HOUR TO MINIMISE POTENTIAL CONTAMINATION.</h2>
+  </div><!--End Right (Desktop) Column Container-->
+
+  <div id="take-care" class="column third caution-color mono hide"><!--Right (Desktop) Column Container-->
+  <br>
+  <br>
+  <h2 class="mono">IT MAY BE POSSIBLE TO BOND UP TO 24 HOURS AFTER PRIMER APPLICATION. CHECK FOR CONTAMINANTS</h2>
+  </div><!--End Right (Desktop) Column Container-->
+
+  <div id="too-late" class="column third error mono hide"><!--Right (Desktop) Column Container-->
+  <br>
+  <br>
+  <h2 class="mono">TOO LATE! THE RISK OF CONTAMINANTS OR DEGRADATION IS TOO GREAT AFTER 24 HOURS</h2>
+  </div><!--End Right (Desktop) Column Container-->
+
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  
+  <!--LEARNING CONTENT END-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFoura()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+
+//Function for primer time slider section 4 F
+    function updateTimeSlider() {
+      var rangeInput = document.getElementById("time-slider").value;
+      if (rangeInput < 4) {
+        document.getElementById("normal").classList.remove('hide');
+      }
+      if (rangeInput > 8 && rangeInput <= 29 ) {
+        document.getElementById("just-right").classList.remove('hide');document.getElementById("normal").classList.add('hide');
+      }
+      else {
+        document.getElementById("just-right").classList.add('hide');
+      }
+      if (rangeInput > 3 && rangeInput <= 8 ) {
+        document.getElementById("too-soon").classList.remove('hide');document.getElementById("normal").classList.add('hide');
+      }
+      else {
+        document.getElementById("too-soon").classList.add('hide');
+      }
+      if (rangeInput >= 30 && rangeInput <= 92 ) {
+        document.getElementById("take-care").classList.remove('hide');;document.getElementById("normal").classList.add('hide');
+      }
+      else {
+        document.getElementById("take-care").classList.add('hide');
+      }
+      if (rangeInput > 92) {
+        document.getElementById("too-late").classList.remove('hide');;document.getElementById("normal").classList.add('hide');
+      }
+      else {
+        document.getElementById("too-late").classList.add('hide');
+      }
+    }
+  //**********************************************************************************************************************************************************
+  //
+
+ // ***********************************************************SECTION 4 G ******************************************************************************************
+function sectionFourg(){
+  var newcontent =
+  `
+  <div name="section4g" class="container"><!--Learning Content Container-->
   <div class="columns animate__animated animate__slideInRight"><!--Columns Container-->
   
   <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
@@ -1582,24 +1727,24 @@ function sectionFourj(){
   // insert Html
   learningcontent.innerHTML = newcontent;
   sectionname.innerHTML = section4; // Update with section name
-  document.getElementById('i-step-back').setAttribute('onclick','sectionFouri()'); // Update with previous content
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourf()'); // Update with previous content
   lastView(); // Update local storage with current page
   document.getElementById('bond-start').addEventListener('ended', function(e) {
   document.getElementById('bond-continue').classList.add('btn');
   document.getElementById('bond-continue').classList.remove('blue-light');
   document.getElementById('bond-continue').classList.add('blue');
-  document.getElementById('bond-continue').setAttribute('onclick','sectionFourk()');
+  document.getElementById('bond-continue').setAttribute('onclick','sectionFourh()');
   document.getElementById('forward-text').innerText = 'move forward';
 })
   };
   //**********************************************************************************************************************************************************
   //
-// ***********************************************************SECTION 4 K ******************************************************************************************
-function sectionFourk(){
+// ***********************************************************SECTION 4 H ******************************************************************************************
+function sectionFourh(){
 var newcontent =
 `
-<div name="section4k" class="slide light"><!--Start Overlay-->
-<div id="section3fslide1" class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
+<div name="section4h" class="slide light"><!--Start Overlay-->
+<div class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
 <div class="column light overflow-icon"><!--Start Section Container-->
 <h1>That's it!</h1><!--Heading-->
 <h2>\ Flame Treatment</h2><!--Heading-->
@@ -1634,7 +1779,7 @@ var newcontent =
 // insert Html
 learningcontent.innerHTML = newcontent;
 sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionFourj()'); // Update with previous content
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourg()'); // Update with previous content
 lastView(); // Update local storage with current page
 };
 //**********************************************************************************************************************************************************
@@ -1644,7 +1789,7 @@ function sectionFourEnd(){
 var newcontent =
 `
 <div name="section4end" class="slide light"><!--Start Overlay-->
-<div id="section3end" class="columns success animate__animated animate__slideInDown"><!--Columns Container-->
+<div class="columns success animate__animated animate__slideInDown"><!--Columns Container-->
 <div class="column"><!--Start Section Container-->
 <h2 class="mono">That's it for this section.</h2><!--Heading-->
 <p class="mono">continue to the resources or return to the topic to complete the quiz.</p>
@@ -1659,7 +1804,7 @@ var newcontent =
 // insert Html
 learningcontent.innerHTML = newcontent;
 sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionFourk()'); // Update with previous content
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourh()'); // Update with previous content
 document.getElementById('i-forward').classList.remove('disabled-btn');
 document.getElementById('i-forward').setAttribute('onclick', 'sectionFivea()');
 lastView(); // Update local storage with current page
