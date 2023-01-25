@@ -1382,9 +1382,9 @@ function sectionFourb(){
   
   </div><!--End Left (Desktop) Column Container-->
   
-  <div id="normal" class="column fill white mono cp-image"><!--Right (Desktop) Column Container-->
-  <img style="width:100%;height:auto;margin:auto;" src="Media/flame-treatment-loop-frame.png">
-  </div><!--End Right (Desktop) Column Container-->
+  <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
+  <video autoplay playsinline muted src="Media/flame-loop.mp4"></video>
+  </div><!--End Right Video Column Container-->
   
   <div id="incorrect-one" class="column fill error mono hide"><!--Right (Desktop) Column Container-->
   <h2 class="mono">5 minutes is too short an interval to ensure the panel is fully cooled.</h2>
@@ -1705,7 +1705,7 @@ margin:initial;
 function sectionFourg(){
   var newcontent =
   `
-  <div name="section4g" class="container"><!--Learning Content Container-->
+  <div name="section4g" class="slide light"><!--Learning Content Container-->
   <div class="columns animate__animated animate__slideInRight"><!--Columns Container-->
   
   <div id="normal" class="column fill white mono overflow"><!--Right Video Column Container-->
@@ -1741,49 +1741,160 @@ function sectionFourg(){
   //
 // ***********************************************************SECTION 4 H ******************************************************************************************
 function sectionFourh(){
-var newcontent =
-`
-<div name="section4h" class="slide light"><!--Start Overlay-->
-<div class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
-<div class="column light overflow-icon"><!--Start Section Container-->
-<h1>That's it!</h1><!--Heading-->
-<h2>\ Flame Treatment</h2><!--Heading-->
-<p>You have now been through the Flame Treatment process.</p>
-<br>
-<h3>Key things that you should remember:</h3>
-<ul>
-<li>Ensure you have all equipment before beginning the task</li>
-<li>Equipment must be in serviceable condition</li>
-<li>You must have enough supplies to complete the task e.g. propane, IPA alcohol, etc.</li>
-<li>Inspect the composite panel prior to beginning the surface treatment</li>
-<li>Thoroughly cleanse and wipe down the composite panel</li>
-<li>Always wait 5 minutes for the IPA alcohol to flash off before starting Flame Treatment</li>
-<li>Set the flame on the burner to a blue flame</li>
-<li>The tip of the burner must be approximately 3 inches from the panel or so the tip of the blue flame makes contact with the surface of the panel</li>
-<li>Pass the flame over the panel at approxiamtely 50cm per second</li>
-<li>Practice speed and distance control on a non-critical area of the panel before attempting to treat the bond paths.</li>
-<li>Pass the flame over the panel at approximately 50cm per second</li>
-<li>A bond path can only be treated once, if an error is made, the part can no longer be used. Take care!</li>
-</ul>
-<p>You can find additional useful resources on the Arrival Wiki. Links to these resources are also provided in this Module.</p>
-<h3>You can move forward to visit the resources.</h3>
-</div>
-<div class="column third purple-dark mono btn" onclick="sectionFourEnd();">move forward</div><!--Close Button-->
-</div><!--End Columns Container-->
-
-</div><!--End Slide Overlay-->
-
-<!--LEARNING CONTENT END-->
-`
-;
-// insert Html
-learningcontent.innerHTML = newcontent;
-sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionFourg()'); // Update with previous content
-lastView(); // Update local storage with current page
-};
-//**********************************************************************************************************************************************************
-//
+  var newcontent =
+  `<div name="section4h" class="slide light"><!--Start Overlay-->
+  <div class="columns light animate__animated animate__slideInLeft"><!--Columns Container-->
+  <div class="column white overflow-icon"><!--Start Section Container-->
+  <h1>That's it!</h1><!--Heading-->
+  <h2>\ Flame Treatment</h2><!--Heading-->
+  <p>You have now been through the Flame Treatment process. Key points for each stage are summarised below.</p>
+  <div class="row"><!--First row of cards-->
+  <span name="preparation" class="card small black"><!--Card-->
+  <p class="mono">preparation</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  <h3>Key things that you should remember:</h3>
+  <ul>
+  <li>Ensure you have all equipment before beginning the task</li>
+  <li>Equipment must be in serviceable condition</li>
+  <li>You must have enough supplies to complete the task e.g. propane, IPA alcohol, etc.</li>
+  </ul>
+  </div>
+  <div class="column third purple-light mono btn" onclick="sectionFouri()">move forward
+  </div><!--Close Button-->
+  </div><!--End Columns Container-->
+  
+  
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourg()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 I ******************************************************************************************
+function sectionFouri(){
+  var newcontent =
+  `<div name="section4i" class="slide light"><!--Start Overlay-->
+  <div class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
+  <div class="column white overflow-icon"><!--Start Section Container-->
+  <h1>Summary</h1><!--Heading-->
+  <h2>&#92; Surface Treatment</h2><!--Heading-->
+  <div class="row"><!--First row of cards-->
+  <span name="surface-treatment" class="card small black"><!--Card-->
+  <p class="mono">surface treatment</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  <h3>Key things that you should remember:</h3>
+  <ul>
+  <li>Inspect the composite panel prior to beginning the surface treatment</li>
+  <li>Thoroughly cleanse and wipe down the composite panel</li>
+  <li>Always wait 5 minutes for the IPA alcohol to flash off before starting Flame Treatment</li>
+  </ul>
+  </div>
+  <div class="column third purple-light mono btn" onclick="sectionFourj()">move forward
+  </div><!--Close Button-->
+  </div><!--End Columns Container-->
+  
+  
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourh()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 J ******************************************************************************************
+function sectionFourj(){
+  var newcontent =
+  `<div name="section4j" class="slide light"><!--Start Overlay-->
+  <div class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
+  <div class="column white overflow-icon"><!--Start Section Container-->
+  <h1>Summary</h1><!--Heading-->
+  <h2>&#92; Flame Treatment</h2><!--Heading-->
+  <div class="row"><!--First row of cards-->
+  <span name="flame-treatment" class="card small black"><!--Card-->
+  <p class="mono">flame treatment</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  <h3>Key things that you should remember:</h3>
+  <ul>
+  <li>Set the flame on the burner to a blue flame</li>
+  <li>The tip of the burner must be approximately 3 inches from the panel or so the tip of the blue flame makes contact with the surface of the panel</li>
+  <li>Pass the flame over the panel at approxiamtely 50cm per second</li>
+  <li>Practice speed and distance control on a non-critical area of the panel before attempting to treat the bond paths.</li>
+  <li>Pass the flame over the panel at approximately 50cm per second</li>
+  <li>A bond path can only be treated once, if an error is made, the part can no longer be used. Take care!</li>
+  </ul>
+  </div>
+  <div class="column third purple-light mono btn" onclick="sectionFourk()">move forward
+  </div><!--Close Button-->
+  </div><!--End Columns Container-->
+  
+  
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFouri()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
+// ***********************************************************SECTION 4 K ******************************************************************************************
+function sectionFourk(){
+  var newcontent =
+  `<div name="section4k" class="slide light"><!--Start Overlay-->
+  <div class="columns light animate__animated animate__slideInRight"><!--Columns Container-->
+  <div class="column white overflow-icon"><!--Start Section Container-->
+  <h1>Summary</h1><!--Heading-->
+  <h2>&#92; Primer Application</h2><!--Heading-->
+  <div class="row"><!--First row of cards-->
+  <span name="primer-application" class="card small black"><!--Card-->
+  <p class="mono">primer application</p><!--Card mono title-->
+  </span><!--End Card-->
+  </div><!--End first row-->
+  <h3>Key things that you should remember:</h3>
+  <ul>
+  <li>Wait at least 15 minutes after flame treatment before applying primer</li>
+  <li>Prime the area of the bead path</li>
+  <li>Use one coat and a single stroke if possible</li>
+  <li>After 10 minutes the panel can be bonded.</li>
+  <li>Bonding should take place within 1 hour, and cannot take place after 24 hours</li>
+  </ul>
+  <p>You can find additional useful resources on the Arrival Wiki. Links to these resources are also provided in this Module.</p>
+  <h3>You can move forward to visit the resources.</h3>
+  </div>
+  <div class="column third purple-light mono btn" onclick="sectionFourEnd()">move forward
+  </div><!--Close Button-->
+  </div><!--End Columns Container-->
+  
+  
+  </div><!--End Columns Container-->
+  </div><!--End Learning Content Container-->
+  `
+  ;
+  // insert Html
+  learningcontent.innerHTML = newcontent;
+  sectionname.innerHTML = section4; // Update with section name
+  document.getElementById('i-step-back').setAttribute('onclick','sectionFourj()'); // Update with previous content
+  lastView(); // Update local storage with current page
+  };
+  //**********************************************************************************************************************************************************
+  //
 // ***********************************************************SECTION 4 END ******************************************************************************************
 function sectionFourEnd(){
 var newcontent =
@@ -1804,7 +1915,7 @@ var newcontent =
 // insert Html
 learningcontent.innerHTML = newcontent;
 sectionname.innerHTML = section4; // Update with section name
-document.getElementById('i-step-back').setAttribute('onclick','sectionFourh()'); // Update with previous content
+document.getElementById('i-step-back').setAttribute('onclick','sectionFourk()'); // Update with previous content
 document.getElementById('i-forward').classList.remove('disabled-btn');
 document.getElementById('i-forward').setAttribute('onclick', 'sectionFivea()');
 lastView(); // Update local storage with current page
