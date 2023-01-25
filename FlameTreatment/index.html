@@ -11,22 +11,28 @@
 
 <!--HEADER-->
 <header id="ui-header"><!--Header Fixed-->
+<button class="button black-contrast back sm-btn" onclick="closeImoduleFrame()"></button>
+<button id="i-module-name" class="button black sm-btn not-btn not-mobile" style="color:#868787"></button>
+<button id="i-section-name" class="button black sm-btn not-btn"></button>
+<button class="button black sm-btn menu" title="Learning Menu" onclick="document.getElementById('i-menu').classList.add('show');"></button>
 </header><!--End Header-->
 <!--HEADER END-->
 
 <!--MENU OVERLAY-->
-<aside id="learningmenu">
+<aside id="i-menu">
 </aside>
 <!--MENU OVERLAY END-->
 
 
 <!-- CONTENT -->
-<div id="content" class="container"><!--Learning Content Container-->
+<div id="i-content"><!--Learning Content Container-->
 </div><!--End Learning Content Container-->
 <!-- CONTENT END -->
 
 <!--FOOTER-->
-<footer id="footer">
+<footer id="ui-footer">
+<button id="i-step-back" class="button nav-btn return" onclick="">step back</button>
+<button id="i-forward" class="button nav-btn forward disabled-btn" onclick="">next section</button>
 </footer>
 <!--FOOTER END-->
 

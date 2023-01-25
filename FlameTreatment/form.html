@@ -1,0 +1,44 @@
+<head>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<form id="contactForm">
+<div>
+  <input type="text" id="Name" name="Name" placeholder="Your Name">
+</div>
+<div>
+  <input type="text" name="EmailAddress" id="EmailAddress" placeholder="Your Email">
+</div>
+<div>
+ <textarea id="Message" name="Message" cols="30" rows="6" placeholder="Your Message"></textarea>
+<div>
+  <input id="submit" name="submit" type="submit" value="Send Message">
+</div>
+</div>
+</form>
+<script>
+var thisForm = document.getElementById("contactForm");
+const headers_ = {
+     'Authorization': 'Bearer keyxS2TBeVvXZWZMV',
+     'Content-Type': 'application/json'
+};
+// When the form is submitted...
+thisForm.addEventListener("submit", function(event) {
+   event.preventDefault();
+// POST the data
+axios.post('https://api.airtable.com/v0/appki93JnG14SdUVF/Table%201',
+{
+   "fields": {
+    "Name": document.getElementById("Name").value,
+    "Email Address": document.getElementById("EmailAddress").value,
+    "Message": document.getElementById("Message").value
+}
+}, {headers: headers_}
+)
+.then((resp) => {
+  console.log("success!")
+})
+.catch(function (error) {
+  console.log(error);
+});
+});
+</script>

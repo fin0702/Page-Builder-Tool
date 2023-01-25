@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html id="i-module-ui" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="i-module-ui.css"><!--interface stylesheet-->
+<link rel="stylesheet" href="rangeslider.css"><!--interface stylesheet-->
+</head>
+<body>
+
+<!--HEADER-->
+<header id="ui-header"><!--Header Fixed-->
+<button class="button black-contrast back sm-btn" onclick="document.getElementById('i-module-ui').style.display = 'none';"></button>
+<button id="i-module-name" class="button black sm-btn not-btn not-mobile" style="color:#868787">Module Name</button>
+<button id="i-section-name" class="button black sm-btn not-btn">Section Name</button>
+<button class="button black sm-btn menu" title="Learning Menu" onclick="document.getElementById('i-menu').classList.add('show');"></button>
+</header><!--End Header-->
+<!--HEADER END-->
+
+<!--MENU OVERLAY-->
+<aside id="i-menu">
+</aside>
+<!--MENU OVERLAY END-->
+
+
+<!-- CONTENT -->
+<div id="i-content-template"><!--Test your content between these tags-->
+  <div id="revisit" class="overlay hide show animate pop">
+  <div class="columns"><!--Columns Container-->
+  <div class="column quarter light mono btn" onclick="sectionOne();">restart<h2 class="mono">< Start from the beginning</h2></div><!--Close Button-->
+  <div class="column quarter blue mono btn" onclick="sectionOne();">continue<h2 class="mono">Continue where you left off ></h2></div><!--Close Button-->
+  </div><!--End Columns Container-->
+  </div>
+</div><!--Test your content between these tags-->
+<!-- CONTENT END -->
+
+<!--FOOTER-->
+<footer id="footer">
+<button id="i-step-back" class="button nav-btn return" onclick="">step back</button>
+<button id="i-forward" class="button nav-btn forward disabled-btn" onclick="">next section</button>
+</footer>
+<!--FOOTER END-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="flamescript.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+</html>
